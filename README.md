@@ -112,7 +112,7 @@ npm run dev
   <tr>
     <td align="center">
       <a href="#">
-        <img src="./" width="100px;" alt="Foto de perfil - Felipe"/><br>
+        <img src="./" width="100px;" alt="Foto de perfil - Daniela"/><br>
         <sub>
           <b>Daniela Silva (Dani)</b>
         </sub>
@@ -138,7 +138,7 @@ npm run dev
   <tr>
     <td align="center">
       <a href="#">
-        <img src="./" width="100px;" alt="Foto de perfil - Tawany"/><br>
+        <img src="./" width="100px;" alt="Foto de perfil - Jéssica"/><br>
         <sub>
           <b>Jéssica dos Santos (Jéssi)</b>
         </sub>
