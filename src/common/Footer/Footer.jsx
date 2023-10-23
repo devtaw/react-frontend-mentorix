@@ -1,6 +1,14 @@
 import React from "react";
-import * as S from "./FooterStyles";
-import { Link } from "react-router-dom";
+import {
+  FooterContainer,
+  Column,
+  Logo,
+  Description,
+  OpeningHours,
+  SocialIcons,
+  CopyrightInfo,
+  CopyrightText,
+} from "./Footer.styled";
 import {
   CaretRight,
   Envelope,
@@ -9,22 +17,24 @@ import {
   LinkedinLogo,
   WhatsappLogo,
 } from "@phosphor-icons/react";
+import { Link } from "react-router-dom";
+import { TextH2, TextBody } from "../typography";
 function Footer() {
   return (
-    <S.Container>
-      <div className="content">
-        <S.Column>
+    <FooterContainer>
+      <div className="d-flex">
+        <Column>
           <div>
-            <S.Logo src="../src/assets/img/logo-footer.png" />
+            <Logo src="../src/assets/img/logo-footer.png" />
 
-            <S.Description>
+            <Description>
               Plataforma gratuita que conecta de forma simples e rápida mentores
               a pessoas que desejam ser mentoradas
-            </S.Description>
+            </Description>
 
-            <h2>siga a gente </h2>
+            <TextH2> siga a gente </TextH2>
 
-            <S.SocialIcons>
+            <SocialIcons>
               <a href="link-do-facebook">
                 <FacebookLogo size={32} color="#f4ef8c" />
               </a>
@@ -34,48 +44,48 @@ function Footer() {
               <a href="link-do-linkedin">
                 <LinkedinLogo size={32} color="#f4ef8c" />
               </a>
-            </S.SocialIcons>
+            </SocialIcons>
           </div>
-        </S.Column>
+        </Column>
 
-        <S.Column>
+        <Column>
           <div>
-            <h2>endereço</h2>
+            <TextH2> endereço </TextH2>
             <p>Rua Emiliano Perneta, 174 - Centro, Curitiba - PR, 80010-050</p>
           </div>
           <div>
-            <h2>horário de atendimento</h2>
-            <S.OpeningHours>
+            <TextH2> horário de atendimento </TextH2>
+            <OpeningHours>
               <p>Segunda a sexta-feira, 8h às 17h</p>
               <p>Sábado, domingo e feriado, 8h às 12h</p>
-            </S.OpeningHours>
+            </OpeningHours>
           </div>
-        </S.Column>
+        </Column>
 
-        <S.Column>
+        <Column>
           <div>
-            <h2>mapa do site</h2>
+            <TextH2> mapa do site </TextH2>
             <div className="icon-link">
-              <CaretRight size={20} color="#f4ef8c" weight="light" />
-              <S.Link href="/">Home</S.Link>
+              <CaretRight size={20} color="#f4ef8c" weight="fill" />
+              <Link href="/">Home</Link>
             </div>
             <div className="icon-link">
-              <CaretRight size={20} color="#f4ef8c" weight="light" />
-              <S.Link href="/sobre">Sobre Nós</S.Link>
+              <CaretRight size={20} color="#f4ef8c" weight="fill" />
+              <Link href="/sobre">Sobre Nós</Link>
             </div>
             <div className="icon-link">
-              <CaretRight size={20} color="#f4ef8c" weight="light" />
-              <S.Link href="/mentores">Mentores</S.Link>
+              <CaretRight size={20} color="#f4ef8c" weight="fill" />
+              <Link href="/mentores">Mentores</Link>
             </div>
             <div className="icon-link">
-              <CaretRight size={20} color="#f4ef8c" weight="light" />
-              <S.Link href="/contato">Contato</S.Link>
+              <CaretRight size={20} color="#f4ef8c" weight="fill" />
+              <Link href="/contato">Contato</Link>
             </div>
           </div>
-        </S.Column>
+        </Column>
 
-        <S.Column>
-          <h2>precisa de ajuda?</h2>
+        <Column>
+          <TextH2> precisa de ajuda?</TextH2>
           <div className="icon-link">
             <Envelope size={32} color="#f4ef8c" />
             <p>suporte@mentorix.com.br</p>
@@ -84,24 +94,24 @@ function Footer() {
             <WhatsappLogo size={32} color="#f4ef8c" />
             <p>(41) 9 1234-5678</p>
           </div>
-        </S.Column>
+        </Column>
       </div>
       <img
         src="../src/assets/img/gradiente-footer.png"
         alt="Separador Gradiente"
       />
-      <S.Column>
-        <S.CopyrightInfo>
-          <S.CopyrightText>
+      <Column>
+        <CopyrightInfo>
+          <CopyrightText>
             &copy; 2023 Mentorix | Todos os direitos reservados
-          </S.CopyrightText>
+          </CopyrightText>
           <div className="imagens">
-            <p>desenvolvido por</p>
+            <TextBody variant="body-sm">desenvolvido por</TextBody>
             <img src="../src/assets/img/logoSquad4-footer.png" alt="Squad 4" />
           </div>
-        </S.CopyrightInfo>
-      </S.Column>
-    </S.Container>
+        </CopyrightInfo>
+      </Column>
+    </FooterContainer>
   );
 }
 
