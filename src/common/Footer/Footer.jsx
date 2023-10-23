@@ -1,6 +1,6 @@
 import React from "react";
 import * as S from "./FooterStyles";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import {
   CaretRight,
   Envelope,
@@ -51,3 +51,31 @@ function Footer() {
             </S.OpeningHours>
           </div>
         </S.Column>
+
+        <S.Column>
+          <div>
+            <h2>mapa do site</h2>
+            <div className="icon-link">
+              <CaretRight size={20} color="#f4ef8c" weight="light" />
+              <S.Link href="/">Home</S.Link>
+            </div>
+            <div className="icon-link">
+              <CaretRight size={20} color="#f4ef8c" weight="light" />
+              <S.Link href="/sobre">Sobre Nós</S.Link>
+            </div>
+            <div className="icon-link">
+              <CaretRight size={20} color="#f4ef8c" weight="light" />
+              <S.Link href="/mentores">Mentores</S.Link>
+            </div>
+            <div className="icon-link">
+              <CaretRight size={20} color="#f4ef8c" weight="light" />
+              <S.Link href="/contato">Contato</S.Link>
+            </div>
+          </div>
+        </S.Column>
+
+        </S.Container>
+        );
+}
+
+export default Footer;
