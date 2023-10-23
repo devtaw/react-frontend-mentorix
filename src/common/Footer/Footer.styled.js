@@ -1,25 +1,18 @@
 import styled from "styled-components";
 
-export const Container = styled.footer`
+export const FooterContainer = styled.footer`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: #1b2336;
-  color: #818181;
+  color: ${(p) => p.theme["blue-gray-500"]};
   padding: 50px;
 
-  .content {
-    display: flex;
-  }
   .imagens {
     display: flex;
   }
   h2 {
-    color: #d698ff;
-    font-family: Open Sans;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
+    color: #${(p) => p.theme["secondary-900"]};
     line-height: normal;
     letter-spacing: -0.48px;
   }
@@ -48,17 +41,10 @@ export const Logo = styled.img`
 
 export const Description = styled.p`
   display: flex;
-  width: 312px;
-  height: 63px;
+  width: 350px;
+  height: 90px;
   flex-direction: column;
   justify-content: flex-end;
-  color: #818181;
-  font-family: Montserrat;
-  font-size: 17px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.34px;
 `;
 
 export const SocialIcons = styled.div`
@@ -69,7 +55,7 @@ export const SocialIcons = styled.div`
   padding-top: 10px;
 
   a {
-    color: #818181;
+    color: ${(p) => p.theme["blue-gray-800"]};
     font-family: Open Sans;
     text-decoration: none;
     align-items: center;
@@ -79,12 +65,10 @@ export const SocialIcons = styled.div`
 export const OpeningHours = styled.div`
   p {
     display: flex;
-    padding-top: 5px;
     flex-direction: column;
-    color: #818181;
-    font-family: Montserrat;
-    font-size: 17px;
-    margin: 0px;
+
+    flex-wrap: wrap;
+    color: #${(p) => p.theme["secondary-900"]};
   }
 `;
 
@@ -92,7 +76,7 @@ export const Link = styled.a`
   display: flex;
   align-items: center;
   margin: 10px 0; /* Adicione espaço acima e abaixo do elemento Link */
-  color: #818181;
+  color: ${(p) => p.theme["blue-gray-800"]};
   font-family: Open Sans;
   text-decoration: none;
 `;
@@ -100,7 +84,7 @@ export const Link = styled.a`
 export const CopyrightInfo = styled.div`
   bottom: 0;
   width: 100%;
-  color: #f4ef8c;
+  color: ${(p) => p.theme["terciary-200"]};
   padding-top: 20px;
   display: flex;
   justify-content: space-between;
