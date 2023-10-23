@@ -1,5 +1,5 @@
 export const defaultTheme = {
-  white: "#FFF",
+  white: "#FFFFFF",
   background: " #FAFAFA",
 
   "gray-100": "#F5F5F5",
@@ -19,7 +19,7 @@ export const defaultTheme = {
   "primary-800": "#57115D",
   "primary-900": "#471E5A",
 
-  "accent-50": "#F5F965",
+  "accent-50": "#F5F966",
   "accent-100": "#FFF001",
   "accent-200": "#FFDF00",
   "accent-300": "#FFD300",
@@ -38,10 +38,10 @@ export const defaultTheme = {
   "blue-700": "#1E56AD",
   "blue-800": "#0009C9",
 
-  "red-500": "#E25858",
+  "red-500": "#E25A5A",
 
-  "green-500": "#168821",
-  "green-100": "#E3F5E1",
+  "green-500": "#168822",
+  "green-100": "#E2F5E0",
 
   "container-size": "75vw",
 
