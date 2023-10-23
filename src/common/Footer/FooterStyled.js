@@ -87,3 +87,12 @@ export const OpeningHours = styled.div`
     margin: 0px;
   }
 `;
+
+export const Link = styled.a`
+  display: flex;
+  align-items: center;
+  margin: 10px 0; /* Adicione espaço acima e abaixo do elemento Link */
+  color: #818181;
+  font-family: Open Sans;
+  text-decoration: none;
+`;
