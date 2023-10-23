@@ -1,6 +1,6 @@
 import React from "react";
 import * as S from "./FooterStyles";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   CaretRight,
   Envelope,
@@ -74,6 +74,24 @@ function Footer() {
           </div>
         </S.Column>
 
+        <S.Column>
+          <h2>precisa de ajuda?</h2>
+          <div className="icon-link">
+            <Envelope size={32} color="#f4ef8c" />
+            <p>suporte@mentorix.com.br</p>
+          </div>
+          <div className="icon-link">
+            <WhatsappLogo size={32} color="#f4ef8c" />
+            <p>(41) 9 1234-5678</p>
+          </div>
+        </S.Column>
+      </div>
+      <img
+        src="../src/assets/img/gradiente-footer.png"
+        alt="Separador Gradiente"
+      />
+      <S.Column>
+        
         </S.Container>
         );
 }
