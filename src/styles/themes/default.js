@@ -45,8 +45,14 @@ export const defaultTheme = {
 
   "container-size": "75vw",
 
-  "title-sm": "1.5rem",
-  "title-lg": "2.5rem",
+  "title-xxlg": "2rem",
+  "title-xlg": "1.5rem",
+  "title-lg": "1.25rem",
+  "title-md": "1rem",
+  "title-sm": "0.875rem",
+  "title-xsm": "0.75rem",
+
   "body-xsm": "0.75rem",
+  "body-sm": "0.875rem",
   "body-md": "1rem",
 };
