@@ -91,9 +91,18 @@ function Footer() {
         alt="Separador Gradiente"
       />
       <S.Column>
-        
-        </S.Container>
-        );
+        <S.CopyrightInfo>
+          <S.CopyrightText>
+            &copy; 2023 Mentorix | Todos os direitos reservados
+          </S.CopyrightText>
+          <div className="imagens">
+            <p>desenvolvido por</p>
+            <img src="../src/assets/img/logoSquad4-footer.png" alt="Squad 4" />
+          </div>
+        </S.CopyrightInfo>
+      </S.Column>
+    </S.Container>
+  );
 }
 
 export default Footer;
