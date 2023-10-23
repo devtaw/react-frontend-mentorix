@@ -86,10 +86,10 @@ export const TextH6 = styled.h6`
  */
 
 export const TextBody = styled.p`
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: ${(props) => (props.bold ? "bold" : 400)};
-  font-size: ${(props) => props.theme[props.variant || "body-md"]}
+  font-weight: ${(props) => (props.bold ? 700 : 400)};
+  font-size: ${(props) => props.theme[props.variant || "body-md"]};
   line-height: 1.3;
   color: ${(props) => props.theme[props.color || "base-text"]};
 `;

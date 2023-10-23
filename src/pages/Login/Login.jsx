@@ -1,8 +1,10 @@
 import React from "react";
+import { ContentContainer } from "../../common/ContentContainer.styled";
+
 export function Login() {
   return (
-    <div>
+    <ContentContainer>
       <h1>Login</h1>
-    </div>
+    </ContentContainer>
   );
 }
