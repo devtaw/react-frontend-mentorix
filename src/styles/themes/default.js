@@ -79,12 +79,11 @@ export const defaultTheme = {
   "title-xsm": "0.75rem", //h6-12px - Extra Pequeno
 
   //corpo de texto:
-  "body-xxsm": "0.64rem", //p-10px - Extra, Extra Pequeno
-  "body-xsm": "0.8rem", //p-12px - Extra Pequeno
+  "body-xxsm": "0.563rem", //p-10px - Extra, Extra Pequeno
+  "body-xsm": "0.75rem", //p-12px - Extra Pequeno
   "body-sm": "1rem", //p-16px - Pequeno
-  "body-md": "1.25rem", //p-20px - Médio
-  "body-mlg": "1.563rem", //p-25px - Médio Grande
-  "body-lg": "1.953rem", //p-32px - Grande
-  "body-xlg": "2.441rem", //p-40px - Extra Grande
-  "body-xxlg": "3.052rem", //p-48px - Extra, Extra Grande
+  "body-md": "1.333rem", //p-20px - Médio
+  "body-lg": "1.777rem", //p-28px - Grande
+  "body-xlg": "2.369rem", //p-38px - Extra Grande
+  "body-xxlg": "3.157rem", //p-50px - Extra, Extra Grande
 };
