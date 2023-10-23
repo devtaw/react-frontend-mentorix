@@ -96,3 +96,23 @@ export const Link = styled.a`
   font-family: Open Sans;
   text-decoration: none;
 `;
+
+export const CopyrightInfo = styled.div`
+  bottom: 0;
+  width: 100%;
+  color: #f4ef8c;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  border: 0px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  display: flex;
+`;
+
+export const CopyrightText = styled.p`
+  font-size: 14px;
+  opacity: 0.7;
+  flex-wrap: wrap;
+`;
