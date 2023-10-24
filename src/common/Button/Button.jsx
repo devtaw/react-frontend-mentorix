@@ -29,7 +29,9 @@ const PrimaryButton = styled(StyleButton)`
 `;
 
 const SecondaryButton = styled(StyleButton)`
-  background: transparent;
-  border: 5px solid ${(props) => props.theme.blue700};
-  color: ${(props) => props.theme.blue700};
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-size: ${(props) => props.theme[props.variant || "title-md"]};
+  font-weight: ${(props) => (props.bold ? 700 : 400)};
+  color: ${(props) => props.theme[props.color || "gray-900"]};
 `;
