@@ -1,10 +1,18 @@
 import React from "react";
-import { StyleHeader1 } from "./Header.styled.js";
-import { Link } from "react-router-dom"; // Importe o Link se você estiver usando React Router
+import { StyleHeader } from "./Header.styled.js";
+import { Link, useNavigate } from "react-router-dom";
+import Button from "../Button/Button";
+import { useTheme } from "styled-components";
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/cadastro");
+  };
+  const theme = useTheme();
   return (
-    <StyleHeader1 className="content">
+    <StyleHeader className="content">
       <img src="../src/assets/img/logo-header.png" alt="Logo Mentorix" />
       <nav>
         <ul className="lista_links">
@@ -34,9 +42,16 @@ const Header = () => {
               LOGIN
             </Link>
           </li>
+          <li>
+            <Button
+              texto="Criar Conta"
+              variant="primary"
+              onClick={handleClick}
+            />
+          </li>
         </ul>
       </nav>
-    </StyleHeader1>
+    </StyleHeader>
   );
 };
 
