@@ -8,11 +8,8 @@ export const FooterContainer = styled.footer`
   color: ${(p) => p.theme["blue-gray-500"]};
   padding: 50px;
 
-  .imagens {
-    display: flex;
-  }
   h2 {
-    color: #${(p) => p.theme["secondary-900"]};
+    color: ${(p) => p.theme["secondary-400"]};
     line-height: normal;
     letter-spacing: -0.48px;
   }
@@ -66,9 +63,8 @@ export const OpeningHours = styled.div`
   p {
     display: flex;
     flex-direction: column;
-
     flex-wrap: wrap;
-    color: #${(p) => p.theme["secondary-900"]};
+    color: ${(p) => p.theme["blue-gray-500"]};
   }
 `;
 
@@ -76,7 +72,7 @@ export const Link = styled.a`
   display: flex;
   align-items: center;
   margin: 10px 0; /* Adicione espaço acima e abaixo do elemento Link */
-  color: ${(p) => p.theme["blue-gray-800"]};
+  color: ${(p) => p.theme["blue-gray-500"]};
   font-family: Open Sans;
   text-decoration: none;
 `;
