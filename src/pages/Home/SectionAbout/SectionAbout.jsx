@@ -1,22 +1,19 @@
 import React from "react";
-import {
-  AboutSection,
-  AboutTitle,
-  AboutDescription,
-} from "./SectionAbout.styled";
+import { AboutSection } from "./SectionAbout.styled";
 import { Button } from "../../common/Button/Button";
+import { TextH1, TextH2 } from "../typography";
 
 function SectionAbout() {
   return (
     <AboutSection>
-      <AboutTitle>SOBRE A MENTORIX</AboutTitle>
-      <AboutDescription>
+      <TextH1>SOBRE A MENTORIX</TextH1>
+      <TextH2>
         A Mentorix é uma plataforma de mentoria on-line dedicada a contribuir
         para o desenvolvimento de pessoas e carreiras em um ambiente
         colaborativo. Nossa missão é promover o compartilhamento de conhecimento
         e experiências entre profissionais, oferecendo uma experiência única que
         incentiva o autoconhecimento e o networking.
-      </AboutDescription>
+      </TextH2>
       <ul>
         <li>
           <Button
