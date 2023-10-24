@@ -20,13 +20,18 @@ const STYLE_MODAL = {
     borderRadius: '12px'
 }
 
-export default function Modal({isOpen}) {
+export default function Modal({isOpen, children, setFechaModal}) {
 
   
   if(isOpen) {
       return(
           <div style={STYLE_BACKGROUND}>
-            <div style={STYLE_MODAL}>Modal</div>
+            <div style={STYLE_MODAL}>
+                <div>
+                    {children}
+                </div>
+                <button onClick={setFechaModal}>Fechar</button>
+                </div>
             </div>  
       )
   }
