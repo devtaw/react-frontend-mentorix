@@ -16,7 +16,9 @@ export function Cadastro() {
       <div>
         <button onClick={() => setAbreModal(true)}>Abre Modal</button>
       </div>
-        <Modal isOpen={abreModal}/>
+        <Modal isOpen={abreModal} setFechaModal={() => setAbreModal(!abreModal)}>
+          Modal
+        </Modal>
       </div>
     </ContentContainer>
   );
