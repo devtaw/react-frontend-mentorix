@@ -36,13 +36,13 @@ function Footer() {
 
             <SocialIcons>
               <a href="link-do-facebook">
-                <FacebookLogo size={32} color="#f4ef8c" />
+                <FacebookLogo size={32} color="#FFF59D" />
               </a>
               <a href="link-do-instagram">
-                <InstagramLogo size={32} color="#f4ef8c" />
+                <InstagramLogo size={32} color="#FFF59D" />
               </a>
               <a href="link-do-linkedin">
-                <LinkedinLogo size={32} color="#f4ef8c" />
+                <LinkedinLogo size={32} color="#FFF59D" />
               </a>
             </SocialIcons>
           </div>
@@ -66,19 +66,19 @@ function Footer() {
           <div>
             <TextH2> mapa do site </TextH2>
             <div className="icon-link">
-              <CaretRight size={20} color="#f4ef8c" weight="fill" />
+              <CaretRight size={20} color="#FFF59D" weight="fill" />
               <Link href="/">Home</Link>
             </div>
             <div className="icon-link">
-              <CaretRight size={20} color="#f4ef8c" weight="fill" />
+              <CaretRight size={20} color="#FFF59D" weight="fill" />
               <Link href="/sobre">Sobre Nós</Link>
             </div>
             <div className="icon-link">
-              <CaretRight size={20} color="#f4ef8c" weight="fill" />
+              <CaretRight size={20} color="#FFF59D" weight="fill" />
               <Link href="/mentores">Mentores</Link>
             </div>
             <div className="icon-link">
-              <CaretRight size={20} color="#f4ef8c" weight="fill" />
+              <CaretRight size={20} color="#FFF59D" weight="fill" />
               <Link href="/contato">Contato</Link>
             </div>
           </div>
@@ -87,12 +87,16 @@ function Footer() {
         <Column>
           <TextH2> precisa de ajuda?</TextH2>
           <div className="icon-link">
-            <Envelope size={32} color="#f4ef8c" />
-            <p>suporte@mentorix.com.br</p>
+            <Envelope size={32} color="#FFF59D" />
+            <TextBody variant="body-sm" className="m-0">
+              suporte@mentorix.com.br
+            </TextBody>
           </div>
           <div className="icon-link">
-            <WhatsappLogo size={32} color="#f4ef8c" />
-            <p>(41) 9 1234-5678</p>
+            <WhatsappLogo size={32} color="#FFF59D" />
+            <TextBody variant="body-sm" className="m-0">
+              (41) 9 1234-5678
+            </TextBody>
           </div>
         </Column>
       </div>
@@ -105,7 +109,7 @@ function Footer() {
           <CopyrightText>
             &copy; 2023 Mentorix | Todos os direitos reservados
           </CopyrightText>
-          <div className="imagens">
+          <div className="d-flex">
             <TextBody variant="body-sm">desenvolvido por</TextBody>
             <img src="../src/assets/img/logoSquad4-footer.png" alt="Squad 4" />
           </div>
