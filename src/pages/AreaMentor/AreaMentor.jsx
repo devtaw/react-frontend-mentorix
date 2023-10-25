@@ -1,29 +1,11 @@
 import React from "react";
-import { ContentContainer } from "../../common/ContentContainer.styled";
-import "./AreaMentor.styled";
-import { useState } from 'react';
-import {
-  MentorDescription,
-  MentorName,
-  MentorPosition,
-  Container,
-  Row2,
-  Avatar,
-  Agendamento,
-  CardAvatar,
-  CardMensagem,
-  CardIcone,
-  CardBotton,
-  Fundocomcor,
-} from "./AreaMentor.styled";
+import { Container, Row2, Avatar, TextH1Mentor, TextH5Mentor, TextH6Mentor, TextH5cor, TextDescriptionMentor } from "./AreaMentor.styled";
 import bg from "../../assets/img/div-capa-areaMentor.png";
 import { Form } from "react-bootstrap";
 import { FormMentor } from "../../common/FormMentor/FormMentor";
-import { Modal, Button } from 'react-bootstrap';
-import 'bootstrap/dist/js/bootstrap.bundle';
-
-
-
+import { Modal, Button } from "react-bootstrap";
+import "bootstrap/dist/js/bootstrap.bundle";
+import { TextBody } from "../../common/typography";
 
 export function AreaMentor() {
   return (
@@ -37,60 +19,28 @@ export function AreaMentor() {
         </Row2>
         <Avatar img="src/assets/img/perfil-mentor.png"></Avatar>
       </div>
-      <h1>Seja bem-vindo (a)!</h1>
-      <h3>
-        Aqui na Área do Mentor você pode editar seu perfil e visualizar as
-        solicitações de mentoria recebidas podendo fazer o aceite ou recusa
-        delas.
-      </h3>
-      <p> Solicitações de agendamento recebidas </p>
-      <p>
+      <div>
+        <div>
+      <TextH1Mentor >Seja bem-vindo (a)!</TextH1Mentor></div>
+      <TextH5Mentor>
+        Aqui na você pode <span TextH5cor>Área do Mentor</span>
+        editar seu perfil e visualizar as solicitações de mentoria recebidas
+        podendo fazer o aceite ou recusa delas.
+      </TextH5Mentor>
+      
+      <TextH6Mentor> Solicitações de agendamento recebidas </TextH6Mentor>
+      <div className="TextDescriptionMentor">
+      <TextBody variant={"body-sm"}>
         Aceite ou recuse suas solicitações e você e o mentorado vão receber um
         e-mail.
-      </p>
+      </TextBody>
+      </div>
+      </div>
       <hr />
-      <Agendamento>
-        <CardAvatar src="src/assets/img/perfil-mentor.png" alt="" />
-        <div>
-          <p>Luiza Ferreira</p>
-          <p>estudante</p>
-          <p>luiza@mail.com</p>
-        </div>
-        <CardMensagem>
-          Olá, tudo bem? Tenho mto interesse em fazer uma mentoriacom você.
-          Podemos marcar quando?
-        </CardMensagem>
-        <CardBotton>
-          <CardIcone></CardIcone>
-          <CardIcone></CardIcone>
-        </CardBotton>
-      </Agendamento>
-      <Agendamento>
-        <CardAvatar src="src/assets/img/perfil-mentor.png" alt="" />
-        <div>
-          <p>Luiza Ferreira</p>
-          <p>estudante</p>
-          <p>luiza@mail.com</p>
-        </div>
-        <CardMensagem>
-          Olá, tudo bem? Tenho mto interesse em fazer uma mentoriacom você.
-          Podemos marcar quando?
-        </CardMensagem>
-        <CardBotton>
-          <CardIcone></CardIcone>
-          <CardIcone></CardIcone>
-        </CardBotton>
-      </Agendamento>
-
-      <h6 className="Fundocomcor">MODO VISUALIZAÇÃO</h6>
-      <p>Perfil</p>
-
-      <p>Clique aqui para editar seu perfil.</p>
-    
-      <hr />
+      <TextDescriptionMentor>Perfil</TextDescriptionMentor>
+      <TextDescriptionMentor>Dados Pessoais</TextDescriptionMentor>
       
-      <FormMentor/>
-     
+      <FormMentor />
     </Container>
   );
 }
