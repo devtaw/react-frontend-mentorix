@@ -9,14 +9,9 @@ export const ContatoContainer = styled.footer`
   width: 100%;
   flex-wrap: nowrap;
   align-items: baseline;
-
-  color: ${(p) => p.theme["background-light"]};
+  color: ${(props) => props.theme["blue-gray-50"]};
 
   h1 {
-    color: ${(p) => p.theme["secondary-400"]};
-  }
-
-  h2 {
-    color: ${(p) => p.theme["secondary-400"]};
+    color: ${(props) => props.theme["secondary-400"]};
   }
 `;
