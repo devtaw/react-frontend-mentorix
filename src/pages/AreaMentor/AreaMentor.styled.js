@@ -1,27 +1,61 @@
 import { CardBody } from "react-bootstrap";
 import styled from "styled-components";
 
+;
+
+export const TextH1Mentor = styled.h1`
+font-family: "Open Sans", sans-serif;
+font-style: normal;
+font-size: ${(props) => props.theme[props.variant || "title-xxlg"]};
+font-weight: ${(props) => (props.bold ? 700 : 400)};
+color: ${(props) => props.theme[props.color || "primary-900"]};
+margin-top: 10px;
+margin-bottom: 13px;
+`;
+
+export const TextH5Mentor = styled.h5`
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-size: ${(props) => props.theme[props.variant || "title-sm"]};
+  font-weight: 400;
+  color: ${(props) => props.theme[props.color || "primary-900"]};
+`;
+
+export const TextH5cor = styled.h5`
+font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-size: ${(props) => props.theme[props.variant || "title-sm"]};
+  font-weight: 400; 
+  color: #673AB7;
+`;
+
+export const TextH6Mentor = styled.h6`
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-size: ${(props) => props.theme[props.variant || "title-xsm"]};
+  font-weight: ${(props) => (props.bold ? 700 : 400)};
+  color: ${(props) => props.theme[props.color || "primary-900"]};
+`;
+
+export const TextDescriptionMentor = styled.p`
+font-family: "Montserrat", sans-serif;
+font-size: ${(props) => props.theme["body-sm"]};
+color: ${(props) => props.theme["blue-gray-800"]};
+font-weight: 400;
+margin-bottom: 15px;
+line-height: 26px;
+margin-top: 0;
+margin-left: 4px;
+text-align: left;
+`;
+
 export const Container = styled.div`
   background-color: #f4f4f4;
   border: 1px solid #ccc;
   padding: 20px;
   border-radius: 5px;
   text-align: center;
-`;
-
-export const MentorName = styled.p`
-  font-size: 24px;
-  font-weight: bold;
-`;
-
-export const MentorPosition = styled.p`
-  font-size: 18px;
-  font-style: italic;
-`;
-
-export const MentorDescription = styled.p`
-  font-size: 16px;
-`;
+`
 
 export const Row2 = styled.div`
   height: 240px;
@@ -86,6 +120,3 @@ export const CardIcone = styled.img`
  border-radius: 3px;
 `;
 
-export const Fundocomcor = styled.h6`
-background-color: #F4EF8C;
-`;
