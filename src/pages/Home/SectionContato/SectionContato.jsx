@@ -16,21 +16,21 @@ function SectionContato() {
       </TextBody>
 
       <div class="d.flex">
-        <TextH2>E-mail</TextH2>
+        <TextH1>E-mail</TextH1>
         <TextBody variant="body-sm" className="m-0">
           <Envelope size={32} color={theme["terciary-200"]} weight="fill" />
           suporte@mentorix.com.br
         </TextBody>
       </div>
       <div>
-        <TextH2>WhatsApp</TextH2>
+        <TextH1>WhatsApp</TextH1>
         <TextBody variant="body-sm" className="m-0">
           <WhatsappLogo size={32} color={theme["terciary-200"]} weight="fill" />
           (41) 9 1234-5678
         </TextBody>
       </div>
       <div>
-        <TextH2>Endereço</TextH2>
+        <TextH1>Endereço</TextH1>
         <TextBody variant="body-sm" className="m-0">
           <MapPin size={32} color={theme["terciary-200"]} weight="fill" />
           Emiliano Perneta, 174 - Centro, Curitiba - PR, 80010-050
