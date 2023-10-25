@@ -1,10 +1,10 @@
 import React from "react";
 import { ContactContainer } from "../SectionContato/SectionContato.styled";
-import { TextH1, TextH2, TextBody } from "../../../common/typography.js";
+import { TextH1, TextBody } from "../../../common/typography.js";
 import { useTheme } from "styled-components";
 import { WhatsappLogo, Envelope, MapPin } from "@phosphor-icons/react";
 
-function SectionContato() {
+function ContactSection() {
   const theme = useTheme();
 
   return (
@@ -40,4 +40,4 @@ function SectionContato() {
   );
 }
 
-export default SectionContato;
+export default ContactSection();
