@@ -26,17 +26,6 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 
 
 export function AreaMentor() {
-  const [show, setShow] = useState(false);
-
-  const handleShow = () => {
-    setShow(true);
-  };
-
-  const handleClose = () => {
-    setShow(false);
-  };
-
-
   return (
     <Container>
       <div className="container">
@@ -96,28 +85,7 @@ export function AreaMentor() {
       <h6 className="Fundocomcor">MODO VISUALIZAÇÃO</h6>
       <p>Perfil</p>
       <p>Clique aqui para editar seu perfil.</p>
-      
-      <Modal show={showModal} onHide={handleCloseModal}>
-      <Modal.Header closeButton>
-        <Modal.Title>Editar Perfil</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        {/* Adicione os campos de edição do perfil aqui */}
-        {/* Exemplo: */}
-        <label>Nome:</label>
-        <input type="text" />
-        {/* ... Mais campos ... */}
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={handleCloseModal}>
-          Fechar
-        </Button>
-        <Button variant="primary" onClick={handleCloseModal}>
-          Salvar Alterações
-        </Button>
-      </Modal.Footer>
-    </Modal>
-
+    
       <hr />
       <FormMentor/>
      
