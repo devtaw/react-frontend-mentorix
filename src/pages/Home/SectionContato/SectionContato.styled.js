@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ContatoContainer = styled.footer`
+export const ContactContainer = styled.footer`
   background-image: url("../src/assets/img/section-contato1.png");
   display: flex;
   flex-direction: column;

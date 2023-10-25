@@ -1,5 +1,5 @@
 import React from "react";
-import { ContatoContainer } from "../SectionContato/SectionContato.styled";
+import { ContactContainer } from "../SectionContato/SectionContato.styled";
 import { TextH1, TextH2, TextBody } from "../../../common/typography.js";
 import { useTheme } from "styled-components";
 import { WhatsappLogo, Envelope, MapPin } from "@phosphor-icons/react";
@@ -8,7 +8,7 @@ function SectionContato() {
   const theme = useTheme();
 
   return (
-    <ContatoContainer>
+    <ContactContainer>
       <TextH1> Entre em contato ! </TextH1>
       <TextBody>
         <p>Adoraríamos ouvir você! </p>
@@ -36,7 +36,7 @@ function SectionContato() {
           Emiliano Perneta, 174 - Centro, Curitiba - PR, 80010-050
         </TextBody>
       </div>
-    </ContatoContainer>
+    </ContactContainer>
   );
 }
 
