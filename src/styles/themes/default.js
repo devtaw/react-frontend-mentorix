@@ -2,11 +2,13 @@ export const defaultTheme = {
   white: "#FFFFFF",
   black: "#000000",
 
-  "background-light": "#E1F5FE",
+  "background-light": "#F7FDFF",
   "background-dark": "#01151E",
 
   // "title-color": "#",
   // "text-color": "#",
+
+  "grey-600": "#757575",
 
   "blue-gray-50": "#ECEFF1",
   "blue-gray-100": "#CFD8DC",
@@ -27,7 +29,7 @@ export const defaultTheme = {
   "primary-600": "#039BE5",
   "primary-700": "#0288D1",
   "primary-800": "#0277BD",
-  "primary-900": "#01579B",
+  "primary-900": "#182B49",
   "primary-a100": "#80D8FF",
   "primary-a200": "#40C4FF",
   "primary-a400": "#00B0FF",
@@ -79,8 +81,8 @@ export const defaultTheme = {
   "title-xsm": "0.75rem", //h6-12px - Extra Pequeno
 
   //corpo de texto:
-  "body-xxsm": "0.563rem", //p-10px - Extra, Extra Pequeno
-  "body-xsm": "0.75rem", //p-12px - Extra Pequeno
+  "body-xxsm": "0.563rem", //p-12px - Extra, Extra Pequeno
+  "body-xsm": "0.75rem", //p-14px - Extra Pequeno
   "body-sm": "1rem", //p-16px - Pequeno
   "body-md": "1.333rem", //p-20px - Médio
   "body-lg": "1.777rem", //p-28px - Grande
