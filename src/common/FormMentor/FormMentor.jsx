@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Col from "react-bootstrap/Form";
 import { Card, ListGroup } from "react-bootstrap";
+import { TextBody } from "../../common/typography";
 import { MentorixButton } from "../Button/MentorixButton.styled.js";
 import {
   MentorDescription,
@@ -16,107 +17,89 @@ import {
   CardMensagem,
   CardIcone,
   CardBotton,
-  Fundocomcor,
+  Textorodape,
+
 } from "./FormMentor.styled";
 import React from "react";
 export function FormMentor() {
+function handleClick(){
+  
+}
   return (
     <div>
-      <MentorixButton color={"terciary-200"} onClick={handleClick}></MentorixButton>
       <div>
-        <p>Foto (obrigatório)</p>
-        <InputGroup className="mb-3">
-          <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-          <Form.Control
-            placeholder="Username"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-          />
-        </InputGroup>
+        <p></p>
+        <InputGroup size="sm" className="mb-3">
+        <InputGroup.Text id="inputGroup-sizing-sm">Foto (obrigatório)</InputGroup.Text>
+        <Form.Control
+          aria-label="Small"
+          aria-describedby="inputGroup-sizing-sm"
+        />
+      </InputGroup>
       </div>
       <div>
-        <p>Email (obrigatório)</p>
-        <InputGroup className="mb-3">
-          <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-          <Form.Control
-            placeholder="Username"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-          />
-        </InputGroup>
+        <p></p>
+        <InputGroup size="sm" className="mb-3">
+        <InputGroup.Text id="inputGroup-sizing-sm">Email (obrigatório)</InputGroup.Text>
+        <Form.Control
+          aria-label="Small"
+          aria-describedby="inputGroup-sizing-sm"
+        />
+      </InputGroup>
       </div>
 
       <div>
-        <p>Senha (obrigatório)</p>
-        <InputGroup className="mb-3">
-          <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-          <Form.Control
-            placeholder="Username"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-          />
-        </InputGroup>
+        
+        <InputGroup size="sm" className="mb-3">
+        <InputGroup.Text id="inputGroup-sizing-sm">Senha (obrigatório)</InputGroup.Text>
+        <Form.Control
+          aria-label="Small"
+          aria-describedby="inputGroup-sizing-sm"
+        />
+      </InputGroup>
       </div>
       <div>
-        <p>LinkedIn (obrigatório)</p>
-        <InputGroup className="mb-3">
-          <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-          <Form.Control
-            placeholder="Username"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-          />
-        </InputGroup>
+        <InputGroup size="sm" className="mb-3">
+        <InputGroup.Text id="inputGroup-sizing-sm">LinkedIn (obrigatório)</InputGroup.Text>
+        <Form.Control
+          aria-label="Small"
+          aria-describedby="inputGroup-sizing-sm"
+        />
+      </InputGroup>
       </div>
       <div>
-        <p>Nome completo (obrigatório)</p>
-        <InputGroup className="mb-3">
-          <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-          <Form.Control
-            placeholder="Username"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-          />
-        </InputGroup>
+        <InputGroup size="sm" className="mb-3" >
+        <InputGroup.Text id="inputGroup-sizing-sm">Nome completo (obrigatório)</InputGroup.Text>
+        <Form.Control
+          aria-label="Small"
+          aria-describedby="inputGroup-sizing-sm"
+        />
+      </InputGroup>
       </div>
       <div>
-        <p>Profissão</p>
-        <InputGroup className="mb-3">
-          <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-          <Form.Control
-            placeholder="Username"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-          />
-        </InputGroup>
+      
+        <InputGroup size="sm" className="mb-3">
+        <InputGroup.Text id="inputGroup-sizing-sm">Profissão</InputGroup.Text>
+        <Form.Control
+          aria-label="Small"
+          aria-describedby="inputGroup-sizing-sm"
+        />
+      </InputGroup>
       </div>
       <div>
-        <p>Profissão</p>
-        <InputGroup className="mb-3">
-          <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-          <Form.Control
-            placeholder="Username"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-          />
-        </InputGroup>
-      </div>
-      <div>
-        <p>Biografia</p>
-        <InputGroup size="lg">
-          <InputGroup.Text id="inputGroup-sizing-lg">Large</InputGroup.Text>
-          <Form.Control
-            aria-label="Large"
-            aria-describedby="inputGroup-sizing-sm"
-          />
-        </InputGroup>
-        <p>O texto deve ter no máximo 400 caracteres (com espaços).</p>
+      <InputGroup size="lg">
+        <InputGroup.Text id="inputGroup-sizing-lg">Biografia</InputGroup.Text>
+        <Form.Control
+          aria-label="Large"
+          aria-describedby="inputGroup-sizing-sm"
+        />
+      </InputGroup>
+        <Textorodape>*O texto deve ter no máximo 400 caracteres (com espaços).</Textorodape>
       </div>
 
       <div>
         <p>Especialidades por áreas de atuação:</p>
-      </div>
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "center"}}>
         <Card style={{ width: "18rem", marginRight: "10px" }}>
           <Card.Header>Negócios</Card.Header>
           <Card.Body>
@@ -151,12 +134,13 @@ export function FormMentor() {
           </Card.Body>
         </Card>
       </div>
-      <div>
-        <p>Você pode marcar mais de 1 opção.</p>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "center"}}>
+        <Textorodape>*Você pode marcar mais de 1 opção.</Textorodape>
       </div>
             <MentorixButton color={"terciary-200"} onClick={handleClick}>
               Atualizar perfil
             </MentorixButton>
+    </div>
     </div>
   );
 }
