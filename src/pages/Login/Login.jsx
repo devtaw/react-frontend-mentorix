@@ -1,10 +1,21 @@
 import React from "react";
-import { ContentContainer } from "../../common/ContentContainer.styled";
+import { MentorixModal } from "../../common/MentorixModal/MentorixModal";
+import { useState } from "react";
+import Form from "../Cadastro/FormCadastro/FormCadastro";
 
-export function Login() {
+
+export function LoginModal({isOpen, onClose}) {
+
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+
+  // function handleCloseModal () {
+  //   setModalIsOpen(false)
+  // }
   return (
-    <ContentContainer>
-      <h1>Login</h1>
-    </ContentContainer>
+    <MentorixModal isOpen={isOpen} title='Login' buttonSaveName="Entrar" onClose={onClose}> 
+      <Form />
+    </MentorixModal>
+    
   );
 }
+
