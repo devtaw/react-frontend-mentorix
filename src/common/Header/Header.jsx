@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleHeader } from "./Header.styled.js";
 import { Link, useNavigate } from "react-router-dom";
-import Button from "../Button/Button";
 import { useTheme } from "styled-components";
+import { MentorixButton } from "../Button/MentorixButton.styled.js";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -43,11 +43,9 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Button
-              texto="Criar Conta"
-              variant="primary"
-              onClick={handleClick}
-            />
+            <MentorixButton color={"terciary-200"} onClick={handleClick}>
+              Criar conta
+            </MentorixButton>
           </li>
         </ul>
       </nav>
