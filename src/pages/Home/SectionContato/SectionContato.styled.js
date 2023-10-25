@@ -1,23 +1,22 @@
 import styled from "styled-components";
 
-export const StyleContainer = styled.section`
-  width: 100%;
-  height: fit-content;
-  background-image: url("/background-Section-1.svg");
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: contain;
+export const ContatoContainer = styled.footer`
+  background-image: url("../src/assets/img/section-contato.png");
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 90px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 100px;
+  width: 100%;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  align-content: center;
+  color: ${(p) => p.theme["background-light"]};
 
-  .textos {
-    width: 50%;
-    max-width: 550px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 30px;
+  h1 {
+    color: ${(p) => p.theme["secondary-400"]};
+  }
+
+  h2 {
+    color: ${(p) => p.theme["secondary-400"]};
   }
 `;
