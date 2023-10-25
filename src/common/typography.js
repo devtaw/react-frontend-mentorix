@@ -26,7 +26,7 @@ export const TextH1 = styled.h1`
   font-style: normal;
   font-size: ${(props) => props.theme[props.variant || "title-xxlg"]};
   font-weight: ${(props) => (props.bold ? 700 : 400)};
-  color: ${(props) => props.theme[props.color || "gray-900"]};
+  color: ${(props) => props.theme[props.color || "primary-900"]};
 `;
 
 export const TextH2 = styled.h2`
@@ -34,7 +34,7 @@ export const TextH2 = styled.h2`
   font-style: normal;
   font-size: ${(props) => props.theme[props.variant || "title-xlg"]};
   font-weight: ${(props) => (props.bold ? 700 : 400)};
-  color: ${(props) => props.theme[props.color || "gray-900"]};
+  color: ${(props) => props.theme[props.color || "primary-900"]};
 `;
 
 export const TextH3 = styled.h3`
@@ -42,7 +42,7 @@ export const TextH3 = styled.h3`
   font-style: normal;
   font-size: ${(props) => props.theme[props.variant || "title-lg"]};
   font-weight: ${(props) => (props.bold ? 700 : 400)};
-  color: ${(props) => props.theme[props.color || "gray-900"]};
+  color: ${(props) => props.theme[props.color || "primary-900"]};
 `;
 
 export const TextH4 = styled.h4`
@@ -50,7 +50,7 @@ export const TextH4 = styled.h4`
   font-style: normal;
   font-size: ${(props) => props.theme[props.variant || "title-md"]};
   font-weight: ${(props) => (props.bold ? 700 : 400)};
-  color: ${(props) => props.theme[props.color || "gray-900"]};
+  color: ${(props) => props.theme[props.color || "primary-900"]};
 `;
 
 export const TextH5 = styled.h5`
@@ -58,7 +58,7 @@ export const TextH5 = styled.h5`
   font-style: normal;
   font-size: ${(props) => props.theme[props.variant || "title-sm"]};
   font-weight: ${(props) => (props.bold ? 700 : 400)};
-  color: ${(props) => props.theme[props.color || "gray-900"]};
+  color: ${(props) => props.theme[props.color || "primary-900"]};
 `;
 
 export const TextH6 = styled.h6`
@@ -66,7 +66,7 @@ export const TextH6 = styled.h6`
   font-style: normal;
   font-size: ${(props) => props.theme[props.variant || "title-xsm"]};
   font-weight: ${(props) => (props.bold ? 700 : 400)};
-  color: ${(props) => props.theme[props.color || "gray-900"]};
+  color: ${(props) => props.theme[props.color || "primary-900"]};
 `;
 
 /**
