@@ -84,9 +84,11 @@ export function AreaMentor() {
 
       <h6 className="Fundocomcor">MODO VISUALIZAÇÃO</h6>
       <p>Perfil</p>
+
       <p>Clique aqui para editar seu perfil.</p>
     
       <hr />
+      
       <FormMentor/>
      
     </Container>

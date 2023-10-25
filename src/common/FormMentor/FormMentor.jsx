@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Col from "react-bootstrap/Form";
 import { Card, ListGroup } from "react-bootstrap";
+import { MentorixButton } from "../Button/MentorixButton.styled.js";
 import {
   MentorDescription,
   MentorName,
@@ -21,6 +22,7 @@ import React from "react";
 export function FormMentor() {
   return (
     <div>
+      <MentorixButton color={"terciary-200"} onClick={handleClick}></MentorixButton>
       <div>
         <p>Foto (obrigatório)</p>
         <InputGroup className="mb-3">
@@ -152,6 +154,9 @@ export function FormMentor() {
       <div>
         <p>Você pode marcar mais de 1 opção.</p>
       </div>
+            <MentorixButton color={"terciary-200"} onClick={handleClick}>
+              Atualizar perfil
+            </MentorixButton>
     </div>
   );
 }
