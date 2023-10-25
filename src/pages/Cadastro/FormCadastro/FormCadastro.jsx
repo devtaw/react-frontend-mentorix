@@ -1,8 +1,7 @@
 import React from 'react'
-import { GlobalStyle } from "../../styles/GlobalStyle";
-import { defaultTheme } from "styled-components";
+import { InputGroup, Form } from 'react-bootstrap'
 
-export default function Form() {
+export default function FormCadastro() {
   return (
     <div>
       <InputGroup className="mb-3">
