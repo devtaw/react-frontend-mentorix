@@ -9,12 +9,9 @@ export const ContatoContainer = styled.div`
   display: flex;
   justify-content: flex-end;
 `;
-export const TextH3 = styled.h2`
-  color: ${(p) => p.theme["primary-900"]};
-  font-size: 60px;
-`;
+
 export const TextContainer = styled.div`
-  flex: 1;
+  flex: 30;
   padding: 50px;
   h3 {
     font-size: 30px;
