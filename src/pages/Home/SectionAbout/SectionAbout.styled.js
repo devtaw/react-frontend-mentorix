@@ -1,4 +1,12 @@
 import styled from "styled-components";
+import { ContentContainer } from "../../../common/ContentContainer.styled";
+
+export const Container = styled(ContentContainer)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 62px 0;
+`;
 
 export const AboutSection = styled.div`
   display: flex;
@@ -37,42 +45,8 @@ export const TextContainer = styled.div`
   }
 `;
 export const ImageContainer = styled.div`
-  flex: 1;
   img {
-    width: 80%;
-    max-width: 80%;
+    width: 70%;
+    max-width: 70%;
   }
 `;
-
-// import styled from "styled-components";
-
-// export const AboutSection = styled.section`
-//   display: flex;
-
-//   flex-direction: column;
-//   justify-content: space-between;
-//   color: ${(p) => p.theme["blue-gray-500"]};
-//   padding: 50px;
-
-//   h2 {
-//     color: ${(p) => p.theme["secondary-400"]};
-//     line-height: normal;
-//     letter-spacing: -0.48px;
-//   }
-
-//   h1 {
-//     color: ${(p) => p.theme["secondary-400"]};
-//     line-height: normal;
-//     letter-spacing: -0.48px;
-//   }
-// `;
-
-// export const ImageContainer = styled.div`
-//   justify-content: flex-end;
-//   flex: 1;
-
-//   img {
-//     max-width: 100%;
-//     height: auto;
-//   }
-// `;
