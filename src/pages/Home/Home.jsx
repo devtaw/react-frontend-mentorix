@@ -40,30 +40,13 @@ export function Home({ usuario, senha, setUsuario, setSenha }) {
   return (
     <>
       <Header />
-      {/* 
-      <button onClick={handleOpenModal}>
-        Abrir Modal (remover quando tiver o header)
-      </button>
-      <button onClick={handleCadastroOpenModal}>
-        Abrir cadastro (remover quando tiver o header)
-      </button> */}
-      <ContentContainer>
-        <SectionWelcome />
-        <SectionCadastro />
-        <SectionAbout />
-        <SectionContact />
-      </ContentContainer>
-
+      <SectionWelcome />
+      <SectionCadastro />
+      <SectionAbout />
+      <SectionContact />
       <Footer />
-      <LoginModal
-        isOpen={modalIsOpen}
-        onClose={handleCloseModal}
-        onSave={handleLogin}
-      />
-      <CadastroModal
-        isOpen={cadastroIsOpen}
-        onClose={handleCadastroCloseModal}
-      />
+      <LoginModal isOpen={modalIsOpen} onClose={handleCloseModal} onSave={handleLogin} />
+      <CadastroModal isOpen={cadastroIsOpen} onClose={handleCadastroCloseModal} />
     </>
   );
 }

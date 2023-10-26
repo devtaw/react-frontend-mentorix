@@ -1,14 +1,17 @@
 import styled from "styled-components";
+import { ContentContainer } from "../../../common/ContentContainer.styled";
 
 export const WelcomeContainer = styled.div`
   display: flex;
+  background-color: ${(p) => p.theme["primary-900"]};
+  color: ${(p) => p.theme["white"]};
+`;
+
+export const Container = styled(ContentContainer)`
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: ${(p) => p.theme["primary-900"]};
-  padding: 20px;
-  color: ${(p) => p.theme["white"]};
-  display: flex;
-  justify-content: flex-end;
+  padding: 62px 0;
 `;
 
 export const TextH1 = styled.h1`
@@ -22,8 +25,7 @@ export const TextH2 = styled.h2`
 `;
 
 export const TextContainer = styled.div`
-  flex: 1;
-  padding: 50px;
+  max-width: 50%;
   h1 {
     font-size: 50px;
     color: ${(p) => p.theme["terciary-300"]};
@@ -42,9 +44,6 @@ export const TextContainer = styled.div`
   }
 `;
 export const ImageContainer = styled.div`
-  justify-content: flex-end;
-  flex: 1;
-
   img {
     max-width: 100%;
     height: auto;
