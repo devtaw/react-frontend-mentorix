@@ -12,7 +12,7 @@ export function ListaMentores() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   //data é preenchido quando a query retorna um resultado e isLoading será true quando a query estiver sendo executada
   const { data, isLoading } = useQuery("lista-mentores", getMentores);
-
+  console.log("Lista Mentores", data);
   //função que será chamada quando user clicar no botão do card mentor
   function handleClickCardMentor() {
     setIsModalOpen(true);
