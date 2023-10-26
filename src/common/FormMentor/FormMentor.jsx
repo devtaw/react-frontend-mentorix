@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Form";
 import { Card, ListGroup } from "react-bootstrap";
 import { TextBody } from "../../common/typography";
 import { MentorixButton } from "../Button/MentorixButton.styled.js";
-import { Envelope } from "@phosphor-icons/react";
+import { Envelope, Password, GooglePhotosLogo,LinkedinLogo,IdentificationBadge,ShareNetwork, Note } from "@phosphor-icons/react";
 import {
   MentorDescription,
   MentorName,
@@ -22,151 +22,148 @@ import {
   Textorodape,
 } from "./FormMentor.styled";
 
-const nome = "Seu Nome";
+const nome = "Luck ";
 
 export function FormMentor() {
-  const [isEditing, setIsEditing] = useState(false);
-  const [name, setName] = useState("Valor padrão do nome");
-  const [senha, setSenha] = useState("Valor padrão da senha");
-  const [linkedin, setLinkedin] = useState("Valor padrão do LinkedIn");
-  const [profissao, setProfissao] = useState("Valor padrão da profissao");
-  const [biografia, setBiografia] = useState("Valor padrão da biografia");
-  const [email, setEmail] = useState("Valor padrão do email");
+  const [isDisabled, setIsDisabled] = useState(true);
+  const [name, setName] = useState("Luck Starwalker");
+  const [senha, setSenha] = useState("*******");
+  const [linkedin, setLinkedin] = useState("www.linkedin/in/luckstarwars");
+  const [profissao, setProfissao] = useState("Desenvolvedor");
+  const [biografia, setBiografia] = useState("Luck é um senador dedicada e experiente, conhecida por sua abordagem colaborativa na política. Sua carreira começou como advogada, lutando pelos direitos civis e sociais. Como senadora, ela prioriza questões como saúde acessível, educação de qualidade e igualdade de gênero. luck é uma forte defensora da justiça social e do meio ambiente. Sua paixão pela igualdade e seu compromisso com o serviço público a tornam uma líder respeitada.");
+  const [email, setEmail] = useState("luckstarwalker@gmail.com");
 
   const handleEditClick = () => {
-    setIsEditing(true);
+    setIsDisabled(false);
   };
 
   const handleSaveClick = () => {
     console.log(name);
     console.log(email);
 
-    setIsEditing(false);
+    setIsDisabled(true);
   };
 
   return (
-    <div>
+    <div style={{ border: '1px solid #ccc', padding: '20px', borderRadius: '5px' }}>
+       {isDisabled ? (
+          // No modo de visualização, exibir o botão "Editar"
+          <MentorixButton color={"terciary-200"} onClick={handleEditClick}>
+            Editar perfil 
+          </MentorixButton>
+        ) : (
+          // No modo de edição, exibir o botão "Salvar"
+          <MentorixButton color={"terciary-200"} onClick={handleSaveClick}>
+             Salvar alterações
+          </MentorixButton>
+        )}
+        <hr />
       <div>
+          
         <InputGroup size="sm" className="mb-3">
           <InputGroup.Text id="inputGroup-sizing-sm">
-            Foto (obrigatório)
+          <GooglePhotosLogo size={16} color="#4d0057" weight="fill" />
+          <label className="ms-2">Foto </label>
           </InputGroup.Text>
-          {isEditing ? (
             <Form.Control
+              disabled={isDisabled}
               value={name}
               onChange={(event) => setName(event.target.value)}
               aria-label="Small"
               aria-describedby="inputGroup-sizing-sm"
             />
-          ) : (
-            <p>{name}</p>
-          )}
         </InputGroup>
       </div>
       <div>
         <InputGroup size="sm" className="mb-3">
           <InputGroup.Text id="inputGroup-sizing-sm">
-            Email (obrigatório)
-            <Envelope size={16} color="#4d0057" weight="fill" />
+          <Envelope size={16} color="#4d0057" weight="fill" />
+          <span className="ms-2"> Email (obrigatório)</span>
           </InputGroup.Text>
-          {isEditing ? (
             <Form.Control
+              disabled={isDisabled}
               onChange={(event) => setEmail(event.target.value)}
               value={email}
               aria-label="Small"
               aria-describedby="inputGroup-sizing-sm"
-              name="email"
             />
-          ) : (
-            <p>{email}</p>
-          )}
         </InputGroup>
       </div>
 
       <div>
         <InputGroup size="sm" className="mb-3">
           <InputGroup.Text id="inputGroup-sizing-sm">
-            Senha (obrigatório)
+          <Password size={16} color="#4d0057" weight="fill" />
+          <span className="ms-2">  Senha (obrigatório)</span>
           </InputGroup.Text>
-          {isEditing ? (
             <Form.Control
+              disabled={isDisabled}
               onChange={(event) => setSenha(event.target.value)}
               value={senha}
               aria-label="Small"
               aria-describedby="inputGroup-sizing-sm"
-              name="senha"
             />
-          ) : (
-            <p>{senha}</p>
-          )}
         </InputGroup>
       </div>
       <div>
         <InputGroup size="sm" className="mb-3">
           <InputGroup.Text id="inputGroup-sizing-sm">
-            LinkedIn (obrigatório)
+          <LinkedinLogo size={16} color="#4d0057" weight="fill" />
+          <span className="ms-2">   LinkedIn (obrigatório)</span>
           </InputGroup.Text>
-          {isEditing ? (
             <Form.Control
+              disabled={isDisabled}
               onChange={(event) => setLinkedIn(event.target.value)}
               value={linkedin}
               aria-label="Small"
               aria-describedby="inputGroup-sizing-sm"
-              name="linkedin"
             />
-          ) : (
-            <p>{linkedin}</p>
-          )}
         </InputGroup>
       </div>
       <div>
         <InputGroup size="sm" className="mb-3">
           <InputGroup.Text id="inputGroup-sizing-sm">
-            Nome completo (obrigatório)
+          <IdentificationBadge size={16} color="#4d0057" weight="fill" />
+          <span className="ms-2">  Nome completo (obrigatório)</span>
           </InputGroup.Text>
-          {isEditing ? (
             <Form.Control
               onChange={(event) => setName(event.target.value)}
               value={nome}
               aria-label="Small"
               aria-describedby="inputGroup-sizing-sm"
-              name="name"
+              disabled={isDisabled}
             />
-          ) : (
-            <p>{nome}</p>
-          )}
         </InputGroup>
       </div>
       <div>
         <InputGroup size="sm" className="mb-3">
-          <InputGroup.Text id="inputGroup-sizing-sm">Profissão</InputGroup.Text>
-          {isEditing ? (
+          <InputGroup.Text id="inputGroup-sizing-sm">
+          <ShareNetwork size={16} color="#4d0057" weight="fill" />
+          <span className="ms-2"> Profissão</span>
+          </InputGroup.Text>
             <Form.Control
-              onChange={(event) => setprofissao(event.target.value)}
-              value={profissao}
+              onChange={(event) => setName(event.target.value)}
+              value={nome}
               aria-label="Small"
               aria-describedby="inputGroup-sizing-sm"
-              name="profissao"
+              disabled={isDisabled}
             />
-          ) : (
-            <p>{profissao}</p>
-          )}
         </InputGroup>
       </div>
+
       <div>
-        <InputGroup size="lg">
-          <InputGroup.Text id="inputGroup-sizing-lg">Biografia</InputGroup.Text>
-          {isEditing ? (
+      <InputGroup size="sm" className="mb-3">
+          <InputGroup.Text id="inputGroup-sizing-sm">
+          <Note size={16} color="#4d0057" weight="fill" />
+          <span className="ms-2"> Biografia</span>
+            </InputGroup.Text>
             <Form.Control
               nChange={(event) => setbiografia(event.target.value)}
               value={biografia}
               aria-label="Small"
               aria-describedby="inputGroup-sizing-sm"
-              name="biografia"
+              disabled={isDisabled}
             />
-          ) : (
-            <p>{biografia}</p>
-          )}
         </InputGroup>
 
         <Textorodape>
@@ -175,7 +172,7 @@ export function FormMentor() {
       </div>
 
       <div>
-        <p>Especialidades por áreas de atuação:</p>
+        <p><strong>Especialidades por áreas de atuação:</strong></p>
         <div
           style={{
             display: "flex",
@@ -184,7 +181,7 @@ export function FormMentor() {
           }}
         >
           <Card style={{ width: "18rem", marginRight: "10px" }}>
-            <Card.Header>Negócios</Card.Header>
+            <Card.Header> <strong>Negócios</strong></Card.Header>
             <Card.Body>
               <Form.Check type="checkbox" label="Estratégia" id="checkbox-1" />
               <Form.Check type="checkbox" label="Finanças" id="checkbox-2" />
@@ -196,7 +193,7 @@ export function FormMentor() {
             </Card.Body>
           </Card>
           <Card style={{ width: "18rem", marginRight: "10px" }}>
-            <Card.Header>Comportamento</Card.Header>
+            <Card.Header> <strong> Comportamento</strong></Card.Header>
             <Card.Body>
               <Form.Check
                 type="checkbox"
@@ -213,7 +210,7 @@ export function FormMentor() {
           </Card>
 
           <Card style={{ width: "18rem" }}>
-            <Card.Header>Tecnologia</Card.Header>
+            <Card.Header> <strong>Tecnologia </strong></Card.Header>
             <Card.Body>
               <Form.Check
                 type="checkbox"
@@ -242,17 +239,7 @@ export function FormMentor() {
         >
           <Textorodape>*Você pode marcar mais de 1 opção.</Textorodape>
         </div>
-        {!isEditing ? (
-          // No modo de visualização, exibir o botão "Editar"
-          <MentorixButton color={"terciary-200"} onClick={handleEditClick}>
-            Editar perfil
-          </MentorixButton>
-        ) : (
-          // No modo de edição, exibir o botão "Salvar"
-          <MentorixButton color={"terciary-200"} onClick={handleSaveClick}>
-            Salvar alterações
-          </MentorixButton>
-        )}
+       
       </div>
     </div>
   );

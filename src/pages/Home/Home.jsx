@@ -40,13 +40,13 @@ export function Home({ usuario, senha, setUsuario, setSenha }) {
   return (
     <>
       <Header />
-
+      {/* 
       <button onClick={handleOpenModal}>
         Abrir Modal (remover quando tiver o header)
       </button>
       <button onClick={handleCadastroOpenModal}>
         Abrir cadastro (remover quando tiver o header)
-      </button>
+      </button> */}
       <ContentContainer>
         <SectionWelcome />
         <SectionCadastro />
