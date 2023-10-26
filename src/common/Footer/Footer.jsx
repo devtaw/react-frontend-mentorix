@@ -8,6 +8,7 @@ import {
   SocialIcons,
   CopyrightInfo,
   CopyrightText,
+  IconLink,
 } from "./Footer.styled";
 import {
   CaretRight,
@@ -40,21 +41,21 @@ function Footer() {
             <SocialIcons>
               <a href="link-do-facebook">
                 <FacebookLogo
-                  size={20}
+                  size={24}
                   color={theme["terciary-200"]}
                   weight="fill"
                 />
               </a>
               <a href="link-do-instagram">
                 <InstagramLogo
-                  size={20}
+                  size={24}
                   color={theme["terciary-200"]}
                   weight="fill"
                 />
               </a>
               <a href="link-do-linkedin">
                 <LinkedinLogo
-                  size={20}
+                  size={24}
                   color={theme["terciary-200"]}
                   weight="fill"
                 />
@@ -66,68 +67,51 @@ function Footer() {
         <Column>
           <div>
             <TextH2> endereço </TextH2>
-            <p>Rua Emiliano Perneta, 174 - Centro, Curitiba - PR, 80010-050</p>
+            <p>R. Emiliano, 174 - Centro, Curitiba - PR, 80010-050</p>
           </div>
           <div>
             <TextH2> horário de atendimento </TextH2>
             <OpeningHours>
-              <p>Segunda a sexta-feira, 8h às 17h</p>
+              <p>Segunda a sexta, 8h às 17h</p>
               <p>Sábado, domingo e feriado, 8h às 12h</p>
             </OpeningHours>
           </div>
         </Column>
 
         <Column>
-          <div>
-            <TextH2> mapa do site </TextH2>
-            <div className="icon-link">
-              <CaretRight
-                size={20}
-                color={theme["terciary-200"]}
-                weight="fill"
-              />
-              <Link className="m-2" href="/">
-                Home
-              </Link>
-            </div>
-            <div className="icon-link">
-              <CaretRight
-                size={20}
-                color={theme["terciary-200"]}
-                weight="fill"
-              />
-              <Link href="/sobre">Sobre Nós</Link>
-            </div>
-            <div className="icon-link">
-              <CaretRight
-                size={20}
-                color={theme["terciary-200"]}
-                weight="fill"
-              />
-              <Link href="/mentores">Mentores</Link>
-            </div>
-            <div className="icon-link">
-              <CaretRight
-                size={20}
-                color={theme["terciary-200"]}
-                weight="fill"
-              />
-              <Link href="/contato">Contato</Link>
-            </div>
-          </div>
+          <TextH2> mapa do site </TextH2>
+          <IconLink>
+            <CaretRight size={24} color={theme["terciary-200"]} weight="fill" />
+            <a href="/">Home</a>
+          </IconLink>
+
+          <IconLink>
+            <CaretRight size={24} color={theme["terciary-200"]} weight="fill" />
+            <a href="/sobre">Sobre Nós</a>
+          </IconLink>
+
+          <IconLink>
+            <CaretRight size={24} color={theme["terciary-200"]} weight="fill" />
+            <a href="/mentores">Mentores</a>
+          </IconLink>
+
+          <IconLink>
+            <CaretRight size={24} color={theme["terciary-200"]} weight="fill" />
+            <a href="/contato">Contato</a>
+          </IconLink>
         </Column>
 
         <Column>
           <TextH2> precisa de ajuda?</TextH2>
           <div className="icon-link">
-            <Envelope size={20} color={theme["terciary-200"]} weight="fill" />
+            <Envelope size={24} color={theme["terciary-200"]} weight="fill" />
             <TextBody variant="body-sm" className="m-0">
               suporte@mentorix.com.br
             </TextBody>
           </div>
           <div className="icon-link">
             <WhatsappLogo
-              size={20}
+              size={24}
               color={theme["terciary-200"]}
               weight="fill"
             />

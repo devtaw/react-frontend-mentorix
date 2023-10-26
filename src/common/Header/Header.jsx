@@ -1,46 +1,55 @@
 import React from "react";
-import { StyleHeader1 } from "./Header.styled.js"; // Importe o estilo a partir do arquivo Header.styled
-// import { Button } from "../common/Button/Button";
-import { Link } from "react-router-dom"; // Importe o Link se você estiver usando React Router
+import { StyleHeader } from "./Header.styled.js";
+import { Link, useNavigate } from "react-router-dom";
+import { useTheme } from "styled-components";
+import { MentorixButton } from "../Button/MentorixButton.styled.js";
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/cadastro");
+  };
+  const theme = useTheme();
   return (
-    <StyleHeader1 className="content">
-      <img src="/src/assets/img/logo-header.png" alt="Logo Mentorix" />{" "}
+    <StyleHeader className="content">
+      <img src="../src/assets/img/logo-header.png" alt="Logo Mentorix" />
       <nav>
         <ul className="lista_links">
           <li>
             <Link to="/" className="link">
-              Home
+              HOME
             </Link>
           </li>
 
           <li>
             <Link to="/sobre" className="link">
-              Sobre
+              SOBRE
             </Link>
           </li>
           <li>
             <Link to="/mentores" className="link">
-              Mentores
+              MENTORES
             </Link>
           </li>
           <li>
             <Link to="/contato" className="link">
-              Contato
+              CONTATO
             </Link>
           </li>
           <li>
             <Link to="/login" className="link">
-              Login
+              LOGIN
             </Link>
           </li>
-          {/* <li>
-            <Button texto="Criar Conta" variant="primary" />
-          </li> */}
+          <li>
+            <MentorixButton color={"terciary-200"} onClick={handleClick}>
+              Criar conta
+            </MentorixButton>
+          </li>
         </ul>
       </nav>
-    </StyleHeader1>
+    </StyleHeader>
   );
 };
 

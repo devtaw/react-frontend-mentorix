@@ -30,6 +30,21 @@ export const Column = styled.div`
   }
 `;
 
+export const IconLink = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  a {
+    display: flex;
+    align-items: center;
+    margin: 10px 0; /* Adicione espaço acima e abaixo do elemento Link */
+    color: ${(p) => p.theme["blue-gray-500"]} !important;
+    font-family: Open Sans;
+    text-decoration: none;
+  }
+`;
+
 export const Logo = styled.img`
   width: 141px;
   height: 50px;
@@ -72,7 +87,7 @@ export const Link = styled.a`
   display: flex;
   align-items: center;
   margin: 10px 0; /* Adicione espaço acima e abaixo do elemento Link */
-  color: ${(p) => p.theme["blue-gray-500"]};
+  /* color: ${(p) => p.theme["blue-gray-500"]} !important; */
   font-family: Open Sans;
   text-decoration: none;
 `;
