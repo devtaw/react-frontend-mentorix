@@ -65,7 +65,7 @@ export default function FormLogin({usuario, setUsuario, senha, setSenha}) {
     />
   </InputGroup>
 
-  <span>Esqueceu sua senha?</span>
+  {/* <span className='spanSenha'>Esqueceu sua senha?</span> */}
 
   
 
