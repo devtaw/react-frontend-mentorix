@@ -1,3 +1,4 @@
+import { Password, User } from '@phosphor-icons/react';
 import React from 'react'
 import { InputGroup, Form } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
@@ -18,7 +19,7 @@ export default function FormLogin({usuario, setUsuario, senha, setSenha}) {
     <div>
       <InputGroup className="mb-3">
     <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
-        
+    <User size={16} color="#4d0057" weight="fill" />
     </InputGroup.Text>
     <Form.Control
       placeholder="Nome do usuário"
@@ -29,7 +30,9 @@ export default function FormLogin({usuario, setUsuario, senha, setSenha}) {
   </InputGroup>
 
   <InputGroup className="mb-3">
-    <InputGroup.Text id="inputGroup-sizing-default" className="text-white">Nome - </InputGroup.Text>
+    <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
+    <Password size={16} color="#4d0057" weight="fill" />
+    </InputGroup.Text>
     <Form.Control
       placeholder="Senha"
       aria-label="Password"
