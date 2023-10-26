@@ -16,7 +16,7 @@ export const ContactContainer = styled.div`
   }
 
   h2 {
-    color: ${(p) => p.theme["secondary-300"]};
+    color: ${(p) => p.theme["blue-a400"]};
     line-height: normal;
     letter-spacing: -0.48px;
   }
@@ -42,7 +42,7 @@ export const Column = styled.div`
 
 export const Card = styled.div`
   background: ${(p) => p.theme["primary-900"]};
-  border: 1px solid #d698ff; /* Borda do card */
+  border: 1px solid #fff59d; /* Borda do card */
   padding: 20px;
   width: 300px;
   height: 200px;

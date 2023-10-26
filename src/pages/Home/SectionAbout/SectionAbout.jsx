@@ -9,7 +9,7 @@ import { TextH1, TextH3, TextH6 } from "../../../common/typography.js"; // Certi
 
 function SectionAbout() {
   return (
-    <AboutSection>
+    <AboutSection id="about">
       <ImageContainer>
         <img
           src={sectionAboutImg}
@@ -20,8 +20,9 @@ function SectionAbout() {
         <TextH6>SOBRE A EMPRESA</TextH6>
         <TextH1>Por que estudantes escolhem o Mentorix para aprender?</TextH1>
         <TextH3>
-          Ajudar os funcionários a adquirir habilidades e fornecer
-          desenvolvimento de carreira muitas vezes ficam em segundo plano.
+          Temos o compromisso de fornecer ensino de qualidade e ser uma
+          referência em auxiliar os profissionais a adquirirem novas habilidades
+          e a impulsionarem o desenvolvimento de suas carreiras.
         </TextH3>
         <ul className="minha-lista">
           <li className="item-lista">
