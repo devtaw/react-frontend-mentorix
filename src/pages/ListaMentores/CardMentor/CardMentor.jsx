@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
-import { ButtonCTA, CardContainer, TagList, TextBio } from "./CardMentor.styled";
+import { ButtonCTA, CardContainer, TagList, TextBio, ContainerAvatar } from "./CardMentor.styled";
 import img from "../../../assets/img/lista-mentores/card-mentor/mentora-1.png";
 import { TextBody, TextH3, TextH5 } from "../../../common/typography";
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
@@ -14,7 +14,9 @@ export function CardMentor({ nome, biografia, areasDeAtuacao, urlFoto, onClick =
   }
   return (
     <CardContainer>
-      <Card.Img variant="top" src={urlFoto} />
+      <ContainerAvatar>
+        <Card.Img variant="top" src={urlFoto} />
+      </ContainerAvatar>
       <Card.Body>
         {/* <Badge>Fínanças</Badge> */}
         <TagList>

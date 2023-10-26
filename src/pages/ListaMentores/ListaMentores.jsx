@@ -40,7 +40,7 @@ export function ListaMentores() {
                   urlFoto={mentor.fotoPerfil}
                   nome={mentor.nomeCompleto}
                   biografia={mentor.experienciaProfissional}
-                  areasDeAtuacao={["Finançcas"]}
+                  areasDeAtuacao={["Finanças"]}
                   onClick={handleClickCardMentor}
                 />
               </div>
