@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row2, Avatar, TextH1Mentor, TextH5Mentor, TextH6Mentor, TextH5cor, TextDescriptionMentor } from "./AreaMentor.styled";
+import { Container, Row2, Avatar, TextH1Mentor, TextH5Mentor, TextH6Mentor,  TextDescriptionMentor } from "./AreaMentor.styled";
 import bg from "../../assets/img/div-capa-areaMentor.png";
 import { Form } from "react-bootstrap";
 import { FormMentor } from "../../common/FormMentor/FormMentor";
