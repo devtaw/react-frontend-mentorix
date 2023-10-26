@@ -6,11 +6,18 @@ import { FormMentor } from "../../common/FormMentor/FormMentor";
 import { Modal, Button } from "react-bootstrap";
 import "bootstrap/dist/js/bootstrap.bundle";
 import { TextBody } from "../../common/typography";
+import  Footer  from "../../common/Footer/Footer";
+import  Header  from "../../common/Header/Header";
+
 
 export function AreaMentor() {
+
   return (
+    <>
+    <Header />
     <Container>
-      <div className="container">
+
+      <div className="container mb-5">
         <div className="row">
           <div className="col-12"></div>
         </div>
@@ -18,29 +25,27 @@ export function AreaMentor() {
           <div className="col-12"></div>
         </Row2>
         <Avatar img="src/assets/img/perfil-mentor.png"></Avatar>
-      </div>
+      
       <div>
         <div>
-      <TextH1Mentor >Seja bem-vindo (a)!</TextH1Mentor></div>
-      <TextH5Mentor>
-        Aqui na você pode <span TextH5cor>Área do Mentor</span>
-        editar seu perfil e visualizar as solicitações de mentoria recebidas
-        podendo fazer o aceite ou recusa delas.
+        <TextH1Mentor className="mb-5 mt-5">Seja bem-vindo (a)!</TextH1Mentor>
+
+      </div>
+
+      <TextH5Mentor className="mb-3 mt-3">
+      Aqui na Área do Mentor você pode editar seu perfil.
       </TextH5Mentor>
       
-      <TextH6Mentor> Solicitações de agendamento recebidas </TextH6Mentor>
-      <div className="TextDescriptionMentor">
-      <TextBody variant={"body-sm"}>
-        Aceite ou recuse suas solicitações e você e o mentorado vão receber um
-        e-mail.
-      </TextBody>
-      </div>
+      {/* <TextDescriptionMentor className="mb-4 mt-4"> Receba solicitações de agendamento através do seu email cadastrado em nossa plataforma. Tenha o controle total para aceitar ou recusar mentorias, proporcionando um serviço personalizado aos seus mentorados. Além disso, ofereça a possibilidade de marcar uma conversa inicial para compreender as necessidades e expectativas dos seus mentorados, estabelecendo assim um sólido relacionamento de mentoria. </TextDescriptionMentor> */}
       </div>
       <hr />
-      <TextDescriptionMentor>Perfil</TextDescriptionMentor>
-      <TextDescriptionMentor>Dados Pessoais</TextDescriptionMentor>
+      <TextDescriptionMentor> <strong>Perfil Mentor (Dados Pessoais): </strong></TextDescriptionMentor>
       
       <FormMentor />
+      </div>
+      
     </Container>
+    <Footer />
+    </>
   );
 }

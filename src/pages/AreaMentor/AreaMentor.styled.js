@@ -6,8 +6,8 @@ import styled from "styled-components";
 export const TextH1Mentor = styled.h1`
 font-family: "Open Sans", sans-serif;
 font-style: normal;
-font-size: ${(props) => props.theme[props.variant || "title-xxlg"]};
-font-weight: ${(props) => (props.bold ? 700 : 400)};
+font-size: 2.5rem;
+font-weight: 700;
 color: ${(props) => props.theme[props.color || "primary-900"]};
 margin-top: 10px;
 margin-bottom: 13px;
@@ -16,7 +16,7 @@ margin-bottom: 13px;
 export const TextH5Mentor = styled.h5`
   font-family: "Open Sans", sans-serif;
   font-style: normal;
-  font-size: ${(props) => props.theme[props.variant || "title-sm"]};
+  font-size: 1.5rem;
   font-weight: 400;
   color: ${(props) => props.theme[props.color || "primary-900"]};
 `;
@@ -26,19 +26,19 @@ export const TextH5Mentor = styled.h5`
 export const TextH6Mentor = styled.h6`
   font-family: "Open Sans", sans-serif;
   font-style: normal;
-  font-size: ${(props) => props.theme[props.variant || "title-xsm"]};
-  font-weight: ${(props) => (props.bold ? 700 : 400)};
+  font-size: 1.0rem;
+  font-weight: 400;
   color: ${(props) => props.theme[props.color || "primary-900"]};
 `;
 
 export const TextDescriptionMentor = styled.p`
 font-family: "Montserrat", sans-serif;
-font-size: ${(props) => props.theme["body-sm"]};
-color: ${(props) => props.theme["blue-gray-800"]};
+font-style: normal;
+color: blue-gray-800;
 font-weight: 400;
 margin-bottom: 15px;
 line-height: 26px;
-margin-top: 0;
+margin-top: 10;
 margin-left: 4px;
 text-align: left;
 `;

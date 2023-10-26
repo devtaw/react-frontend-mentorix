@@ -97,5 +97,6 @@ font-size: 0.543rem;
 line-height: 1.3;
 text-align: left;
 color: ${(props) => props.theme[props.color || "base-text"]};
+margin-top: 5px;
 `;
 
