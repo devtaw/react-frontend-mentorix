@@ -4,6 +4,7 @@ import { TextH1, TextH2, TextH6 } from "../../../common/typography";
 import { useTheme } from "styled-components";
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
 import { ContentContainer } from "../../../common/ContentContainer.styled";
+import image from "../../../assets/img/section-welcome.png";
 
 function SectionWelcome() {
   const theme = useTheme();
@@ -24,10 +25,7 @@ function SectionWelcome() {
           </MentorixButton>
         </TextContainer>
         <ImageContainer>
-          <img
-            src="../src/assets/img/section-welcome.png"
-            alt="Imagem de seis pessoas, para referenciar os Mentores."
-          />
+          <img src={image} alt="Imagem de seis pessoas, para referenciar os Mentores." />
         </ImageContainer>
       </Container>
     </WelcomeContainer>
