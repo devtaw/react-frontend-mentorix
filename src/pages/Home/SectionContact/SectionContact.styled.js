@@ -1,5 +1,14 @@
 import { SpeakerNone } from "@phosphor-icons/react";
 import styled from "styled-components";
+import { ContentContainer } from "../../../common/ContentContainer.styled";
+
+export const Container = styled(ContentContainer)`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 62px 0;
+`;
 
 export const ContactContainer = styled.div`
   display: flex;
@@ -16,7 +25,7 @@ export const ContactContainer = styled.div`
   }
 
   h2 {
-    color: ${(p) => p.theme["secondary-300"]};
+    color: ${(p) => p.theme["blue-a400"]};
     line-height: normal;
     letter-spacing: -0.48px;
   }
@@ -42,7 +51,7 @@ export const Column = styled.div`
 
 export const Card = styled.div`
   background: ${(p) => p.theme["primary-900"]};
-  border: 1px solid #d698ff; /* Borda do card */
+  border: 1px solid #fff59d; /* Borda do card */
   padding: 20px;
   width: 300px;
   height: 200px;

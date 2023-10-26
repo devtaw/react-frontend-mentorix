@@ -1,22 +1,24 @@
 import React, { useState } from "react";
 import { ContentContainer } from "../../common/ContentContainer.styled";
-import { ContainerList, ContentSection, SpanTitle, TextDescription, Title } from "./ListaMentores.styled";
+import { ContainerList, ContentSection, SpanTitle, TextDescription, Title, Container } from "./ListaMentores.styled";
 import { CardMentor } from "./CardMentor/CardMentor";
 import { MentorixModal } from "../../common/MentorixModal/MentorixModal";
 import { Form } from "react-bootstrap";
 import { useQuery } from "@tanstack/react-query";
 import { getMentores } from "../../common/services/MentorService";
+import Header from "../../common/Header/Header";
+import Footer from "../../common/Footer/Footer";
+import { TextBody } from "../../common/typography";
 
 export function ListaMentores() {
   //cria estado p/ guardar se modal estar aberta ou fechada
   const [isModalOpen, setIsModalOpen] = useState(false);
   //data é preenchido quando a query retorna um resultado e isLoading será true quando a query estiver sendo executada
-  const { data, isLoading } = useQuery({
+  const listaMentoresQuery = useQuery({
     queryKey: ["lista-mentores"],
     //aqui se passa função q busca dados na API p/ propriedade queryFN p/ q react-query possa gerenciar estado dessa requisição
     queryFn: getMentores,
   });
-  console.log("Lista Mentores", data);
   //função que será chamada quando user clicar no botão do card mentor
   function handleClickCardMentor() {
     setIsModalOpen(true);
@@ -28,43 +30,32 @@ export function ListaMentores() {
   }
   return (
     <>
-      <ContentContainer>
+      <Header />
+      <Container>
         <ContentSection>
           <SpanTitle>Expert Team</SpanTitle>
-          <Title>Encontre o melhor online mentor para você</Title>
+          <Title>Encontre o melhor mentor online para você</Title>
           <TextDescription>Você não precisa lutar sozinho, você conta com nossa assistência e ajuda.</TextDescription>
           <ContainerList className="row">
-            <div className="col-lg-4 col-md-6 col-xs-12">
-              {/* oncClick vai disparar função handleClickMentor quando botão for clicado */}
-              <CardMentor onClick={handleClickCardMentor} />
-            </div>
-            <div className="col-lg-4 col-md-6 col-xs-12">
-              <CardMentor />
-            </div>
-            <div className="col-lg-4 col-md-6 col-xs-12">
-              <CardMentor />
-            </div>
-            <div className="col-lg-4 col-md-6 col-xs-12">
-              <CardMentor />
-            </div>
-            <div className="col-lg-4 col-md-6 col-xs-12">
-              <CardMentor />
-            </div>
-            <div className="col-lg-4 col-md-6 col-xs-12">
-              <CardMentor />
-            </div>
-            <div className="col-lg-4 col-md-6 col-xs-12">
-              <CardMentor />
-            </div>
-            <div className="col-lg-4 col-md-6 col-xs-12">
-              <CardMentor />
-            </div>
-            <div className="col-lg-4 col-md-6 col-xs-12">
-              <CardMentor />
-            </div>
+            {listaMentoresQuery.isLoading && <TextBody className="mt-5">Carregando...</TextBody>}
+
+            {listaMentoresQuery?.data?.map((mentor) => (
+              <div key={mentor.email} className="col-lg-4 col-md-6 col-xs-12">
+                {/* oncClick vai disparar função handleClickMentor quando botão for clicado */}
+                <CardMentor
+                  urlFoto={mentor.fotoPerfil}
+                  nome={mentor.nomeCompleto}
+                  biografia={mentor.experienciaProfissional}
+                  areasDeAtuacao={["Tecnologia da Informação"]}
+                  onClick={handleClickCardMentor}
+                />
+              </div>
+            ))}
           </ContainerList>
         </ContentSection>
-      </ContentContainer>
+      </Container>
+
+      <Footer />
 
       <MentorixModal
         title="Entre em contato com o mentor"

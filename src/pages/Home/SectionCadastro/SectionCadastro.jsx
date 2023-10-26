@@ -7,7 +7,7 @@ function SectionCadastro() {
   const theme = useTheme();
 
   return (
-    <ContatoContainer>
+    <ContatoContainer id="cadastro">
       <TextContainer>
         <TextH3 variant={"title-xxlg"}>
           Entre em contato para se cadastrar como mentor

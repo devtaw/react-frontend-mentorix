@@ -5,6 +5,7 @@ export const StyleHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 25px 25px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
   .logo {
     color: ${(p) => p.theme["secondary-900"]};
