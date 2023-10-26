@@ -42,7 +42,6 @@ export function AreaMentor() {
             </div>
 
             <TextH5Mentor className="mb-4 mt-3">Aqui na Área do Mentor você pode editar seu perfil.</TextH5Mentor>
-
             {/* <TextDescriptionMentor className="mb-4 mt-4"> Receba solicitações de agendamento através do seu email cadastrado em nossa plataforma. Tenha o controle total para aceitar ou recusar mentorias, proporcionando um serviço personalizado aos seus mentorados. Além disso, ofereça a possibilidade de marcar uma conversa inicial para compreender as necessidades e expectativas dos seus mentorados, estabelecendo assim um sólido relacionamento de mentoria. </TextDescriptionMentor> */}
           </div>
           <hr />

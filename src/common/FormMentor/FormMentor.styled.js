@@ -93,7 +93,7 @@ export const Textorodape = styled.p`
 font-family: "Montserrat", sans-serif;
 font-style: normal;
 font-weight: ${(props) => (props.bold ? 700 : 400)};
-font-size: 0.543rem;
+font-size: 0.743rem;
 line-height: 1.3;
 text-align: left;
 color: ${(props) => props.theme[props.color || "base-text"]};
