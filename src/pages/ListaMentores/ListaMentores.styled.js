@@ -25,7 +25,7 @@ export const Title = styled.h1`
   margin-top: 10px;
   z-index: 1;
   margin-bottom: 3px;
-  color: ${(props) => props.theme["blue-gray-900"]};
+  color: ${(props) => props.theme["primary-900"]};
   width: 493px;
   text-align: left;
   text-transform: capitalize;
