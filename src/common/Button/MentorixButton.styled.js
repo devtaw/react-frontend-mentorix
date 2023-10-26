@@ -5,9 +5,9 @@ export const MentorixButton = styled(Button)`
   height: 45px;
   padding: 0 45px;
   display: inline-block;
-  background-color: #b39ddb;
+  background-color: ${(props) => props.theme["primary-a700"]};
   line-height: 45px;
-  border-radius: 20px;
+  border-radius: 6px;
   font-size: 15px;
   font-weight: 600;
   color: #fff;
