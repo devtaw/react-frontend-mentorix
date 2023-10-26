@@ -32,7 +32,7 @@ export function AreaMentor() {
 
       </div>
 
-      <TextH5Mentor className="mb-3 mt-3">
+      <TextH5Mentor className="mb-4 mt-3">
       Aqui na Área do Mentor você pode editar seu perfil.
       </TextH5Mentor>
       
