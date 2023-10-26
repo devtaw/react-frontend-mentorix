@@ -8,6 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getMentores } from "../../common/services/MentorService";
 import Header from "../../common/Header/Header";
 import Footer from "../../common/Footer/Footer";
+import { TextBody } from "../../common/typography";
 
 export function ListaMentores() {
   //cria estado p/ guardar se modal estar aberta ou fechada
@@ -33,9 +34,11 @@ export function ListaMentores() {
       <Container>
         <ContentSection>
           <SpanTitle>Expert Team</SpanTitle>
-          <Title>Encontre o melhor online mentor para você</Title>
+          <Title>Encontre o melhor mentor online para você</Title>
           <TextDescription>Você não precisa lutar sozinho, você conta com nossa assistência e ajuda.</TextDescription>
           <ContainerList className="row">
+            {listaMentoresQuery.isLoading && <TextBody className="mt-5">Carregando...</TextBody>}
+
             {listaMentoresQuery?.data?.map((mentor) => (
               <div key={mentor.email} className="col-lg-4 col-md-6 col-xs-12">
                 {/* oncClick vai disparar função handleClickMentor quando botão for clicado */}
