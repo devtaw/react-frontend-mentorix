@@ -1,16 +1,14 @@
 import { CardBody } from "react-bootstrap";
 import styled from "styled-components";
 
-;
-
 export const TextH1Mentor = styled.h1`
-font-family: "Open Sans", sans-serif;
-font-style: normal;
-font-size: 2.5rem;
-font-weight: 700;
-color: ${(props) => props.theme[props.color || "primary-900"]};
-margin-top: 10px;
-margin-bottom: 13px;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: ${(props) => props.theme[props.color || "primary-900"]};
+  margin-top: 10px;
+  margin-bottom: 13px;
 `;
 
 export const TextH5Mentor = styled.h5`
@@ -21,26 +19,24 @@ export const TextH5Mentor = styled.h5`
   color: ${(props) => props.theme[props.color || "primary-900"]};
 `;
 
-
-
 export const TextH6Mentor = styled.h6`
   font-family: "Open Sans", sans-serif;
   font-style: normal;
-  font-size: 1.0rem;
+  font-size: 1rem;
   font-weight: 400;
   color: ${(props) => props.theme[props.color || "primary-900"]};
 `;
 
 export const TextDescriptionMentor = styled.p`
-font-family: "Montserrat", sans-serif;
-font-style: normal;
-color: blue-gray-800;
-font-weight: 400;
-margin-bottom: 15px;
-line-height: 26px;
-margin-top: 10;
-margin-left: 4px;
-text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  color: blue-gray-800;
+  font-weight: 400;
+  margin-bottom: 15px;
+  line-height: 26px;
+  margin-top: 10;
+  margin-left: 4px;
+  text-align: left;
 `;
 
 export const Container = styled.div`
@@ -49,7 +45,7 @@ export const Container = styled.div`
   padding: 20px;
   border-radius: 5px;
   text-align: center;
-`
+`;
 
 export const Row2 = styled.div`
   height: 240px;
@@ -64,7 +60,7 @@ export const Avatar = styled.div`
   background-size: cover;
   margin: 0 auto;
   margin-top: -100px;
-  background-image: url(${(props) => props.img});
+  /* background-image: url(${(props) => props.img}); */
 `;
 
 export const Agendamento = styled.div`
@@ -74,7 +70,7 @@ export const Agendamento = styled.div`
   border-radius: 10px;
   margin-bottom: 25px;
   display: flex;
-  align-items: center; 
+  align-items: center;
 `;
 
 export const CardAvatar = styled.img`
@@ -84,33 +80,31 @@ export const CardAvatar = styled.img`
 `;
 
 export const CardMensagem = styled.div`
-height: 77px;
-background-color: #E5E7EB;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 0 50px;
+  height: 77px;
+  background-color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 50px;
 `;
 
 export const CardBotton = styled.div`
-display: flex;
-align-items: center;
-justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const CardIcone = styled.img`
   height: 96px;
   width: 96px;
   margin-left: 30px;
- `;
-
-
- export const Input = styled.input`
- padding: 0.5em;
- margin: 0.5em;
- color: ${props => props.inputColor || "palevioletred"};
- background: papayawhip;
- border: none;
- border-radius: 3px;
 `;
 
+export const Input = styled.input`
+  padding: 0.5em;
+  margin: 0.5em;
+  color: ${(props) => props.inputColor || "palevioletred"};
+  background: papayawhip;
+  border: none;
+  border-radius: 3px;
+`;
