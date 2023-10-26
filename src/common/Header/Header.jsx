@@ -5,6 +5,7 @@ import { useTheme } from "styled-components";
 import { MentorixButton } from "../Button/MentorixButton.styled.js";
 import { useState } from "react";
 import { LoginModal } from "../../pages/Login/Login.jsx";
+import logoImg from "../../assets/img/logo-header.png";
 
 const Header = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -28,7 +29,7 @@ const Header = () => {
     <>
       <StyleHeader className="content">
         <a href="/">
-          <img src="../src/assets/img/logo-header.png" alt="Logo Mentorix" />
+          <img src={logoImg} alt="Logo Mentorix" />
         </a>
         <nav>
           <ul className="lista_links">
