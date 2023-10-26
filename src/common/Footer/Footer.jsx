@@ -15,6 +15,8 @@ import { Link } from "react-router-dom";
 import { TextH2, TextBody } from "../typography";
 import { useTheme } from "styled-components";
 import logoImg from "../../assets/img/logo-footer.png";
+import squadImg from "../../assets/img/logoSquad4-footer.png";
+import gradFooterImg from "../../assets/img/gradiente-footer.png";
 
 function Footer() {
   const theme = useTheme();
@@ -99,13 +101,13 @@ function Footer() {
           </div>
         </Column>
       </div>
-      <img src="../src/assets/img/gradiente-footer.png" alt="Separador Gradiente" />
+      <img src={gradFooterImg} alt="Separador Gradiente" />
       <Column>
         <CopyrightInfo>
           <CopyrightText>&copy; 2023 Mentorix | Todos os direitos reservados</CopyrightText>
           <div className="d-flex">
             <TextBody variant="body-sm">desenvolvido por</TextBody>
-            <img src="../src/assets/img/logoSquad4-footer.png" alt="Squad 4" />
+            <img src={squadImg} alt="Squad 4" />
           </div>
         </CopyrightInfo>
       </Column>
