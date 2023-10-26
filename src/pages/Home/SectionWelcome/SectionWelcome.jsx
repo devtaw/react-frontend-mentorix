@@ -4,7 +4,7 @@ import {
   TextContainer,
   ImageContainer,
 } from "./SectionWelcome.styled";
-import { TextH1, TextH2 } from "../../../common/typography";
+import { TextH1, TextH2, TextH6 } from "../../../common/typography";
 import { useTheme } from "styled-components";
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
 
@@ -14,6 +14,7 @@ function SectionWelcome() {
   return (
     <WelcomeContainer>
       <TextContainer>
+        <TextH6>MENTORES ESPECIALIZADOS </TextH6>
         <TextH1 variant={"title-xxlg"}>
           Quer mudar de vida? Escolha Mentorix!
         </TextH1>
