@@ -13,7 +13,9 @@ const Header = () => {
   const theme = useTheme();
   return (
     <StyleHeader className="content">
-      <img src="../src/assets/img/logo-header.png" alt="Logo Mentorix" />
+      <a href="/">
+        <img src="../src/assets/img/logo-header.png" alt="Logo Mentorix" />
+      </a>
       <nav>
         <ul className="lista_links">
           <li>
@@ -23,12 +25,12 @@ const Header = () => {
           </li>
 
           <li>
-            <Link to="/sobre" className="link">
+            <Link to="#sobre" className="link">
               SOBRE
             </Link>
           </li>
           <li>
-            <Link to="/mentores" className="link">
+            <Link to="/lista-mentores" className="link">
               MENTORES
             </Link>
           </li>
