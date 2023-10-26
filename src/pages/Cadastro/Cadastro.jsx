@@ -1,10 +1,26 @@
 import React from "react";
-import { ContentContainer } from "../../common/ContentContainer.styled";
+import { useState } from "react";
+import { MentorixModal } from "../../common/MentorixModal/MentorixModal";
+import FormCadastro from "./FormCadastro/FormCadastro";
 
-export function Cadastro() {
-  return (
-    <ContentContainer>
-      <h1>Cadastro</h1>
-    </ContentContainer>
+
+export function CadastroModal({isOpen, onClose}) {
+  const [cadastroIsOpen, setCadastroIsOpen] = useState(false)
+  // children,
+  // isOpen,
+  // buttonSaveName = "Salvar",
+  // title,
+  // onClose = () => null,
+
+  // function handleCloseModal () {
+  //   setModalIsOpen(false)
+  // }
+
+  return(
+    <MentorixModal isOpen={isOpen} title='Cadastro' buttonSaveName="Cadastrar" onClose={onClose}>
+      <FormCadastro />
+    </MentorixModal>
   );
+
+  
 }
