@@ -1,5 +1,14 @@
 import { SpeakerNone } from "@phosphor-icons/react";
 import styled from "styled-components";
+import { ContentContainer } from "../../../common/ContentContainer.styled";
+
+export const Container = styled(ContentContainer)`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 62px 0;
+`;
 
 export const ContactContainer = styled.div`
   display: flex;

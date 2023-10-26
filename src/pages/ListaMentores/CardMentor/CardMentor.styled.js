@@ -50,3 +50,12 @@ export const ButtonCTA = styled(Button)`
   color: #fff;
   transition: all 0.3s ease-out 0s;
 `;
+
+export const ContainerAvatar = styled.div`
+  height: 212px;
+  overflow: hidden;
+
+  img {
+    object-fit: contain;
+  }
+`;
