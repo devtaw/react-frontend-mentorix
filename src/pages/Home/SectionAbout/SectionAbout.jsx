@@ -1,21 +1,36 @@
 import React from "react";
-import { AboutSection } from "./SectionAbout.styled.js";
-import { TextH1, TextH2 } from "../../../common/typography.js";
+import sectionAboutImg from "../../../assets/img/section-about.png";
+import {
+  AboutSection,
+  ImageContainer,
+  TextContainer,
+} from "./SectionAbout.styled.js";
+import { TextH1, TextH3, TextH6 } from "../../../common/typography.js"; // Certifique-se de importar TextH6
 
 function SectionAbout() {
   return (
     <AboutSection>
-      <TextH1>SOBRE</TextH1>
-      <TextH2>
-        A Mentorix é uma plataforma de mentoria on-line dedicada a contribuir
-        para o desenvolvimento de pessoas e carreiras em um ambiente
-        colaborativo. Nossa missão é promover o compartilhamento de conhecimento
-        e experiências entre profissionais, oferecendo uma experiência única que
-        incentiva o autoconhecimento e o networking.
-      </TextH2>
-      <textH1>
-        Junte-se a nós nesta emocionante jornada de crescimento e descobertas.
-      </textH1>
+      <ImageContainer>
+        <img
+          src={sectionAboutImg}
+          alt="Imagem de uma Homem sorrindo com um notebook na mão."
+        />
+      </ImageContainer>
+      <TextContainer>
+        <TextH6>SOBRE A EMPRESA</TextH6>
+        <TextH1>Por que estudantes escolhem o Mentorix para aprender?</TextH1>
+        <TextH3>
+          Ajudar os funcionários a adquirir habilidades e fornecer
+          desenvolvimento de carreira muitas vezes ficam em segundo plano.
+        </TextH3>
+        <ul className="minha-lista">
+          <li className="item-lista">
+            Instrutores Qualificados e Especializados
+          </li>
+          <li className="item-lista">Aprendizado Interativo e Prático</li>
+          <li className="item-lista">Flexibilidade e Acessibilidade</li>
+        </ul>
+      </TextContainer>
     </AboutSection>
   );
 }

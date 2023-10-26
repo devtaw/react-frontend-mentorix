@@ -32,13 +32,14 @@ export function SectionContact() {
         <Column>
           <Card>
             <SocialIcons className="right-align">
+              <WhatsappLogo
+                size={50}
+                color={theme["terciary-200"]}
+                weight="fill"
+              />
+              <TextH2> WhatsApp </TextH2>
+
               <TextBody variant="body-sm" className="m-0">
-                <WhatsappLogo
-                  size={80}
-                  color={theme["terciary-200"]}
-                  weight="fill"
-                />
-                <TextH2> WhatsApp </TextH2>
                 (41) 9 1234-5678
               </TextBody>
             </SocialIcons>
@@ -47,37 +48,28 @@ export function SectionContact() {
 
         <Column>
           <Card>
-            <IconLink className="right-align">
+            <SocialIcons className="right-align">
+              <MapPin size={50} color={theme["terciary-200"]} weight="fill" />
+              <TextH2>Endereço</TextH2>
               <TextBody variant="body-sm" className="m-0">
-                <MapPin size={80} color={theme["terciary-200"]} weight="fill" />
-                <TextH2> Endereço</TextH2>
                 Emiliano Perneta, 174 Centro, Curitiba - PR, 80010-050
               </TextBody>
-            </IconLink>
+            </SocialIcons>
           </Card>
         </Column>
 
         <Column>
           <Card>
             <SocialIcons className="right-align">
+              <Envelope size={50} color={theme["terciary-200"]} weight="fill" />
+              <TextH2>E-mail</TextH2>
               <TextBody variant="body-sm" className="m-0">
-                <Envelope
-                  size={80}
-                  color={theme["terciary-200"]}
-                  weight="fill"
-                />
-                <TextH2>E-mail</TextH2>
                 suporte@mentorix.com.br
               </TextBody>
             </SocialIcons>
           </Card>
         </Column>
       </div>
-
-      <Frase className="right-align">
-        Feliz aquele que transfere o que sabe e aprende o que ensina.
-        <p>Cora Coralina</p>
-      </Frase>
     </ContactContainer>
   );
 }
