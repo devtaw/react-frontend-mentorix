@@ -32,7 +32,7 @@ const Header = () => {
           <img src={logoImg} alt="Logo Mentorix" />
         </a>
         <nav>
-          <ul className="lista_links">
+          <ul className="lista_links m-0">
             <li>
               <Link to="/" className="link">
                 HOME
