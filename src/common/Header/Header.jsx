@@ -23,28 +23,29 @@ const Header = () => {
           </li>
 
           <li>
-            <Link to="/sobre" className="link">
+            <Link to="#about" className="link">
               SOBRE
             </Link>
           </li>
           <li>
-            <Link to="/mentores" className="link">
+            <Link to="/lista-mentores" className="link">
               MENTORES
             </Link>
           </li>
           <li>
-            <Link to="/contato" className="link">
+            <Link to="#contact" className="link">
               CONTATO
             </Link>
           </li>
           <li>
-            <Link to="/login" className="link">
-              LOGIN
+            <Link to="#cadastro" className="link">
+              CADASTRO
             </Link>
           </li>
+
           <li>
             <MentorixButton color={"terciary-200"} onClick={handleClick}>
-              Criar conta
+              LOGIN
             </MentorixButton>
           </li>
         </ul>

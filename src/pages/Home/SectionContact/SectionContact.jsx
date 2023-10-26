@@ -15,7 +15,7 @@ import { WhatsappLogo, Envelope, MapPin } from "@phosphor-icons/react";
 export function SectionContact() {
   const theme = useTheme();
   return (
-    <ContactContainer>
+    <ContactContainer id="contact">
       <TextContainer>
         <TextH1 className="right-align">Entre em contato Hoje !</TextH1>
         <TextBody className="right-align">Adoraríamos ouvir você.</TextBody>
