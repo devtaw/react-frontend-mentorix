@@ -21,13 +21,7 @@ export const TextH5Mentor = styled.h5`
   color: ${(props) => props.theme[props.color || "primary-900"]};
 `;
 
-export const TextH5cor = styled.h5`
-font-family: "Open Sans", sans-serif;
-  font-style: normal;
-  font-size: ${(props) => props.theme[props.variant || "title-sm"]};
-  font-weight: 400; 
-  color: #673AB7;
-`;
+
 
 export const TextH6Mentor = styled.h6`
   font-family: "Open Sans", sans-serif;
