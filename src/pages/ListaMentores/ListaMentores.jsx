@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { ContentContainer } from "../../common/ContentContainer.styled";
-import { ContainerList, ContentSection, SpanTitle, TextDescription, Title } from "./ListaMentores.styled";
+import { ContainerList, ContentSection, SpanTitle, TextDescription, Title, Container } from "./ListaMentores.styled";
 import { CardMentor } from "./CardMentor/CardMentor";
 import { MentorixModal } from "../../common/MentorixModal/MentorixModal";
 import { Form } from "react-bootstrap";
 import { useQuery } from "@tanstack/react-query";
 import { getMentores } from "../../common/services/MentorService";
+import Header from "../../common/Header/Header";
+import Footer from "../../common/Footer/Footer";
 
 export function ListaMentores() {
   //cria estado p/ guardar se modal estar aberta ou fechada
@@ -27,7 +29,8 @@ export function ListaMentores() {
   }
   return (
     <>
-      <ContentContainer>
+      <Header />
+      <Container>
         <ContentSection>
           <SpanTitle>Expert Team</SpanTitle>
           <Title>Encontre o melhor online mentor para você</Title>
@@ -47,7 +50,9 @@ export function ListaMentores() {
             ))}
           </ContainerList>
         </ContentSection>
-      </ContentContainer>
+      </Container>
+
+      <Footer />
 
       <MentorixModal
         title="Entre em contato com o mentor"
