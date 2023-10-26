@@ -1,5 +1,5 @@
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 import { ModalContainer } from "./MentorixModal.styled";
 
 //componente genérico de modal que recebe propriedades:

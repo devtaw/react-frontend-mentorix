@@ -25,7 +25,7 @@ export const Title = styled.h1`
   margin-top: 10px;
   z-index: 1;
   margin-bottom: 3px;
-  color: ${(props) => props.theme["blue-gray-900"]};
+  color: ${(props) => props.theme["primary-900"]};
   width: 493px;
   text-align: left;
   text-transform: capitalize;
@@ -40,4 +40,10 @@ export const TextDescription = styled.p`
   line-height: 26px;
   margin-top: 0;
   margin-left: 4px;
+`;
+
+export const ContainerList = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 `;
