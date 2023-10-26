@@ -6,7 +6,7 @@ import { TextBody, TextH3, TextH5 } from "../../../common/typography";
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
 
 //componente cardmentor recebe propriedade chamada onclick que representa função que será chamda quando usuário clicar no botão para agendar
-export function CardMentor({ onClick = () => null }) {
+export function CardMentor({ nome, biografia, areasDeAtuacao, urlFoto, onClick = () => null }) {
   //função que será chamada quando user clicar no botão
   function handleClickButton() {
     //chamar função a partir das propriedades significa que estou chamando um evento a partir de uma propriedade onClick / dispara evento onClick para componente pai ListaMentores
@@ -14,16 +14,17 @@ export function CardMentor({ onClick = () => null }) {
   }
   return (
     <CardContainer>
-      <Card.Img variant="top" src={img} />
+      <Card.Img variant="top" src={urlFoto} />
       <Card.Body>
         {/* <Badge>Fínanças</Badge> */}
         <TagList>
-          <TextH5>Fínanças</TextH5>
+          {areasDeAtuacao.map((area) => (
+            <TextH5 key={area}>{area}</TextH5>
+          ))}
         </TagList>
-        <TextH3 bold="true">Elis Regina</TextH3>
+        <TextH3 bold="true">{nome}</TextH3>
         <TextBio variant="body-sm" color="grey-600">
-          Com vasta experiência no mercado financeiro, atuo como mentora em negócios, guiando profissionais rumo ao
-          sucesso.
+          {biografia}
         </TextBio>
       </Card.Body>
       <Card.Body>

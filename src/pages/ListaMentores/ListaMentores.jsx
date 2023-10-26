@@ -11,12 +11,11 @@ export function ListaMentores() {
   //cria estado p/ guardar se modal estar aberta ou fechada
   const [isModalOpen, setIsModalOpen] = useState(false);
   //data é preenchido quando a query retorna um resultado e isLoading será true quando a query estiver sendo executada
-  const { data, isLoading } = useQuery({
+  const listaMentoresQuery = useQuery({
     queryKey: ["lista-mentores"],
     //aqui se passa função q busca dados na API p/ propriedade queryFN p/ q react-query possa gerenciar estado dessa requisição
     queryFn: getMentores,
   });
-  console.log("Lista Mentores", data);
   //função que será chamada quando user clicar no botão do card mentor
   function handleClickCardMentor() {
     setIsModalOpen(true);
@@ -34,34 +33,18 @@ export function ListaMentores() {
           <Title>Encontre o melhor online mentor para você</Title>
           <TextDescription>Você não precisa lutar sozinho, você conta com nossa assistência e ajuda.</TextDescription>
           <ContainerList className="row">
-            <div className="col-lg-4 col-md-6 col-xs-12">
-              {/* oncClick vai disparar função handleClickMentor quando botão for clicado */}
-              <CardMentor onClick={handleClickCardMentor} />
-            </div>
-            <div className="col-lg-4 col-md-6 col-xs-12">
-              <CardMentor />
-            </div>
-            <div className="col-lg-4 col-md-6 col-xs-12">
-              <CardMentor />
-            </div>
-            <div className="col-lg-4 col-md-6 col-xs-12">
-              <CardMentor />
-            </div>
-            <div className="col-lg-4 col-md-6 col-xs-12">
-              <CardMentor />
-            </div>
-            <div className="col-lg-4 col-md-6 col-xs-12">
-              <CardMentor />
-            </div>
-            <div className="col-lg-4 col-md-6 col-xs-12">
-              <CardMentor />
-            </div>
-            <div className="col-lg-4 col-md-6 col-xs-12">
-              <CardMentor />
-            </div>
-            <div className="col-lg-4 col-md-6 col-xs-12">
-              <CardMentor />
-            </div>
+            {listaMentoresQuery?.data?.map((mentor) => (
+              <div key={mentor.email} className="col-lg-4 col-md-6 col-xs-12">
+                {/* oncClick vai disparar função handleClickMentor quando botão for clicado */}
+                <CardMentor
+                  urlFoto={mentor.fotoPerfil}
+                  nome={mentor.nomeCompleto}
+                  biografia={mentor.experienciaProfissional}
+                  areasDeAtuacao={["Finançcas"]}
+                  onClick={handleClickCardMentor}
+                />
+              </div>
+            ))}
           </ContainerList>
         </ContentSection>
       </ContentContainer>
