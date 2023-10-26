@@ -67,19 +67,18 @@ export const SocialIcons = styled.div`
   padding-top: 10px;
 
   a {
-    color: ${(p) => p.theme["blue-gray-800"]};
+    color: ${(props) => props.theme["blue-gray-100"]};
     font-family: Open Sans;
     text-decoration: none;
     align-items: center;
   }
 `;
-
 export const OpeningHours = styled.div`
   p {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    color: ${(p) => p.theme["blue-gray-500"]};
+    color: ${(p) => p.theme["blue-gray-100"]};
   }
 `;
 
