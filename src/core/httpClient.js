@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const httpClient = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || "http://localhost:3000",
+  baseURL: "https://mentorix.onrender.com",
   headers: {
     "Content-Type": "application/json",
   },
