@@ -3,6 +3,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import { ButtonCTA, CardContainer, TagList, TextBio } from "./CardMentor.styled";
 import img from "../../../assets/img/lista-mentores/card-mentor/mentora-1.png";
 import { TextBody, TextH3, TextH5 } from "../../../common/typography";
+import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
 
 //componente cardmentor recebe propriedade chamada onclick que representa função que será chamda quando usuário clicar no botão para agendar
 export function CardMentor({ onClick = () => null }) {

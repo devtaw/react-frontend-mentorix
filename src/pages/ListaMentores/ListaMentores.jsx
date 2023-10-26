@@ -4,15 +4,19 @@ import { ContainerList, ContentSection, SpanTitle, TextDescription, Title } from
 import { CardMentor } from "./CardMentor/CardMentor";
 import { MentorixModal } from "../../common/MentorixModal/MentorixModal";
 import { Form } from "react-bootstrap";
-import { useQuery } from "react-query;";
+import { useQuery } from "@tanstack/react-query";
 import { getMentores } from "../../common/services/MentorService";
 
 export function ListaMentores() {
   //cria estado p/ guardar se modal estar aberta ou fechada
   const [isModalOpen, setIsModalOpen] = useState(false);
   //data é preenchido quando a query retorna um resultado e isLoading será true quando a query estiver sendo executada
-  const { data, isLoading } = useQuery("lista-mentores", getMentores);
-
+  const { data, isLoading } = useQuery({
+    queryKey: ["lista-mentores"],
+    //aqui se passa função q busca dados na API p/ propriedade queryFN p/ q react-query possa gerenciar estado dessa requisição
+    queryFn: getMentores,
+  });
+  console.log("Lista Mentores", data);
   //função que será chamada quando user clicar no botão do card mentor
   function handleClickCardMentor() {
     setIsModalOpen(true);
