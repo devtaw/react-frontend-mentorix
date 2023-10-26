@@ -41,3 +41,9 @@ export const TextDescription = styled.p`
   margin-top: 0;
   margin-left: 4px;
 `;
+
+export const ContainerList = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+`;
