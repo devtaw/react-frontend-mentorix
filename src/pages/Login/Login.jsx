@@ -3,6 +3,8 @@ import { MentorixModal } from "../../common/MentorixModal/MentorixModal";
 import { useState } from "react";
 import FormLogin from "./FormLogin/FormLogin";
 import { useNavigate } from "react-router-dom";
+import Header from "../../common/Header/Header";
+import Footer from "../../common/Footer/Footer";
 
 export function Login({ isOpen, onClose }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -21,8 +23,9 @@ export function Login({ isOpen, onClose }) {
   // }
   return (
     <div>
-
+      <Header />
       <FormLogin />
+      <Footer/>
     </div>
   );
 }
