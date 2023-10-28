@@ -6,16 +6,18 @@ import { GlobalStyle } from "./styles/GlobalStyle";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./core/queryClient";
+import { SnackbarProvider } from "notistack";
 
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <BrowserRouter>
-        <QueryClientProvider client={queryClient}>
-          <Router />
-        </QueryClientProvider>
-      </BrowserRouter>
-
+      <SnackbarProvider>
+        <BrowserRouter>
+          <QueryClientProvider client={queryClient}>
+            <Router />
+          </QueryClientProvider>
+        </BrowserRouter>
+      </SnackbarProvider>
       <GlobalStyle />
     </ThemeProvider>
   );
