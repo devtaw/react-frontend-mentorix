@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 export function Login({ isOpen, onClose }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [usuario, setUsuario] = useState("");
+  const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
   const navigate = useNavigate();
@@ -20,8 +20,9 @@ export function Login({ isOpen, onClose }) {
   //   setModalIsOpen(false)
   // }
   return (
-    <MentorixModal isOpen={isOpen} title="Login" buttonSaveName="Entrar" onClose={onClose} onSave={handleLogin}>
+    <div>
+
       <FormLogin />
-    </MentorixModal>
+    </div>
   );
 }
