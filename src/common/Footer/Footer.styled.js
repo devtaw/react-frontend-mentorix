@@ -13,6 +13,10 @@ export const FooterContainer = styled.footer`
     line-height: normal;
     letter-spacing: -0.48px;
   }
+
+  h4 {
+    color: ${(p) => p.theme["terciary-200"]};
+  }
 `;
 
 export const Column = styled.div`

@@ -39,9 +39,9 @@ const Header = () => {
             </li>
 
             <li>
-              <Link to="#about" className="link">
+              <a href="#about" className="link">
                 SOBRE
-              </Link>
+              </a>
             </li>
             <li>
               <Link to="/lista-mentores" className="link">
@@ -49,28 +49,24 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to="#contact" className="link">
+              <a href="#contact" className="link">
                 CONTATO
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="./login" className="link">
+              <Link to="/login" className="link">
                 LOGIN
               </Link>
             </li>
 
             <li>
-              <MentorixButton
-                color={"terciary-200"}
-                onClick={handleClick}
-              >
+              <MentorixButton color={"terciary-200"} onClick={handleClick}>
                 Criar conta
               </MentorixButton>
             </li>
           </ul>
         </nav>
       </StyleHeader>
-
     </>
   );
 };
