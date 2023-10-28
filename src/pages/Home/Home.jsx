@@ -5,15 +5,13 @@ import Header from "../../common/Header/Header";
 import SectionAbout from "./SectionAbout/SectionAbout";
 import { SectionContact } from "./SectionContact/SectionContact";
 import SectionWelcome from "./SectionWelcome/SectionWelcome";
-import SectionCadastro from "./SectionCadastro/SectionCadastro";
 import { LoginModal } from "../Login/Login";
 import { useState } from "react";
-import { CadastroModal } from "../Cadastro/Cadastro";
 import { useNavigate } from "react-router-dom";
 
 export function Home({ usuario, senha, setUsuario, setSenha }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [cadastroIsOpen, setCadastroIsOpen] = useState(false);
+  // const [cadastroIsOpen, setCadastroIsOpen] = useState(false);
 
   const navigate = useNavigate();
 
@@ -25,13 +23,13 @@ export function Home({ usuario, senha, setUsuario, setSenha }) {
     setModalIsOpen(true);
   }
 
-  function handleCadastroCloseModal() {
-    setCadastroIsOpen(false);
-  }
+  // function handleCadastroCloseModal() {
+  //   setCadastroIsOpen(false);
+  // }
 
-  function handleCadastroOpenModal() {
-    setCadastroIsOpen(true);
-  }
+  // function handleCadastroOpenModal() {
+  //   setCadastroIsOpen(true);
+  // }
 
   function handleLogin() {
     navigate("/area-mentor");
@@ -41,12 +39,18 @@ export function Home({ usuario, senha, setUsuario, setSenha }) {
     <>
       <Header />
       <SectionWelcome />
-      <SectionCadastro />
       <SectionAbout />
       <SectionContact />
       <Footer />
-      <LoginModal isOpen={modalIsOpen} onClose={handleCloseModal} onSave={handleLogin} />
-      <CadastroModal isOpen={cadastroIsOpen} onClose={handleCadastroCloseModal} />
+      <LoginModal
+        isOpen={modalIsOpen}
+        onClose={handleCloseModal}
+        onSave={handleLogin}
+      />
+      {/* <CadastroModal
+        isOpen={cadastroIsOpen}
+        onClose={handleCadastroCloseModal}
+      /> */}
     </>
   );
 }
