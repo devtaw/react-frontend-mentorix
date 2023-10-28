@@ -10,7 +10,14 @@ import {
   CopyrightText,
   IconLink,
 } from "./Footer.styled";
-import { CaretRight, Envelope, FacebookLogo, InstagramLogo, LinkedinLogo, WhatsappLogo } from "@phosphor-icons/react";
+import {
+  CaretRight,
+  Envelope,
+  FacebookLogo,
+  InstagramLogo,
+  LinkedinLogo,
+  WhatsappLogo,
+} from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 import { TextH2, TextBody } from "../typography";
 import { useTheme } from "styled-components";
@@ -29,20 +36,45 @@ function Footer() {
             <Logo src={logoImg} />
 
             <Description>
-              Plataforma gratuita que conecta de forma simples e rápida mentores a pessoas que desejam ser mentoradas
+              Plataforma gratuita que conecta de forma simples e rápida mentores
+              a pessoas que desejam ser mentoradas
             </Description>
 
             <TextH2> siga a gente </TextH2>
 
             <SocialIcons>
-              <a href="link-do-facebook">
-                <FacebookLogo size={24} color={theme["terciary-200"]} weight="fill" />
+              <a
+                href="https://pt-br.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FacebookLogo
+                  size={24}
+                  color={theme["terciary-200"]}
+                  weight="fill"
+                />
               </a>
-              <a href="link-do-instagram">
-                <InstagramLogo size={24} color={theme["terciary-200"]} weight="fill" />
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <InstagramLogo
+                  size={24}
+                  color={theme["terciary-200"]}
+                  weight="fill"
+                />
               </a>
-              <a href="link-do-linkedin">
-                <LinkedinLogo size={24} color={theme["terciary-200"]} weight="fill" />
+              <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkedinLogo
+                  size={24}
+                  color={theme["terciary-200"]}
+                  weight="fill"
+                />
               </a>
             </SocialIcons>
           </div>
@@ -94,7 +126,11 @@ function Footer() {
             </TextBody>
           </div>
           <div className="icon-link">
-            <WhatsappLogo size={24} color={theme["terciary-200"]} weight="fill" />
+            <WhatsappLogo
+              size={24}
+              color={theme["terciary-200"]}
+              weight="fill"
+            />
             <TextBody variant="body-sm" className="m-0">
               (41) 9 1234-5678
             </TextBody>
@@ -104,7 +140,9 @@ function Footer() {
       <img src={gradFooterImg} alt="Separador Gradiente" />
       <Column>
         <CopyrightInfo>
-          <CopyrightText>&copy; 2023 Mentorix | Todos os direitos reservados</CopyrightText>
+          <CopyrightText>
+            &copy; 2023 Mentorix | Todos os direitos reservados
+          </CopyrightText>
           <div className="d-flex">
             <TextBody variant="body-sm">desenvolvido por</TextBody>
             <img src={squadImg} alt="Squad 4" />
