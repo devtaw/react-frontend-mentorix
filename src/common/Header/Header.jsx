@@ -63,7 +63,7 @@ const Header = () => {
             <li>
               <MentorixButton
                 color={"terciary-200"}
-                onClick={handleOpenLoginModal}
+                onClick={handleClick}
               >
                 Criar conta
               </MentorixButton>
