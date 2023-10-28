@@ -84,8 +84,13 @@ function Footer() {
           <div>
             <TextH2> endereço </TextH2>
             <p>R. Emiliano, 174 - Centro, Curitiba - PR, 80010-050</p>
-          </div>
-          <div>
+            <a
+              href="https://www.google.com/maps?q=R.+Emiliano,174,Centro,Curitiba,PR,80010-050"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver no Google Maps
+            </a>
             <TextH2> horário de atendimento </TextH2>
             <OpeningHours>
               <p>Segunda a sexta, 8h às 17h</p>
@@ -103,7 +108,7 @@ function Footer() {
 
           <IconLink>
             <CaretRight size={24} color={theme["terciary-200"]} weight="fill" />
-            <a href="/sobre">Sobre Nós</a>
+            <a href="#About">Sobre Nós</a>
           </IconLink>
 
           <IconLink>
@@ -113,7 +118,7 @@ function Footer() {
 
           <IconLink>
             <CaretRight size={24} color={theme["terciary-200"]} weight="fill" />
-            <a href="/contato">Contato</a>
+            <a href="#contato">Contato</a>
           </IconLink>
         </Column>
 
