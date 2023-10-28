@@ -9,6 +9,7 @@ import { getMentores } from "../../common/services/MentorService";
 import Header from "../../common/Header/Header";
 import Footer from "../../common/Footer/Footer";
 import { TextBody } from "../../common/typography";
+import { useSnackbar } from "notistack";
 
 export function ListaMentores() {
   //cria estado p/ guardar se modal estar aberta ou fechada
@@ -19,6 +20,8 @@ export function ListaMentores() {
     //aqui se passa função q busca dados na API p/ propriedade queryFN p/ q react-query possa gerenciar estado dessa requisição
     queryFn: getMentores,
   });
+  //utiliza hook de notificações
+  const snackbar = useSnackbar();
   //função que será chamada quando user clicar no botão do card mentor
   function handleClickCardMentor() {
     setIsModalOpen(true);
@@ -28,6 +31,13 @@ export function ListaMentores() {
     //volta estado de isModalOpen para false, logo como estamos passando isModalOpen como parametros para modal, ela entederá que deve ser fechada
     setIsModalOpen(false);
   }
+
+  function handleModalSave() {
+    //chama função que mostra notificação ao usuário.
+    snackbar.enqueueSnackbar("Mensagem enviada com sucesso", { variant: "success" }); //mostra notificação de sucesso
+    snackbar.enqueueSnackbar("Erro ao enviar mensagem, tente novamente mais tarde", { variant: "error" }); //mostra notificação de erro
+  }
+
   return (
     <>
       <Header />
@@ -62,7 +72,7 @@ export function ListaMentores() {
         buttonSaveName="Enviar"
         isOpen={isModalOpen}
         onClose={handleModalClose}
-        onSave={handleModalClose}
+        onSave={handleModalSave}
       >
         <Form>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">

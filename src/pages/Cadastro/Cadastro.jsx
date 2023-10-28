@@ -2,25 +2,34 @@ import React from "react";
 import { useState } from "react";
 import { MentorixModal } from "../../common/MentorixModal/MentorixModal";
 import FormCadastro from "./FormCadastro/FormCadastro";
+import Header from "../../common/Header/Header";
+import Footer from "../../common/Footer/Footer";
 
+export function Cadastro({ isOpen, onClose }) {
+  // const handleCadastro = async () => {
+  //   e.preventDefault()
 
-export function CadastroModal({isOpen, onClose}) {
-  const [cadastroIsOpen, setCadastroIsOpen] = useState(false)
-  // children,
-  // isOpen,
-  // buttonSaveName = "Salvar",
-  // title,
-  // onClose = () => null,
+  //   const body = {
+  //     nomeCompleto,
+  //     email,
+  //     senha,
+  //     confirmaSenha,
+  //     fotoPerfil,
+  //     biografia,
+  //     linkedin,
+  //     profissao
+  //   }
 
-  // function handleCloseModal () {
-  //   setModalIsOpen(false)
+  //   if (senha === confirmaSenha) {
+  //     const resposta = await postMentores(body)
+  //   }
   // }
 
-  return(
-    <MentorixModal isOpen={isOpen} title='Cadastro' buttonSaveName="Cadastrar" onClose={onClose}>
+  return (
+    <div>
+      <Header />
       <FormCadastro />
-    </MentorixModal>
+      <Footer />
+    </div>
   );
-
-  
 }
