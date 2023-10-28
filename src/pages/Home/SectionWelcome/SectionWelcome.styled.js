@@ -27,14 +27,15 @@ export const TextH2 = styled.h2`
 export const TextContainer = styled.div`
   max-width: 50%;
   h1 {
-    font-size: 50px;
+    font-size: 65px;
     color: ${(p) => p.theme["terciary-300"]};
   }
   h2 {
-    font-size: 15px;
+    font-size: 18px;
     color: ${(p) => p.theme["terciary-100"]};
   }
   h6 {
+    font-size: 15px;
     font-family: "Open Sans", sans-serif;
     background-color: ${(p) => p.theme["blue-a400"]};
     color: ${(p) => p.theme["white"]};
