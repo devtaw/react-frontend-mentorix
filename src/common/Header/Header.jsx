@@ -72,10 +72,6 @@ const Header = () => {
         </nav>
       </StyleHeader>
 
-      <Login
-        isOpen={isLoginModalOpen}
-        onClose={handleCloseLoginModal}
-      ></Login>
     </>
   );
 };
