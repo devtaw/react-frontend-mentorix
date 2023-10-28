@@ -2,10 +2,11 @@ import React from "react";
 import { useState } from "react";
 import { MentorixModal } from "../../common/MentorixModal/MentorixModal";
 import FormCadastro from "./FormCadastro/FormCadastro";
+import Header from "../../common/Header/Header";
 
 
 export function Cadastro({isOpen, onClose}) {
-  const [cadastroIsOpen, setCadastroIsOpen] = useState(false)
+  // const [cadastroIsOpen, setCadastroIsOpen] = useState(false)
   // children,
   // isOpen,
   // buttonSaveName = "Salvar",
@@ -17,9 +18,10 @@ export function Cadastro({isOpen, onClose}) {
   // }
 
   return(
-    <MentorixModal isOpen={isOpen} title='Cadastro' buttonSaveName="Cadastrar" onClose={onClose}>
+    <div>
+    <Header />
       <FormCadastro />
-    </MentorixModal>
+    </div>
   );
 
   
