@@ -2,6 +2,7 @@ import { Envelope, Lock } from "@phosphor-icons/react";
 import React, { useState } from "react";
 import { InputGroup, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { SpanEsqueceuSenha } from "./FormLogin.styled";
 // import { User } from "@phosphor-icons/react";
 
 export default function FormLogin({ usuario, setUsuario, senha, setSenha }) {
@@ -59,7 +60,11 @@ export default function FormLogin({ usuario, setUsuario, senha, setSenha }) {
         />
       </InputGroup>
 
-      {/* <span className='spanSenha'>Esqueceu sua senha?</span> */}
+      <SpanEsqueceuSenha className='spanSenha'>
+        <p>
+          Esqueceu sua senha? Entre em contato com suporte@mentorix.com
+          </p>
+          </SpanEsqueceuSenha>
     </div>
   );
 }
