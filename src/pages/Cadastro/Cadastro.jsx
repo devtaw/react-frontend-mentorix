@@ -4,7 +4,7 @@ import { MentorixModal } from "../../common/MentorixModal/MentorixModal";
 import FormCadastro from "./FormCadastro/FormCadastro";
 
 
-export function CadastroModal({isOpen, onClose}) {
+export function Cadastro({isOpen, onClose}) {
   const [cadastroIsOpen, setCadastroIsOpen] = useState(false)
   // children,
   // isOpen,
