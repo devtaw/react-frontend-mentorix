@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useTheme } from "styled-components";
 import { MentorixButton } from "../Button/MentorixButton.styled.js";
 import { useState } from "react";
-import { Login } from "../../pages/Login/Login.jsx";
 import logoImg from "../../assets/img/logo-header.png";
 
 const Header = () => {
