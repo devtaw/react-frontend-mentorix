@@ -5,7 +5,7 @@ import Header from "../../common/Header/Header";
 import SectionAbout from "./SectionAbout/SectionAbout";
 import { SectionContact } from "./SectionContact/SectionContact";
 import SectionWelcome from "./SectionWelcome/SectionWelcome";
-import { LoginModal } from "../Login/Login";
+import { Login } from "../Login/Login";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -42,7 +42,7 @@ export function Home({ usuario, senha, setUsuario, setSenha }) {
       <SectionAbout />
       <SectionContact />
       <Footer />
-      <LoginModal
+      <Login
         isOpen={modalIsOpen}
         onClose={handleCloseModal}
         onSave={handleLogin}
