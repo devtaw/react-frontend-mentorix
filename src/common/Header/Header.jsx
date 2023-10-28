@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useTheme } from "styled-components";
 import { MentorixButton } from "../Button/MentorixButton.styled.js";
 import { useState } from "react";
-import { LoginModal } from "../../pages/Login/Login.jsx";
 import logoImg from "../../assets/img/logo-header.png";
 
 const Header = () => {
@@ -63,7 +62,7 @@ const Header = () => {
             <li>
               <MentorixButton
                 color={"terciary-200"}
-                onClick={handleOpenLoginModal}
+                onClick={handleClick}
               >
                 Criar conta
               </MentorixButton>
@@ -72,10 +71,6 @@ const Header = () => {
         </nav>
       </StyleHeader>
 
-      <LoginModal
-        isOpen={isLoginModalOpen}
-        onClose={handleCloseLoginModal}
-      ></LoginModal>
     </>
   );
 };
