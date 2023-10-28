@@ -1,4 +1,4 @@
-import { Envelope, Password, SelectionPlus, User } from '@phosphor-icons/react'
+import { BookOpenText, Desktop, Envelope, Image, LinkedinLogo, Password, SelectionPlus, User } from '@phosphor-icons/react'
 import React from 'react'
 import { useState } from 'react'
 import { InputGroup, Form } from 'react-bootstrap'
@@ -106,8 +106,8 @@ export default function FormCadastro() {
   <label>Foto de perfil</label>
       <InputGroup className="mb-3">
     <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
-    <User size={16} color="#4d0057" weight="fill" />
-    </InputGroup.Text>
+    <Image size={16} color="#4d0057" weight="fill" />
+</InputGroup.Text>
     <Form.Control
       placeholder="Foto de perfil"
       aria-label="Photo"
@@ -119,7 +119,7 @@ export default function FormCadastro() {
   <label>Biografia</label>
       <InputGroup className="mb-3">
     <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
-    <User size={16} color="#4d0057" weight="fill" />
+    <BookOpenText size={16} color="#4d0057" weight="fill" />
     </InputGroup.Text>
     <Form.Control
       placeholder="Biografia"
@@ -132,7 +132,7 @@ export default function FormCadastro() {
   <label>LinkedIn</label>
       <InputGroup className="mb-3">
     <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
-    <User size={16} color="#4d0057" weight="fill" />
+    <LinkedinLogo size={16} color="#4d0057" weight="fill" />
     </InputGroup.Text>
     <Form.Control
       placeholder="LinkedIn"
@@ -145,7 +145,7 @@ export default function FormCadastro() {
   <label>Profissão</label>
       <InputGroup className="mb-3">
     <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
-    <User size={16} color="#4d0057" weight="fill" />
+    <Desktop size={16} color="#4d0057" weight="fill" />
     </InputGroup.Text>
     <Form.Control
       placeholder="Profissão"
