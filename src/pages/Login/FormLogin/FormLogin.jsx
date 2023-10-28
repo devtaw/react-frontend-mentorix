@@ -4,7 +4,6 @@ import { InputGroup, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { SpanEsqueceuSenha } from "./FormLogin.styled";
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
-// import { User } from "@phosphor-icons/react";
 
 export default function FormLogin({ email, setEmail, senha, setSenha }) {
   // const [email, setEmail] = useState('')
@@ -61,15 +60,11 @@ export default function FormLogin({ email, setEmail, senha, setSenha }) {
         />
       </InputGroup>
 
-      <MentorixButton onClick={handleLogin}>
-        Entrar
-      </MentorixButton>
+      <MentorixButton onClick={handleLogin}>Entrar</MentorixButton>
 
-      <SpanEsqueceuSenha className='spanSenha'>
-        <p>
-          Esqueceu sua senha? Entre em contato com suporte@mentorix.com
-          </p>
-          </SpanEsqueceuSenha>
+      <SpanEsqueceuSenha className="spanSenha">
+        <p>Esqueceu sua senha? Entre em contato com suporte@mentorix.com</p>
+      </SpanEsqueceuSenha>
     </div>
   );
 }

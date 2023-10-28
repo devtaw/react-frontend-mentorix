@@ -5,26 +5,31 @@ import FormCadastro from "./FormCadastro/FormCadastro";
 import Header from "../../common/Header/Header";
 import Footer from "../../common/Footer/Footer";
 
+export function Cadastro({ isOpen, onClose }) {
+  // const handleCadastro = async () => {
+  //   e.preventDefault()
 
-export function Cadastro({isOpen, onClose}) {
-  // const [cadastroIsOpen, setCadastroIsOpen] = useState(false)
-  // children,
-  // isOpen,
-  // buttonSaveName = "Salvar",
-  // title,
-  // onClose = () => null,
+  //   const body = {
+  //     nomeCompleto,
+  //     email,
+  //     senha,
+  //     confirmaSenha,
+  //     fotoPerfil,
+  //     biografia,
+  //     linkedin,
+  //     profissao
+  //   }
 
-  // function handleCloseModal () {
-  //   setModalIsOpen(false)
+  //   if (senha === confirmaSenha) {
+  //     const resposta = await postMentores(body)
+  //   }
   // }
 
-  return(
+  return (
     <div>
-    <Header />
+      <Header />
       <FormCadastro />
       <Footer />
     </div>
   );
-
-  
 }
