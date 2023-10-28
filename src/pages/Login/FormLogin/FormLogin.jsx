@@ -3,9 +3,11 @@ import React, { useState } from "react";
 import { InputGroup, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { SpanEsqueceuSenha } from "./FormLogin.styled";
+import Header from "../../../common/Header/Header";
+import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
 // import { User } from "@phosphor-icons/react";
 
-export default function FormLogin({ usuario, setUsuario, senha, setSenha }) {
+export default function FormLogin({ email, setEmail, senha, setSenha }) {
   // const [email, setEmail] = useState('')
   // const [senha, setSenha] = useState('')
 
@@ -33,6 +35,7 @@ export default function FormLogin({ usuario, setUsuario, senha, setSenha }) {
 
   return (
     <div>
+      <Header />
       <label>E-mail</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
@@ -59,6 +62,10 @@ export default function FormLogin({ usuario, setUsuario, senha, setSenha }) {
           //   onChange={(e) => setSenha(e.target.value)}
         />
       </InputGroup>
+
+      <MentorixButton onClick={handleLogin}>
+        Entrar
+      </MentorixButton>
 
       <SpanEsqueceuSenha className='spanSenha'>
         <p>
