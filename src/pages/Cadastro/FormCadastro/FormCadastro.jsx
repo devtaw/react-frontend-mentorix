@@ -1,7 +1,8 @@
-import { Envelope, Password, User } from '@phosphor-icons/react'
+import { Envelope, Password, SelectionPlus, User } from '@phosphor-icons/react'
 import React from 'react'
 import { useState } from 'react'
 import { InputGroup, Form } from 'react-bootstrap'
+import { MentorixButton } from '../../../common/Button/MentorixButton.styled'
 
 export default function FormCadastro() {
 
@@ -9,6 +10,11 @@ export default function FormCadastro() {
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
   const [confirmaSenha, setConfirmaSenha] = useState('')
+  const [fotoPerfil, setFotoPerfil] = useState('')
+  const [biografia, setBiografia] = useState('')
+  const [linkedin, setLinkedin] = useState('')
+  const [profissao, setProfissao] = useState('')
+
 
   return (
     <div>
@@ -96,6 +102,62 @@ export default function FormCadastro() {
     }
     />
   </InputGroup>
+  
+  <label>Foto de perfil</label>
+      <InputGroup className="mb-3">
+    <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
+    <User size={16} color="#4d0057" weight="fill" />
+    </InputGroup.Text>
+    <Form.Control
+      placeholder="Foto de perfil"
+      aria-label="Photo"
+      aria-describedby="inputGroup-sizing-default"
+      value={fotoPerfil}
+    />
+  </InputGroup>
+
+  <label>Biografia</label>
+      <InputGroup className="mb-3">
+    <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
+    <User size={16} color="#4d0057" weight="fill" />
+    </InputGroup.Text>
+    <Form.Control
+      placeholder="Biografia"
+      aria-label="Biography"
+      aria-describedby="inputGroup-sizing-default"
+      value={biografia}
+    />
+  </InputGroup>
+
+  <label>LinkedIn</label>
+      <InputGroup className="mb-3">
+    <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
+    <User size={16} color="#4d0057" weight="fill" />
+    </InputGroup.Text>
+    <Form.Control
+      placeholder="LinkedIn"
+      aria-label="LinkedIn"
+      aria-describedby="inputGroup-sizing-default"
+      value={linkedin}
+    />
+  </InputGroup>
+
+  <label>Profissão</label>
+      <InputGroup className="mb-3">
+    <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
+    <User size={16} color="#4d0057" weight="fill" />
+    </InputGroup.Text>
+    <Form.Control
+      placeholder="Profissão"
+      aria-label="Occupation"
+      aria-describedby="inputGroup-sizing-default"
+      value={profissao}
+    />
+  </InputGroup>
+
+  <MentorixButton>
+    Cadastrar
+  </MentorixButton>
     </div>
   )
 }
