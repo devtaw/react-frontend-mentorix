@@ -120,20 +120,24 @@ function Footer() {
         <Column>
           <TextH2> precisa de ajuda?</TextH2>
           <div className="icon-link">
-            <Envelope size={24} color={theme["terciary-200"]} weight="fill" />
-            <TextBody variant="body-sm" className="m-0">
-              suporte@mentorix.com.br
-            </TextBody>
+            <a href="mailto:suporte@mentorix.com.br">
+              <Envelope size={24} color={theme["terciary-200"]} weight="fill" />
+              <TextBody variant="body-sm" className="m-0">
+                suporte@mentorix.com.br
+              </TextBody>
+            </a>
           </div>
           <div className="icon-link">
-            <WhatsappLogo
-              size={24}
-              color={theme["terciary-200"]}
-              weight="fill"
-            />
-            <TextBody variant="body-sm" className="m-0">
-              (41) 9 1234-5678
-            </TextBody>
+            <a href="tel:+41412345678">
+              <WhatsappLogo
+                size={24}
+                color={theme["terciary-200"]}
+                weight="fill"
+              />
+              <TextBody variant="body-sm" className="m-0">
+                (41) 9 1234-5678
+              </TextBody>
+            </a>
           </div>
         </Column>
       </div>
