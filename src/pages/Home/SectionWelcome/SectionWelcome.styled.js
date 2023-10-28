@@ -36,8 +36,8 @@ export const TextContainer = styled.div`
   }
   h6 {
     font-family: "Open Sans", sans-serif;
-    background-color: #2467ec;
-    color: #fff;
+    background-color: ${(p) => p.theme["blue-a400"]};
+    color: ${(p) => p.theme["white"]};
     padding: 5px 10px;
     display: inline-block;
     width: auto;

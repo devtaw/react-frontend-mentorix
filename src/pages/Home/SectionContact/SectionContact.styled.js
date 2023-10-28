@@ -7,14 +7,13 @@ export const Container = styled(ContentContainer)`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 62px 0;
+  padding: 60px 0;
 `;
 
 export const ContactContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-image: url("src/assets/img/section-contato1.png"); */
   background-color: ${(p) => p.theme["background-dark"]};
   color: ${(p) => p.theme["secondary-50"]};
   padding: 80px;
@@ -49,16 +48,24 @@ export const Column = styled.div`
     display: initial;
   }
 `;
-
 export const Card = styled.div`
   background: ${(p) => p.theme["primary-900"]};
-  border: 1px solid #fff59d; /* Borda do card */
-  padding: 20px;
-  width: 300px;
-  height: 200px;
+  border: 1px solid #fff59d;
+  padding: 30px;
   text-align: center;
   border-radius: 10px;
   color: ${(p) => p.theme["blue-gray-50"]};
+  display: flex;
+  flex-direction: column; /* Alinha o conteúdo verticalmente */
+  justify-content: space-between; /* Espaço igual entre os elementos internos */
+  align-items: center; /* Alinha o conteúdo horizontalmente */
+  width: 250px;
+  height: 250px; /* Ajuste a altura como desejado */
+  min-height: 250px; /* Evita que os cartões se tornem menores do que o desejado */
+
+  h4 {
+    color: ${(p) => p.theme["green-500"]};
+  }
 `;
 
 export const SocialIcons = styled.div`
