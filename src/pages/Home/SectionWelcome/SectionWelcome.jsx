@@ -8,12 +8,12 @@ import {
 import { TextH1, TextH2, TextH6 } from "../../../common/typography";
 import { useTheme } from "styled-components";
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
+import { Link } from "react-router-dom";
 import { ContentContainer } from "../../../common/ContentContainer.styled";
 import image from "../../../assets/img/section-welcome.png";
 
 function SectionWelcome() {
   const theme = useTheme();
-  function handleClick() {}
   return (
     <WelcomeContainer>
       <Container>
@@ -27,13 +27,11 @@ function SectionWelcome() {
             Conhecimento compartilhado, futuro assegurado. Junte-se a nós.
           </TextH2>
 
-          <MentorixButton
-            color={"terciary-200"}
-            onClick={handleClick}
-            className="mt-4"
-          >
-            Conheça os Mentores
-          </MentorixButton>
+          <Link to="/lista-mentores">
+            <MentorixButton color={"terciary-200"} className="mt-4">
+              Conheça os Mentores
+            </MentorixButton>
+          </Link>
         </TextContainer>
         <ImageContainer>
           <img

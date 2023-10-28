@@ -113,12 +113,12 @@ function Footer() {
 
           <IconLink>
             <CaretRight size={24} color={theme["terciary-200"]} weight="fill" />
-            <a href="/mentores">Mentores</a>
+            <a href="/lista-mentores">Mentores</a>
           </IconLink>
 
           <IconLink>
             <CaretRight size={24} color={theme["terciary-200"]} weight="fill" />
-            <a href="#contato">Contato</a>
+            <a href="#contact">Contato</a>
           </IconLink>
         </Column>
 

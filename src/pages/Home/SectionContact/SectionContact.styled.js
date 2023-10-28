@@ -7,7 +7,7 @@ export const Container = styled(ContentContainer)`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 60px 0;
+  padding: 40px 0;
 `;
 
 export const ContactContainer = styled.div`
@@ -16,7 +16,7 @@ export const ContactContainer = styled.div`
   justify-content: center;
   background-color: ${(p) => p.theme["background-dark"]};
   color: ${(p) => p.theme["secondary-50"]};
-  padding: 80px;
+  padding: 50px;
 
   h1 {
     color: ${(p) => p.theme["blue-gray-50"]};
@@ -56,12 +56,12 @@ export const Card = styled.div`
   border-radius: 10px;
   color: ${(p) => p.theme["blue-gray-50"]};
   display: flex;
-  flex-direction: column; /* Alinha o conteúdo verticalmente */
-  justify-content: space-between; /* Espaço igual entre os elementos internos */
-  align-items: center; /* Alinha o conteúdo horizontalmente */
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   width: 250px;
-  height: 250px; /* Ajuste a altura como desejado */
-  min-height: 250px; /* Evita que os cartões se tornem menores do que o desejado */
+  height: 260px;
+  min-height: 260px;
 
   h4 {
     color: ${(p) => p.theme["green-500"]};
