@@ -9,7 +9,7 @@ export const FooterContainer = styled.footer`
   padding: 50px;
 
   h2 {
-    color: ${(p) => p.theme["secondary-300"]};
+    color: ${(p) => p.theme["secondary-600"]};
     line-height: normal;
     letter-spacing: -0.48px;
   }
@@ -33,12 +33,11 @@ export const Column = styled.div`
 export const IconLink = styled.div`
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 
   a {
     display: flex;
     align-items: center;
-    margin: 10px 0; /* Adicione espaço acima e abaixo do elemento Link */
     color: ${(p) => p.theme["blue-gray-100"]} !important;
     font-family: Open Sans;
     text-decoration: none;
