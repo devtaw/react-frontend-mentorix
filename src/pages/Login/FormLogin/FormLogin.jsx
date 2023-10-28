@@ -2,9 +2,10 @@ import { Envelope, Lock } from "@phosphor-icons/react";
 import React, { useState } from "react";
 import { InputGroup, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-// import { User } from "@phosphor-icons/react";
+import { SpanEsqueceuSenha } from "./FormLogin.styled";
+import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
 
-export default function FormLogin({ usuario, setUsuario, senha, setSenha }) {
+export default function FormLogin({ email, setEmail, senha, setSenha }) {
   // const [email, setEmail] = useState('')
   // const [senha, setSenha] = useState('')
 
@@ -59,7 +60,11 @@ export default function FormLogin({ usuario, setUsuario, senha, setSenha }) {
         />
       </InputGroup>
 
-      {/* <span className='spanSenha'>Esqueceu sua senha?</span> */}
+      <MentorixButton onClick={handleLogin}>Entrar</MentorixButton>
+
+      <SpanEsqueceuSenha className="spanSenha">
+        <p>Esqueceu sua senha? Entre em contato com suporte@mentorix.com</p>
+      </SpanEsqueceuSenha>
     </div>
   );
 }
