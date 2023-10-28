@@ -21,27 +21,27 @@ export const TextContainer = styled.div`
 
   H1 {
     font-family: "Open Sans", sans-serif;
-    color: #313391;
-    padding: 5px 10px; /* Ajuste o valor de preenchimento conforme necessário */
-    display: inline-block; /* Torna o elemento um bloco inline */
-    width: auto; /* A largura se ajustará automaticamente ao conteúdo */
+    color: ${(p) => p.theme["blue-a400"]};
+    padding: 5px 10px;
+    display: inline-block;
+    width: auto;
   }
 
   h3 {
     font-family: "Open Sans", sans-serif;
-    color: #313391;
-    padding: 5px 10px; /* Ajuste o valor de preenchimento conforme necessário */
-    display: inline-block; /* Torna o elemento um bloco inline */
-    width: auto; /* A largura se ajustará automaticamente ao conteúdo */
+    color: ${(p) => p.theme["blue-a400"]};
+    padding: 5px 10px;
+    display: inline-block;
+    width: auto;
   }
 
   h6 {
     font-family: "Open Sans", sans-serif;
     background-color: ${(p) => p.theme["primary-400"]};
-    color: ${(p) => p.theme["terciary-a100"]};
-    padding: 5px 10px; /* Ajuste o valor de preenchimento conforme necessário */
-    display: inline-block; /* Torna o elemento um bloco inline */
-    width: auto; /* A largura se ajustará automaticamente ao conteúdo */
+    color: ${(p) => p.theme["background-light"]};
+    padding: 5px 10px;
+    display: inline-block;
+    width: auto;
   }
 `;
 export const ImageContainer = styled.div`

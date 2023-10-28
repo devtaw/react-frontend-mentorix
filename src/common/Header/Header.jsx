@@ -55,21 +55,27 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to="#cadastro" className="link">
-                CADASTRO
+              <Link to="./login" className="link">
+                LOGIN
               </Link>
             </li>
 
             <li>
-              <MentorixButton color={"terciary-200"} onClick={handleOpenLoginModal}>
-                LOGIN
+              <MentorixButton
+                color={"terciary-200"}
+                onClick={handleOpenLoginModal}
+              >
+                Criar conta
               </MentorixButton>
             </li>
           </ul>
         </nav>
       </StyleHeader>
 
-      <LoginModal isOpen={isLoginModalOpen} onClose={handleCloseLoginModal}></LoginModal>
+      <LoginModal
+        isOpen={isLoginModalOpen}
+        onClose={handleCloseLoginModal}
+      ></LoginModal>
     </>
   );
 };

@@ -10,7 +10,14 @@ import {
   CopyrightText,
   IconLink,
 } from "./Footer.styled";
-import { CaretRight, Envelope, FacebookLogo, InstagramLogo, LinkedinLogo, WhatsappLogo } from "@phosphor-icons/react";
+import {
+  CaretRight,
+  Envelope,
+  FacebookLogo,
+  InstagramLogo,
+  LinkedinLogo,
+  WhatsappLogo,
+} from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 import { TextH2, TextBody } from "../typography";
 import { useTheme } from "styled-components";
@@ -29,20 +36,45 @@ function Footer() {
             <Logo src={logoImg} />
 
             <Description>
-              Plataforma gratuita que conecta de forma simples e rápida mentores a pessoas que desejam ser mentoradas
+              Plataforma gratuita que conecta de forma simples e rápida mentores
+              a pessoas que desejam ser mentoradas
             </Description>
 
             <TextH2> siga a gente </TextH2>
 
             <SocialIcons>
-              <a href="link-do-facebook">
-                <FacebookLogo size={24} color={theme["terciary-200"]} weight="fill" />
+              <a
+                href="https://pt-br.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FacebookLogo
+                  size={24}
+                  color={theme["terciary-200"]}
+                  weight="fill"
+                />
               </a>
-              <a href="link-do-instagram">
-                <InstagramLogo size={24} color={theme["terciary-200"]} weight="fill" />
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <InstagramLogo
+                  size={24}
+                  color={theme["terciary-200"]}
+                  weight="fill"
+                />
               </a>
-              <a href="link-do-linkedin">
-                <LinkedinLogo size={24} color={theme["terciary-200"]} weight="fill" />
+              <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkedinLogo
+                  size={24}
+                  color={theme["terciary-200"]}
+                  weight="fill"
+                />
               </a>
             </SocialIcons>
           </div>
@@ -52,8 +84,13 @@ function Footer() {
           <div>
             <TextH2> endereço </TextH2>
             <p>R. Emiliano, 174 - Centro, Curitiba - PR, 80010-050</p>
-          </div>
-          <div>
+            <a
+              href="https://www.google.com/maps?q=R.+Emiliano,174,Centro,Curitiba,PR,80010-050"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver no Google Maps
+            </a>
             <TextH2> horário de atendimento </TextH2>
             <OpeningHours>
               <p>Segunda a sexta, 8h às 17h</p>
@@ -71,7 +108,7 @@ function Footer() {
 
           <IconLink>
             <CaretRight size={24} color={theme["terciary-200"]} weight="fill" />
-            <a href="/sobre">Sobre Nós</a>
+            <a href="#About">Sobre Nós</a>
           </IconLink>
 
           <IconLink>
@@ -81,30 +118,40 @@ function Footer() {
 
           <IconLink>
             <CaretRight size={24} color={theme["terciary-200"]} weight="fill" />
-            <a href="/contato">Contato</a>
+            <a href="#contato">Contato</a>
           </IconLink>
         </Column>
 
         <Column>
           <TextH2> precisa de ajuda?</TextH2>
           <div className="icon-link">
-            <Envelope size={24} color={theme["terciary-200"]} weight="fill" />
-            <TextBody variant="body-sm" className="m-0">
-              suporte@mentorix.com.br
-            </TextBody>
+            <a href="mailto:suporte@mentorix.com.br">
+              <Envelope size={24} color={theme["terciary-200"]} weight="fill" />
+              <TextBody variant="body-sm" className="m-0">
+                suporte@mentorix.com.br
+              </TextBody>
+            </a>
           </div>
           <div className="icon-link">
-            <WhatsappLogo size={24} color={theme["terciary-200"]} weight="fill" />
-            <TextBody variant="body-sm" className="m-0">
-              (41) 9 1234-5678
-            </TextBody>
+            <a href="tel:+41412345678">
+              <WhatsappLogo
+                size={24}
+                color={theme["terciary-200"]}
+                weight="fill"
+              />
+              <TextBody variant="body-sm" className="m-0">
+                (41) 9 1234-5678
+              </TextBody>
+            </a>
           </div>
         </Column>
       </div>
       <img src={gradFooterImg} alt="Separador Gradiente" />
       <Column>
         <CopyrightInfo>
-          <CopyrightText>&copy; 2023 Mentorix | Todos os direitos reservados</CopyrightText>
+          <CopyrightText>
+            &copy; 2023 Mentorix | Todos os direitos reservados
+          </CopyrightText>
           <div className="d-flex">
             <TextBody variant="body-sm">desenvolvido por</TextBody>
             <img src={squadImg} alt="Squad 4" />
