@@ -4,7 +4,7 @@ import { useState } from "react";
 import FormLogin from "./FormLogin/FormLogin";
 import { useNavigate } from "react-router-dom";
 
-export function LoginModal({ isOpen, onClose }) {
+export function Login({ isOpen, onClose }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [usuario, setUsuario] = useState("");
   const [senha, setSenha] = useState("");
