@@ -5,11 +5,11 @@ export const FooterContainer = styled.footer`
   flex-direction: column;
   justify-content: space-between;
   background-color: #1b2336;
-  color: ${(p) => p.theme["blue-gray-500"]};
+  color: ${(p) => p.theme["blue-gray-100"]};
   padding: 50px;
 
   h2 {
-    color: ${(p) => p.theme["secondary-400"]};
+    color: ${(p) => p.theme["secondary-300"]};
     line-height: normal;
     letter-spacing: -0.48px;
   }
@@ -26,7 +26,7 @@ export const Column = styled.div`
   .icon-link {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
   }
 `;
 
@@ -39,7 +39,7 @@ export const IconLink = styled.div`
     display: flex;
     align-items: center;
     margin: 10px 0; /* Adicione espaço acima e abaixo do elemento Link */
-    color: ${(p) => p.theme["blue-gray-500"]} !important;
+    color: ${(p) => p.theme["blue-gray-100"]} !important;
     font-family: Open Sans;
     text-decoration: none;
   }
@@ -57,6 +57,7 @@ export const Description = styled.p`
   height: 90px;
   flex-direction: column;
   justify-content: flex-end;
+  color: ${(p) => p.theme["blue-gray-100"]};
 `;
 
 export const SocialIcons = styled.div`
@@ -85,8 +86,7 @@ export const OpeningHours = styled.div`
 export const Link = styled.a`
   display: flex;
   align-items: center;
-  margin: 10px 0; /* Adicione espaço acima e abaixo do elemento Link */
-  /* color: ${(p) => p.theme["blue-gray-500"]} !important; */
+  margin: 10px 0;
   font-family: Open Sans;
   text-decoration: none;
 `;
