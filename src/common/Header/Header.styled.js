@@ -5,6 +5,7 @@ export const StyleHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 25px 25px;
+  background-color: #f7fdff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
   .logo {
@@ -22,7 +23,8 @@ export const StyleHeader = styled.header`
 
   .link {
     text-decoration: none;
-    color: ${(p) => p.theme["secondary-300"]};
+    /* color: ${(p) => p.theme["secondary-300"]}; */
+    color: #4527a0 !important;
     font-family: "Open Sans", sans-serif;
     font-size: 18.72px;
     font-weight: 700;

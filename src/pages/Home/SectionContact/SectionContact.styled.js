@@ -14,7 +14,8 @@ export const ContactContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: url(../src/assets/img/section-contato1.png);
+  /* background-image: url("src/assets/img/section-contato1.png"); */
+  background-color: ${(p) => p.theme["background-dark"]};
   color: ${(p) => p.theme["secondary-50"]};
   padding: 80px;
 
