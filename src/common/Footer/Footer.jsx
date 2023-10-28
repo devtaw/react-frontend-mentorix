@@ -19,7 +19,7 @@ import {
   WhatsappLogo,
 } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
-import { TextH2, TextBody } from "../typography";
+import { TextH2, TextBody, TextH4 } from "../typography";
 import { useTheme } from "styled-components";
 import logoImg from "../../assets/img/logo-footer.png";
 import squadImg from "../../assets/img/logoSquad4-footer.png";
@@ -27,6 +27,11 @@ import gradFooterImg from "../../assets/img/gradiente-footer.png";
 
 function Footer() {
   const theme = useTheme();
+
+  const linkStyle = {
+    textDecoration: "none",
+    color: theme["white"],
+  };
 
   return (
     <FooterContainer>
@@ -83,13 +88,15 @@ function Footer() {
         <Column>
           <div>
             <TextH2> endereço </TextH2>
+
             <p>R. Emiliano, 174 - Centro, Curitiba - PR, 80010-050</p>
             <a
               href="https://www.google.com/maps?q=R.+Emiliano,174,Centro,Curitiba,PR,80010-050"
               target="_blank"
               rel="noopener noreferrer"
+              style={{ textDecoration: "none" }}
             >
-              Ver no Google Maps
+              <TextH4>Ver no Google Maps</TextH4>
             </a>
             <TextH2> horário de atendimento </TextH2>
             <OpeningHours>
@@ -103,29 +110,42 @@ function Footer() {
           <TextH2> mapa do site </TextH2>
           <IconLink>
             <CaretRight size={24} color={theme["terciary-200"]} weight="fill" />
-            <a href="/">Home</a>
+            <Link to="/" style={linkStyle}>
+              Home
+            </Link>
           </IconLink>
 
           <IconLink>
             <CaretRight size={24} color={theme["terciary-200"]} weight="fill" />
-            <a href="#About">Sobre Nós</a>
+            <Link to="#About" style={linkStyle}>
+              Sobre Nós
+            </Link>
           </IconLink>
 
           <IconLink>
             <CaretRight size={24} color={theme["terciary-200"]} weight="fill" />
-            <a href="/lista-mentores">Mentores</a>
+            <Link to="/lista-mentores" style={linkStyle}>
+              Mentores
+            </Link>
           </IconLink>
 
           <IconLink>
             <CaretRight size={24} color={theme["terciary-200"]} weight="fill" />
-            <a href="#contact">Contato</a>
+            <Link to="#contact" style={linkStyle}>
+              Contato
+            </Link>
           </IconLink>
         </Column>
 
         <Column>
           <TextH2> precisa de ajuda?</TextH2>
           <div className="icon-link">
-            <a href="mailto:suporte@mentorix.com.br">
+            <a
+              href="mailto:suporte@mentorix.com.br"
+              style={{ textDecoration: "none", color: theme["blue-gray-50"] }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Envelope size={24} color={theme["terciary-200"]} weight="fill" />
               <TextBody variant="body-sm" className="m-0">
                 suporte@mentorix.com.br
@@ -133,7 +153,12 @@ function Footer() {
             </a>
           </div>
           <div className="icon-link">
-            <a href="tel:+41412345678">
+            <a
+              href="tel:+41412345678"
+              style={{ textDecoration: "none", color: theme["blue-gray-50"] }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <WhatsappLogo
                 size={24}
                 color={theme["terciary-200"]}
