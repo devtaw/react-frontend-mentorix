@@ -48,7 +48,7 @@ export function FormCadastro({ onSave }) {
       <label>Nome Completo</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
-          <User size={16} color="#4d0057" weight="fill" />
+          <User size={16} color="#673AB7" weight="fill" />
         </InputGroup.Text>
         <Form.Control
           type="text"
@@ -66,7 +66,7 @@ export function FormCadastro({ onSave }) {
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
           {/* Aqui adiciona ícone do span */}
-          <Envelope size={16} color="#4d0057" weight="fill" />
+          <Envelope size={16} color="#673AB7" weight="fill" />
         </InputGroup.Text>
         <Form.Control
           type="email"
@@ -83,7 +83,7 @@ export function FormCadastro({ onSave }) {
       <label>Senha</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
-          <Password size={16} color="#4d0057" weight="fill" />
+          <Password size={16} color="#673AB7" weight="fill" />
         </InputGroup.Text>
         <Form.Control
           type="password"
@@ -100,7 +100,7 @@ export function FormCadastro({ onSave }) {
       <label>Confirmação senha</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
-          <Password size={16} color="#4d0057" weight="fill" />
+          <Password size={16} color="#673AB7" weight="fill" />
         </InputGroup.Text>
         <Form.Control
           type="password"
@@ -117,7 +117,7 @@ export function FormCadastro({ onSave }) {
       <label>Foto de perfil</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
-          <Image size={16} color="#4d0057" weight="fill" />
+          <Image size={16} color="#673AB7" weight="fill" />
         </InputGroup.Text>
         <Form.Control
           type="text"
@@ -134,7 +134,7 @@ export function FormCadastro({ onSave }) {
       <label>Biografia</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
-          <BookOpenText size={16} color="#4d0057" weight="fill" />
+          <BookOpenText size={16} color="#673AB7" weight="fill" />
         </InputGroup.Text>
         <Form.Control
           type="text"
@@ -151,7 +151,7 @@ export function FormCadastro({ onSave }) {
       <label>LinkedIn</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
-          <LinkedinLogo size={16} color="#4d0057" weight="fill" />
+          <LinkedinLogo size={16} color="#673AB7" weight="fill" />
         </InputGroup.Text>
         <Form.Control
           type="text"
@@ -168,7 +168,7 @@ export function FormCadastro({ onSave }) {
       <label>Profissão</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
-          <Desktop size={16} color="#4d0057" weight="fill" />
+          <Desktop size={16} color="#673AB7" weight="fill" />
         </InputGroup.Text>
         <Form.Control
           placeholder="Profissão"
