@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { MentorixModal } from "../../../common/MentorixModal/MentorixModal";
 import { Form } from "react-bootstrap";
 import { useSnackbar } from "notistack";
+import { postAgendamento } from "../../../common/services/AgendamentoService";
 
-export function ModalAgendamento({ isModalOpen, onClose = () => null }) {
+export function ModalAgendamento({ isModalOpen, idMentor, onClose = () => null }) {
   const [nomeCompleto, setNomeCompleto] = useState("");
   const [email, setEmail] = useState("");
   const [profissao, setProfissao] = useState("");
@@ -15,13 +16,37 @@ export function ModalAgendamento({ isModalOpen, onClose = () => null }) {
     onClose();
   }
 
-  function handleModalSave() {
+  async function handleModalSave() {
     // valida o formulario
     if (!isFormValid()) {
       return;
     }
 
-    onClose();
+    try {
+      const dados = {
+        nomeCompleto,
+        email,
+        profissao,
+        campoMensagem: mensagem,
+        mentor_id: idMentor,
+      };
+
+      const agendamentoCadastrado = await postAgendamento(dados);
+
+      if (agendamentoCadastrado) {
+        snackbar.enqueueSnackbar("SolicitaçAo de Agendamento realizado com sucesso", {
+          variant: "success",
+        });
+      }
+
+      onClose();
+    } catch (error) {
+      console.error(error);
+      snackbar.enqueueSnackbar("Erro ao realizar SolicitaçAo de agendamento, tente novamente mais tarde.", {
+        variant: "error",
+      });
+      onClose();
+    }
   }
 
   function isFormValid() {
