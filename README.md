@@ -12,9 +12,7 @@
 
 - [Descrição do projeto](#descrição-page_facing_up)
 
-- [Funcionalidades do projeto](#funcionalidades-hammer_and_wrench)
-
-- [Técnicas e tecnologias utilizadas no projeto](#técnicas-e-tecnologias-utilizadas-desktop_computer)
+- [Tecnologias utilizadas no projeto](#técnicas-e-tecnologias-utilizadas-desktop_computer)
 
 - [Paleta de Cores utilizada no projeto](#paleta-de-cores-art)
 
