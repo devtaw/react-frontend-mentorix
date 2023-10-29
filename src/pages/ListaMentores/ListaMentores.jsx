@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ContainerList, ContentSection, SpanTitle, TextDescription, Title, Container } from "./ListaMentores.styled";
 import { CardMentor } from "./CardMentor/CardMentor";
 import { useQuery } from "@tanstack/react-query";
-import { getMentores } from "../../common/services/MentorService";
+import { getMentores, getMentoresEspecialidades } from "../../common/services/MentorService";
 import Header from "../../common/Header/Header";
 import Footer from "../../common/Footer/Footer";
 import { TextBody } from "../../common/typography";
@@ -17,6 +17,20 @@ export function ListaMentores() {
     //aqui se passa função q busca dados na API p/ propriedade queryFN p/ q react-query possa gerenciar estado dessa requisição
     queryFn: getMentores,
   });
+
+  const mentoresEspecialidadesQuery = useQuery({
+    queryKey: ["lista-mentores-especialidades"],
+    //aqui se passa função q busca dados na API p/ propriedade queryFN p/ q react-query possa gerenciar estado dessa requisição
+    queryFn: getMentoresEspecialidades,
+  });
+
+  // cria mapa de mentor_id para especialidades
+  const mentorEspecialidadesMap = new Map(
+    mentoresEspecialidadesQuery.data?.map((mentorEspecialidade) => [
+      mentorEspecialidade.mentor_id,
+      mentorEspecialidade.especialidades,
+    ])
+  );
 
   //função que será chamada quando user clicar no botão do card mentor
   function handleClickCardMentor() {
@@ -45,7 +59,7 @@ export function ListaMentores() {
                   urlFoto={mentor.fotoPerfil}
                   nome={mentor.nomeCompleto}
                   biografia={mentor.biografia}
-                  especialidades={[]}
+                  especialidades={mentorEspecialidadesMap.get(mentor.id) || []}
                   onClick={handleClickCardMentor}
                 />
               </div>
