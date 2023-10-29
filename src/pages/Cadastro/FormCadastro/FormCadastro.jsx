@@ -37,10 +37,6 @@ export default function FormCadastro() {
           value={nome}
           onChange={(e) => {
             setNome(e.target.value);
-
-            if (nome.length == 0) {
-              alert("Esse campo não pode estar vazio!");
-            }
           }}
         />
       </InputGroup>
@@ -74,10 +70,6 @@ export default function FormCadastro() {
           value={senha}
           onChange={(e) => {
             setSenha(e.target.value);
-
-            if (senha.length < 6) {
-              alert("A senha deve ter no mínimo 6 dígitos!");
-            }
           }}
         />
       </InputGroup>
@@ -94,10 +86,6 @@ export default function FormCadastro() {
           value={confirmaSenha}
           onChange={(e) => {
             setSenha(e.target.value);
-
-            if (confirmaSenha !== senha) {
-              alert("As senhas devem ser iguais");
-            }
           }}
         />
       </InputGroup>
