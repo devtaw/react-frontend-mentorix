@@ -159,7 +159,7 @@ export default function FormCadastro({ handleCadastro }) {
         />
       </InputGroup>
 
-      <MentorixButton onClick={handleCadastro}>Cadastrar</MentorixButton>
+      <MentorixButton onSave={handleCadastro}>Cadastrar</MentorixButton>
     </div>
   );
 }
