@@ -13,7 +13,7 @@ import { useState } from "react";
 import { InputGroup, Form } from "react-bootstrap";
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
 
-export default function FormCadastro() {
+export default function FormCadastro({ handleCadastro }) {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -37,10 +37,6 @@ export default function FormCadastro() {
           value={nome}
           onChange={(e) => {
             setNome(e.target.value);
-
-            if (nome.length == 0) {
-              alert("Esse campo não pode estar vazio!");
-            }
           }}
         />
       </InputGroup>
@@ -74,10 +70,6 @@ export default function FormCadastro() {
           value={senha}
           onChange={(e) => {
             setSenha(e.target.value);
-
-            if (senha.length < 6) {
-              alert("A senha deve ter no mínimo 6 dígitos!");
-            }
           }}
         />
       </InputGroup>
@@ -93,11 +85,7 @@ export default function FormCadastro() {
           aria-describedby="inputGroup-sizing-default"
           value={confirmaSenha}
           onChange={(e) => {
-            setSenha(e.target.value);
-
-            if (confirmaSenha !== senha) {
-              alert("As senhas devem ser iguais");
-            }
+            setConfirmaSenha(e.target.value);
           }}
         />
       </InputGroup>
@@ -112,6 +100,9 @@ export default function FormCadastro() {
           aria-label="Photo"
           aria-describedby="inputGroup-sizing-default"
           value={fotoPerfil}
+          onChange={(e) => {
+            setFotoPerfil(e.target.value);
+          }}
         />
       </InputGroup>
 
@@ -125,6 +116,9 @@ export default function FormCadastro() {
           aria-label="Biography"
           aria-describedby="inputGroup-sizing-default"
           value={biografia}
+          onChange={(e) => {
+            setBiografia(e.target.value);
+          }}
         />
       </InputGroup>
 
@@ -138,6 +132,9 @@ export default function FormCadastro() {
           aria-label="LinkedIn"
           aria-describedby="inputGroup-sizing-default"
           value={linkedin}
+          onChange={(e) => {
+            setLinkedin(e.target.value);
+          }}
         />
       </InputGroup>
 
@@ -151,6 +148,7 @@ export default function FormCadastro() {
           aria-label="Occupation"
           aria-describedby="inputGroup-sizing-default"
           value={profissao}
+          onChange={(e) => setProfissao(e.target.value)}
         />
       </InputGroup>
 

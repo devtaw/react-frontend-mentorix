@@ -57,7 +57,7 @@ function Footer() {
           <div>
             <TextH2> Endereço </TextH2>
 
-            <p>R. Emiliano, 174 - Centro, Curitiba - PR, 80010-050</p>
+            <p className="mb-1">R. Emiliano, 174 - Centro, Curitiba - PR, 80010-050</p>
             <a
               href="https://www.google.com/maps?q=R.+Emiliano,174,Centro,Curitiba,PR,80010-050"
               target="_blank"
@@ -68,7 +68,7 @@ function Footer() {
             </a>
             <TextH2> Horário de atendimento </TextH2>
             <OpeningHours>
-              <p>Segunda a sexta, 8h às 17h</p>
+              <p className="mb-1">Segunda a sexta, 8h às 17h</p>
               <p>Sábado, domingo e feriado, 8h às 12h</p>
             </OpeningHours>
           </div>
@@ -107,10 +107,16 @@ function Footer() {
 
         <Column>
           <TextH2> Precisa de ajuda?</TextH2>
-          <div className="icon-link">
+          <div className="icon-link mb-1">
             <a
               href="mailto:suporte@mentorix.com.br"
-              style={{ textDecoration: "none", color: theme["blue-gray-50"] }}
+              style={{
+                textDecoration: "none",
+                color: theme["blue-gray-50"],
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+              }}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -123,7 +129,13 @@ function Footer() {
           <div className="icon-link">
             <a
               href="tel:+41412345678"
-              style={{ textDecoration: "none", color: theme["blue-gray-50"] }}
+              style={{
+                textDecoration: "none",
+                color: theme["blue-gray-50"],
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+              }}
               target="_blank"
               rel="noopener noreferrer"
             >
