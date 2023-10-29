@@ -12,7 +12,7 @@
 
 - [Descrição do projeto](#descrição-page_facing_up)
 
-- [Tecnologias utilizadas](#Tecnologias-desktop_computer)     
+- [Tecnologias utilizadas](#tecnologias)
 
 - [Paleta de Cores utilizada no projeto](#paleta-de-cores-art)
 
@@ -24,7 +24,7 @@
 
 - [Deploy](#deploy)
 
--[Apresentação](#apresentação)
+- [Apresentação](#apresentação)
 
 - [Desenvolvedores do projeto](#desenvolvedores-octocat)
 
@@ -43,7 +43,7 @@ Desenvolvimento do Front-End que vai consumir todos os endpoints criados para a 
 
 <b>(https://react-frontend-mentorix.vercel.app/):</b>
 
-## Tecnologias utilizadas :desktop_computer:
+## Tecnologias utilizadas 
 
 Node.js //React + Vite// Postman
 
