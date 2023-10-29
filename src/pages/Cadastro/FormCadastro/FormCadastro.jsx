@@ -100,7 +100,7 @@ export default function FormCadastro({ handleCadastro }) {
           <Image size={16} color="#4d0057" weight="fill" />
         </InputGroup.Text>
         <Form.Control
-          type="file"
+          type="text"
           placeholder="Foto de perfil"
           aria-label="Photo"
           aria-describedby="inputGroup-sizing-default"
@@ -159,7 +159,7 @@ export default function FormCadastro({ handleCadastro }) {
         />
       </InputGroup>
 
-      <MentorixButton>Cadastrar</MentorixButton>
+      <MentorixButton onClick={handleCadastro}>Cadastrar</MentorixButton>
     </div>
   );
 }
