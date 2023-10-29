@@ -7,3 +7,8 @@ export async function getMentores() {
 export async function getMentoresEspecialidades() {
   return httpClient.get("/mentor-especialidades").then((response) => response.data);
 }
+
+export async function postMentores(body) {
+  const resposta = await httpClient.post("/mentores", body);
+  return resposta.data;
+}

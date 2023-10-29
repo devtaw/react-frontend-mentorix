@@ -1,35 +1,43 @@
 import React from "react";
-import { useState } from "react";
-import { MentorixModal } from "../../common/MentorixModal/MentorixModal";
-import FormCadastro from "./FormCadastro/FormCadastro";
+import { FormCadastro } from "./FormCadastro/FormCadastro";
 import Header from "../../common/Header/Header";
 import Footer from "../../common/Footer/Footer";
+import { useNavigate } from "react-router";
+import { useSnackbar } from "notistack";
+import { postMentores } from "../../common/services/MentorService";
+import { Container } from "react-bootstrap";
 
-export function Cadastro({ isOpen, onClose }) {
-  // const handleCadastro = async () => {
-  //   e.preventDefault()
+export function Cadastro() {
+  const navigate = useNavigate();
+  const snackbar = useSnackbar();
 
-  //   const body = {
-  //     nomeCompleto,
-  //     email,
-  //     senha,
-  //     confirmaSenha,
-  //     fotoPerfil,
-  //     biografia,
-  //     linkedin,
-  //     profissao
-  //   }
-
-  //   if (senha === confirmaSenha) {
-  //     const resposta = await postMentores(body)
-  //   }
-  // }
+  const handleCadastro = async (body) => {
+    try {
+      const resposta = await postMentores(body);
+      if (resposta) {
+        // todo: chamar notificação de sucesso, redirecionar para área mentor
+        snackbar.enqueueSnackbar("Usuário cadastrado com sucesso!", {
+          variant: "success",
+        });
+        navigate("/area-mentor");
+        return;
+      }
+    } catch (error) {
+      // todo: chamar notificação de erro
+      snackbar.enqueueSnackbar("Erro ao cadastrar usuário!", {
+        variant: "error",
+      });
+      console.log(error);
+    }
+  };
 
   return (
-    <div>
+    <>
       <Header />
-      <FormCadastro />
+      <Container>
+        <FormCadastro onSave={handleCadastro} />
+      </Container>
       <Footer />
-    </div>
+    </>
   );
 }
