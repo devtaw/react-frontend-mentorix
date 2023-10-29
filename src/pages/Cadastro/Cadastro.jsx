@@ -29,17 +29,6 @@ export function Cadastro() {
     }
   };
 
-  const body = {
-    nomeCompleto,
-    email,
-    senha,
-    confirmaSenha,
-    fotoPerfil,
-    biografia,
-    linkedin,
-    profissao,
-  };
-
   return (
     <div>
       <Header />
