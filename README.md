@@ -37,7 +37,7 @@ Desenvolvimento do Front-End que vai consumir todos os endpoints criados para a 
 
 <p align="justify"> O site <b>Mentorix</b> foi desenvolvido para a avaliação "Projeto em Grupo -  Ligando as Peças” do "Módulo 5: Frameworks, bibliotecas, tecnologias client-side/front-end + Postura profissional e Inovação" do curso de formação <b>WebDev Full Stack JavaScript</b> da Resilia Educação em parceria com o programa "Códigos do Amanhã" da <b>EBANX</b>.</p>
 
-<b>Link para acessar o site:</b>
+<b>https://react-frontend-mentorix.vercel.app/:</b>
 
 ## Tecnologias utilizadas :desktop_computer:
 
@@ -105,6 +105,8 @@ npm run dev
 
 - Front-end - Vercel clique [aqui](https://react-frontend-mentorix.vercel.app/).
 
+## Apresentação :open_file_folder:
+Para ver a apresentação clique [aqui](https://www.canva.com/design/DAFyV38apvc/wmOX6JuP8HcggBEUTq9wNA/view?utm_content=DAFyV38apvc&utm_campaign=designshare&utm_medium=link&utm_source=recording_view).
 
 ## Desenvolvedores :octocat:
 
@@ -114,7 +116,7 @@ npm run dev
       <a href="#">
         <img src="./src/assets/img/Daniela.png" width="100px;" alt="Foto de perfil - Daniela"/><br>
         <sub>
-          <b>Daniela Silva (Dani)</b>
+          <b>Daniela Silva</b>
         </sub>
       </a>
     </td>
@@ -127,7 +129,7 @@ npm run dev
       <a href="#">
         <img src="./src/assets/img/felipe .JPG" width="100px;" alt="Foto de perfil - Felipe"/><br>
         <sub>
-          <b>Felipe Gomes (Jefferson Caminhões)</b>
+          <b>Felipe Gomes</b>
         </sub>
       </a>
     </td>
@@ -140,7 +142,7 @@ npm run dev
       <a href="#">
         <img src="./src/assets/img/jéssica .JPG" width="100px;" alt="Foto de perfil - Jéssica"/><br>
         <sub>
-          <b>Jéssica dos Santos (Jéssi)</b>
+          <b>Jéssica dos Santos </b>
         </sub>
       </a>
     </td>
@@ -153,7 +155,7 @@ npm run dev
       <a href="#">
         <img src="./src/assets/img/taw .JPG" width="100px;" alt="Foto de perfil - Tawany"/><br>
         <sub>
-          <b>Tawany Simões (Taw)</b>
+          <b>Tawany Simões</b>
         </sub>
       </a>
     </td>
