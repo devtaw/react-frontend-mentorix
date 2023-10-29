@@ -1,16 +1,17 @@
 import React from "react";
-import FormCadastro from "./FormCadastro/FormCadastro";
+import { FormCadastro } from "./FormCadastro/FormCadastro";
 import Header from "../../common/Header/Header";
 import Footer from "../../common/Footer/Footer";
 import { useNavigate } from "react-router";
 import { useSnackbar } from "notistack";
+import { postMentores } from "../../common/services/MentorService";
+import { Container } from "react-bootstrap";
 
 export function Cadastro() {
-  const handleCadastro = async () => {
-    e.preventDefault();
-    const navigate = useNavigate();
-    const snackbar = useSnackbar();
+  const navigate = useNavigate();
+  const snackbar = useSnackbar();
 
+  const handleCadastro = async (body) => {
     try {
       const resposta = await postMentores(body);
       if (resposta) {
@@ -26,14 +27,17 @@ export function Cadastro() {
       snackbar.enqueueSnackbar("Erro ao cadastrar usuário!", {
         variant: "error",
       });
+      console.log(error);
     }
   };
 
   return (
-    <div>
+    <>
       <Header />
-      <FormCadastro />
+      <Container>
+        <FormCadastro onSave={handleCadastro} />
+      </Container>
       <Footer />
-    </div>
+    </>
   );
 }
