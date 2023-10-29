@@ -12,6 +12,8 @@ import React from "react";
 import { useState } from "react";
 import { InputGroup, Form } from "react-bootstrap";
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
+import { useSnackbar } from "notistack";
+import { useNavigate } from "react-router";
 
 export default function FormCadastro({ handleCadastro }) {
   const [nome, setNome] = useState("");
@@ -22,6 +24,16 @@ export default function FormCadastro({ handleCadastro }) {
   const [biografia, setBiografia] = useState("");
   const [linkedin, setLinkedin] = useState("");
   const [profissao, setProfissao] = useState("");
+
+  const snackbar = useSnackbar();
+  const navigate = useNavigate();
+  function handlesave() {
+    if (senha !== confirmaSenha) {
+      snackbar.enqueueSnackbar("As senhas devem ser iguais!");
+      return;
+    }
+    onSave(nome, email, senha, fotoPerfil, biografia, linkedin, profissao);
+  }
 
   return (
     <div>
