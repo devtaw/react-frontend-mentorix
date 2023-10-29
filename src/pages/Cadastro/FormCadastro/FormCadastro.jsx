@@ -14,6 +14,7 @@ import { InputGroup, Form } from "react-bootstrap";
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
 import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router";
+import { Container } from "./FormCadastro.styled";
 
 export function FormCadastro({ onSave }) {
   const [nomeCompleto, setNomeCompleto] = useState("");
@@ -44,7 +45,24 @@ export function FormCadastro({ onSave }) {
   }
 
   return (
-    <div>
+    <Container>
+      <label>Foto de perfil</label>
+      <InputGroup className="mb-3">
+        <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
+          <Image size={16} color="#673AB7" weight="fill" />
+        </InputGroup.Text>
+        <Form.Control
+          type="text"
+          placeholder="Foto de perfil"
+          aria-label="Photo"
+          aria-describedby="inputGroup-sizing-default"
+          value={fotoPerfil}
+          onChange={(e) => {
+            setFotoPerfil(e.target.value);
+          }}
+        />
+      </InputGroup>
+
       <label>Nome Completo</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
@@ -114,19 +132,33 @@ export function FormCadastro({ onSave }) {
         />
       </InputGroup>
 
-      <label>Foto de perfil</label>
+      <label>Profissão</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
-          <Image size={16} color="#673AB7" weight="fill" />
+          <Desktop size={16} color="#673AB7" weight="fill" />
+        </InputGroup.Text>
+        <Form.Control
+          placeholder="Profissão"
+          aria-label="Occupation"
+          aria-describedby="inputGroup-sizing-default"
+          value={profissao}
+          onChange={(e) => setProfissao(e.target.value)}
+        />
+      </InputGroup>
+
+      <label>LinkedIn</label>
+      <InputGroup className="mb-3">
+        <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
+          <LinkedinLogo size={16} color="#673AB7" weight="fill" />
         </InputGroup.Text>
         <Form.Control
           type="text"
-          placeholder="Foto de perfil"
-          aria-label="Photo"
+          placeholder="LinkedIn"
+          aria-label="LinkedIn"
           aria-describedby="inputGroup-sizing-default"
-          value={fotoPerfil}
+          value={linkedin}
           onChange={(e) => {
-            setFotoPerfil(e.target.value);
+            setLinkedin(e.target.value);
           }}
         />
       </InputGroup>
@@ -148,38 +180,7 @@ export function FormCadastro({ onSave }) {
         />
       </InputGroup>
 
-      <label>LinkedIn</label>
-      <InputGroup className="mb-3">
-        <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
-          <LinkedinLogo size={16} color="#673AB7" weight="fill" />
-        </InputGroup.Text>
-        <Form.Control
-          type="text"
-          placeholder="LinkedIn"
-          aria-label="LinkedIn"
-          aria-describedby="inputGroup-sizing-default"
-          value={linkedin}
-          onChange={(e) => {
-            setLinkedin(e.target.value);
-          }}
-        />
-      </InputGroup>
-
-      <label>Profissão</label>
-      <InputGroup className="mb-3">
-        <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
-          <Desktop size={16} color="#673AB7" weight="fill" />
-        </InputGroup.Text>
-        <Form.Control
-          placeholder="Profissão"
-          aria-label="Occupation"
-          aria-describedby="inputGroup-sizing-default"
-          value={profissao}
-          onChange={(e) => setProfissao(e.target.value)}
-        />
-      </InputGroup>
-
       <MentorixButton onClick={handleSave}>Cadastrar</MentorixButton>
-    </div>
+    </Container>
   );
 }
