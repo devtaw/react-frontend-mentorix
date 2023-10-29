@@ -85,7 +85,7 @@ export function SectionContact() {
 
           <Column>
             <Card>
-              <a href="mailto:suporte@mentorix.com.br" style={linkStyle}>
+              <a href="mailto:suporte.mentorix@gmail.com" style={linkStyle}>
                 <SocialIcons className="right-align">
                   <Envelope
                     size={50}
@@ -94,7 +94,7 @@ export function SectionContact() {
                   />
                   <TextH2>E-mail</TextH2>
                   <TextBody variant="body-sm" className="m-0">
-                    suporte@mentorix.com.br
+                    suporte.mentorix@gmail.com
                   </TextBody>
                 </SocialIcons>
               </a>

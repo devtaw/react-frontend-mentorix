@@ -143,7 +143,7 @@ function Footer() {
           <TextH2> precisa de ajuda?</TextH2>
           <div className="icon-link mb-1">
             <a
-              href="mailto:suporte@mentorix.com.br"
+              href="mailto:suporte.mentorix@gmail.com"
               style={{
                 textDecoration: "none",
                 color: theme["blue-gray-50"],
@@ -156,7 +156,7 @@ function Footer() {
             >
               <Envelope size={24} color={theme["terciary-200"]} weight="fill" />
               <TextBody variant="body-sm" className="m-0">
-                suporte@mentorix.com.br
+                suporte.mentorix@gmail.com
               </TextBody>
             </a>
           </div>

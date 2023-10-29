@@ -1,4 +1,4 @@
-<p align="center"><img src="./" width="300px;" alt="Logo - Mentorix"/></p>
+<p align="center"><img src={logoImg} width="300px;" alt="Logo - Mentorix"/></p>
 
 <hr>
 
@@ -12,9 +12,7 @@
 
 - [Descrição do projeto](#descrição-page_facing_up)
 
-- [Funcionalidades do projeto](#funcionalidades-hammer_and_wrench)
-
-- [Técnicas e tecnologias utilizadas no projeto](#técnicas-e-tecnologias-utilizadas-desktop_computer)
+- [Tecnologias utilizadas no projeto](#técnicas-e-tecnologias-utilizadas-desktop_computer)
 
 - [Paleta de Cores utilizada no projeto](#paleta-de-cores-art)
 
@@ -30,6 +28,7 @@
 
 <p align="justify">
 
+O Mentorix é um ambiente que conecta mentores experientes a mentees em busca de orientação e desenvolvimento. Nossa plataforma oferece acesso a uma variedade de mentorias em diversas áreas, abrangendo tecnologia, negócios e desenvolvimento pessoal.
 Desenvolvimento do Front-End que vai consumir todos os endpoints criados para a [API do Módulo 4](https://github.com/devtaw/api-rest-mentorix).
 
 </p>
@@ -40,19 +39,11 @@ Desenvolvimento do Front-End que vai consumir todos os endpoints criados para a 
 
 <b>Link para acessar o site:</b>
 
-## Funcionalidades :hammer_and_wrench:
+## Tecnologias utilizadas :desktop_computer:
 
-1. :white_check_mark: `Funcionalidade 1` Descrição do que a funcionalidade faz;
-2. :white_check_mark: `Funcionalidade 2` Descrição do que a funcionalidade faz;
-3. :white_check_mark: `Funcionalidade 3` Descrição do que a funcionalidade faz;
-4. :white_check_mark: `Funcionalidade 4` Descrição do que a funcionalidade faz;
-5. :white_check_mark: `Funcionalidade 5` Descrição do que a funcionalidade faz;
+Node.js //React + Vite// Postman
 
-## Técnicas e tecnologias utilizadas :desktop_computer:
-
-- Descrição da técnica utilizada
-- Descrição da técnica utilizada
-- Descrição da técnica utilizada
+Dependências: @fortawesome/fontawesome-free // @phosphor-icons/react //@tanstack/react-query // axios // bootstrap//notistack // react // react-bootstrap // react-query // react-router-dom //styled-components
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
@@ -62,7 +53,7 @@ Desenvolvimento do Front-End que vai consumir todos os endpoints criados para a 
 
 ## Paleta de cores :art:
 
-<img src="./" width="500x;" alt="Paleta de Cores do Projeto"/>
+<img src="./src/assets/img/Paleta de cores- Mentorix.png" width="500x;" alt="Paleta de Cores do Projeto"/>
 
 ## Pré-requisitos :warning:
 
@@ -106,13 +97,22 @@ npm run dev
 - Acesse os arquivos de código-fonte clicando [aqui](https://github.com/devtaw/react-frontend-mentorix/tree/main/src).
 - Ou faça o download dos arquivos de código-fonte clicando [aqui](https://github.com/devtaw/react-frontend-mentorix/archive/refs/heads/main.zip).
 
+- Acesse o back-end da aplicação  clicando [aqui](https://github.com/devtaw/api-rest-mentorix).
+
+## Deploy
+
+- Back-end - Google Cloud clique [aqui](https://console.cloud.google.com/sql/instances/mentorix/overview?authuser=1&hl=pt-BR&project=skilled-module-399502)
+
+- Front-end - Vercel clique [aqui](https://react-frontend-mentorix.vercel.app/).
+
+
 ## Desenvolvedores :octocat:
 
  <table>
   <tr>
     <td align="center">
       <a href="#">
-        <img src="./" width="100px;" alt="Foto de perfil - Daniela"/><br>
+        <img src="./src/assets/img/Daniela.png" width="100px;" alt="Foto de perfil - Daniela"/><br>
         <sub>
           <b>Daniela Silva (Dani)</b>
         </sub>
@@ -125,7 +125,7 @@ npm run dev
   <tr>
     <td align="center">
       <a href="#">
-        <img src="./" width="100px;" alt="Foto de perfil - Felipe"/><br>
+        <img src="./src/assets/img/felipe .JPG" width="100px;" alt="Foto de perfil - Felipe"/><br>
         <sub>
           <b>Felipe Gomes (Jefferson Caminhões)</b>
         </sub>
@@ -138,7 +138,7 @@ npm run dev
   <tr>
     <td align="center">
       <a href="#">
-        <img src="./" width="100px;" alt="Foto de perfil - Jéssica"/><br>
+        <img src="./src/assets/img/jéssica .JPG" width="100px;" alt="Foto de perfil - Jéssica"/><br>
         <sub>
           <b>Jéssica dos Santos (Jéssi)</b>
         </sub>
@@ -151,7 +151,7 @@ npm run dev
   <tr>
     <td align="center">
       <a href="#">
-        <img src="./" width="100px;" alt="Foto de perfil - Tawany"/><br>
+        <img src="./src/assets/img/taw .JPG" width="100px;" alt="Foto de perfil - Tawany"/><br>
         <sub>
           <b>Tawany Simões (Taw)</b>
         </sub>
@@ -159,3 +159,4 @@ npm run dev
     </td>
   </tr>
  </table>
+<p>Feito com 💜 Squad 4.</p>
