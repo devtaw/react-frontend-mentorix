@@ -24,7 +24,7 @@ export function Router() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/lista-mentores" element={<ListaMentores />} />
-      <Route path="/area-mentor" element={<AreaMentor />} />
+      <Route path="/area-mentor/:id" element={<AreaMentor />} />
       <Route path="/cadastro" element={<Cadastro/>} />
       <Route path="/login" element={<Login/>}/>
     </Routes>

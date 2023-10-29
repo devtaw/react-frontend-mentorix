@@ -6,7 +6,7 @@ export const Container = styled.div`
   border: 1px solid #ccc;
   padding: 20px;
   border-radius: 5px;
-  text-align: center;
+  text-align: left;
 `;
 
 export const MentorName = styled.p`
