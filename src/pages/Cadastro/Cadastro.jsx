@@ -22,9 +22,9 @@ export function Cadastro() {
       profissao,
     };
 
-    if (senha === confirmaSenha) {
-      const resposta = await postMentores(body);
-      try {
+    try {
+      if (senha === confirmaSenha) {
+        const resposta = await postMentores(body);
         if (resposta) {
           // todo: chamar notificação de sucesso, redirecionar para área mentor
           snackbar.enqueueSnackbar("Usuário cadastrado com sucesso!", {
@@ -33,12 +33,12 @@ export function Cadastro() {
           navigate("/area-mentor");
           return;
         }
-      } catch (error) {
-        // todo: chamar notificação de erro
-        snackbar.enqueueSnackbar("Erro ao cadastrar usuário!", {
-          variant: "error",
-        });
       }
+    } catch (error) {
+      // todo: chamar notificação de erro
+      snackbar.enqueueSnackbar("Erro ao cadastrar usuário!", {
+        variant: "error",
+      });
     }
   };
 
