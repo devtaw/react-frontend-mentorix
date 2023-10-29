@@ -15,8 +15,8 @@ import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
 import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router";
 
-export default function FormCadastro({ handleCadastro }) {
-  const [nome, setNome] = useState("");
+export function FormCadastro({ onSave }) {
+  const [nomeCompleto, setNomeCompleto] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [confirmaSenha, setConfirmaSenha] = useState("");
@@ -27,17 +27,25 @@ export default function FormCadastro({ handleCadastro }) {
 
   const snackbar = useSnackbar();
   const navigate = useNavigate();
-  function handlesave() {
+  function handleSave() {
     if (senha !== confirmaSenha) {
       snackbar.enqueueSnackbar("As senhas devem ser iguais!");
       return;
     }
-    onSave(nome, email, senha, fotoPerfil, biografia, linkedin, profissao);
+    onSave({
+      nomeCompleto,
+      email,
+      senha,
+      fotoPerfil,
+      biografia,
+      linkedin,
+      profissao,
+    });
   }
 
   return (
     <div>
-      <label>Nome</label>
+      <label>Nome Completo</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
           <User size={16} color="#4d0057" weight="fill" />
@@ -47,9 +55,9 @@ export default function FormCadastro({ handleCadastro }) {
           placeholder="Nome do usuário"
           aria-label="Username"
           aria-describedby="inputGroup-sizing-default"
-          value={nome}
+          value={nomeCompleto}
           onChange={(e) => {
-            setNome(e.target.value);
+            setNomeCompleto(e.target.value);
           }}
         />
       </InputGroup>
@@ -171,7 +179,7 @@ export default function FormCadastro({ handleCadastro }) {
         />
       </InputGroup>
 
-      <MentorixButton onSave={handleCadastro}>Cadastrar</MentorixButton>
+      <MentorixButton onClick={handleSave}>Cadastrar</MentorixButton>
     </div>
   );
 }
