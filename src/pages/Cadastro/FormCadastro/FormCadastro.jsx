@@ -31,6 +31,7 @@ export default function FormCadastro({ handleCadastro }) {
           <User size={16} color="#4d0057" weight="fill" />
         </InputGroup.Text>
         <Form.Control
+          type="text"
           placeholder="Nome do usuário"
           aria-label="Username"
           aria-describedby="inputGroup-sizing-default"
@@ -48,6 +49,7 @@ export default function FormCadastro({ handleCadastro }) {
           <Envelope size={16} color="#4d0057" weight="fill" />
         </InputGroup.Text>
         <Form.Control
+          type="email"
           placeholder="E-mail"
           aria-label="Email"
           aria-describedby="inputGroup-sizing-default"
@@ -64,6 +66,7 @@ export default function FormCadastro({ handleCadastro }) {
           <Password size={16} color="#4d0057" weight="fill" />
         </InputGroup.Text>
         <Form.Control
+          type="password"
           placeholder="Senha"
           aria-label="Password"
           aria-describedby="inputGroup-sizing-default"
@@ -80,6 +83,7 @@ export default function FormCadastro({ handleCadastro }) {
           <Password size={16} color="#4d0057" weight="fill" />
         </InputGroup.Text>
         <Form.Control
+          type="password"
           placeholder="Confirmação senha"
           aria-label="Password confirm"
           aria-describedby="inputGroup-sizing-default"
@@ -96,6 +100,7 @@ export default function FormCadastro({ handleCadastro }) {
           <Image size={16} color="#4d0057" weight="fill" />
         </InputGroup.Text>
         <Form.Control
+          type="file"
           placeholder="Foto de perfil"
           aria-label="Photo"
           aria-describedby="inputGroup-sizing-default"
@@ -112,6 +117,7 @@ export default function FormCadastro({ handleCadastro }) {
           <BookOpenText size={16} color="#4d0057" weight="fill" />
         </InputGroup.Text>
         <Form.Control
+          type="text"
           placeholder="Biografia"
           aria-label="Biography"
           aria-describedby="inputGroup-sizing-default"
@@ -128,6 +134,7 @@ export default function FormCadastro({ handleCadastro }) {
           <LinkedinLogo size={16} color="#4d0057" weight="fill" />
         </InputGroup.Text>
         <Form.Control
+          type="text"
           placeholder="LinkedIn"
           aria-label="LinkedIn"
           aria-describedby="inputGroup-sizing-default"
