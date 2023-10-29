@@ -20,3 +20,7 @@ export function updateMentor(id, mentor) {
 }
 
 
+export async function postMentores(body) {
+  const resposta = await httpClient.post('/mentores', body)
+  return resposta.data
+}
