@@ -1,4 +1,4 @@
-<p align="center"><img src={logoImg} width="300px;" alt="Logo - Mentorix"/></p>
+<p align="center"><img src="./src/assets/img/logo-header.png" width="300px;" alt="Logo - Mentorix"/></p>
 
 <hr>
 
@@ -12,7 +12,7 @@
 
 - [Descrição do projeto](#descrição-page_facing_up)
 
-- [Tecnologias utilizadas no projeto](#técnicas-e-tecnologias-utilizadas-desktop_computer)
+- [Tecnologias utilizadas](#Tecnologias-desktop_computer)     
 
 - [Paleta de Cores utilizada no projeto](#paleta-de-cores-art)
 
@@ -22,13 +22,17 @@
 
 - [Acesso ao projeto](#acesso-ao-projeto-open_file_folder)
 
+- [Deploy](#deploy)
+
+-[Apresentação](#apresentação)
+
 - [Desenvolvedores do projeto](#desenvolvedores-octocat)
 
 ## Resumo :pencil:
 
 <p align="justify">
 
-O Mentorix é um ambiente que conecta mentores experientes a mentees em busca de orientação e desenvolvimento. Nossa plataforma oferece acesso a uma variedade de mentorias em diversas áreas, abrangendo tecnologia, negócios e desenvolvimento pessoal.
+O Mentorix é um ambiente que conecta mentores experientes a mentes em busca de orientação e desenvolvimento. Nossa plataforma oferece acesso a uma variedade de mentorias em diversas áreas, abrangendo tecnologia, negócios e desenvolvimento pessoal.
 Desenvolvimento do Front-End que vai consumir todos os endpoints criados para a [API do Módulo 4](https://github.com/devtaw/api-rest-mentorix).
 
 </p>
@@ -99,13 +103,13 @@ npm run dev
 
 - Acesse o back-end da aplicação  clicando [aqui](https://github.com/devtaw/api-rest-mentorix).
 
-## Deploy
+## Deploy 
 
 - Back-end - Google Cloud clique [aqui](https://console.cloud.google.com/sql/instances/mentorix/overview?authuser=1&hl=pt-BR&project=skilled-module-399502)
 
 - Front-end - Vercel clique [aqui](https://react-frontend-mentorix.vercel.app/).
 
-## Apresentação :open_file_folder:
+## Apresentação 
 Para ver a apresentação clique [aqui](https://www.canva.com/design/DAFyV38apvc/wmOX6JuP8HcggBEUTq9wNA/view?utm_content=DAFyV38apvc&utm_campaign=designshare&utm_medium=link&utm_source=recording_view).
 
 ## Desenvolvedores :octocat:
@@ -135,7 +139,7 @@ Para ver a apresentação clique [aqui](https://www.canva.com/design/DAFyV38apvc
     </td>
   </tr>
  </table>
- 
+
  <table>
   <tr>
     <td align="center">
