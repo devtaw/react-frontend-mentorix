@@ -1,15 +1,12 @@
 import React, { useState } from "react";
-import { ContentContainer } from "../../common/ContentContainer.styled";
 import { ContainerList, ContentSection, SpanTitle, TextDescription, Title, Container } from "./ListaMentores.styled";
 import { CardMentor } from "./CardMentor/CardMentor";
-import { MentorixModal } from "../../common/MentorixModal/MentorixModal";
-import { Form } from "react-bootstrap";
 import { useQuery } from "@tanstack/react-query";
 import { getMentores } from "../../common/services/MentorService";
 import Header from "../../common/Header/Header";
 import Footer from "../../common/Footer/Footer";
 import { TextBody } from "../../common/typography";
-import { useSnackbar } from "notistack";
+import { ModalAgendamento } from "./ModalAgendamento/ModalAgendamento";
 
 export function ListaMentores() {
   //cria estado p/ guardar se modal estar aberta ou fechada
@@ -20,8 +17,7 @@ export function ListaMentores() {
     //aqui se passa função q busca dados na API p/ propriedade queryFN p/ q react-query possa gerenciar estado dessa requisição
     queryFn: getMentores,
   });
-  //utiliza hook de notificações
-  const snackbar = useSnackbar();
+
   //função que será chamada quando user clicar no botão do card mentor
   function handleClickCardMentor() {
     setIsModalOpen(true);
@@ -31,13 +27,6 @@ export function ListaMentores() {
     //volta estado de isModalOpen para false, logo como estamos passando isModalOpen como parametros para modal, ela entederá que deve ser fechada
     setIsModalOpen(false);
   }
-
-  function handleModalSave() {
-    //chama função que mostra notificação ao usuário.
-    snackbar.enqueueSnackbar("Mensagem enviada com sucesso", { variant: "success" }); //mostra notificação de sucesso
-    snackbar.enqueueSnackbar("Erro ao enviar mensagem, tente novamente mais tarde", { variant: "error" }); //mostra notificação de erro
-  }
-
   return (
     <>
       <Header />
@@ -50,13 +39,13 @@ export function ListaMentores() {
             {listaMentoresQuery.isLoading && <TextBody className="mt-5">Carregando...</TextBody>}
 
             {listaMentoresQuery?.data?.map((mentor) => (
-              <div key={mentor.email} className="col-lg-4 col-md-6 col-xs-12">
+              <div key={mentor.id} className="col-lg-4 col-md-6 col-xs-12">
                 {/* oncClick vai disparar função handleClickMentor quando botão for clicado */}
                 <CardMentor
                   urlFoto={mentor.fotoPerfil}
                   nome={mentor.nomeCompleto}
-                  biografia={mentor.experienciaProfissional}
-                  areasDeAtuacao={["Tecnologia da Informação"]}
+                  biografia={mentor.biografia}
+                  especialidades={[]}
                   onClick={handleClickCardMentor}
                 />
               </div>
@@ -64,35 +53,8 @@ export function ListaMentores() {
           </ContainerList>
         </ContentSection>
       </Container>
-
       <Footer />
-
-      <MentorixModal
-        title="Entre em contato com o mentor"
-        buttonSaveName="Enviar"
-        isOpen={isModalOpen}
-        onClose={handleModalClose}
-        onSave={handleModalSave}
-      >
-        <Form>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-            <Form.Label>Nome completo:</Form.Label>
-            <Form.Control type="email" placeholder="name@example.com" autoFocus />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-            <Form.Label>E-mail:</Form.Label>
-            <Form.Control type="email" placeholder="name@example.com" autoFocus />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-            <Form.Label>Profissão:</Form.Label>
-            <Form.Control type="email" placeholder="name@example.com" autoFocus />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-            <Form.Label>Mensagem:</Form.Label>
-            <Form.Control as="textarea" rows={3} />
-          </Form.Group>
-        </Form>
-      </MentorixModal>
+      <ModalAgendamento isModalOpen={isModalOpen} onClose={handleModalClose} />
     </>
   );
 }
