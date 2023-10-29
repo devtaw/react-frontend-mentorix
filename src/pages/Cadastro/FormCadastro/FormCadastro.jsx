@@ -12,9 +12,11 @@ import React from "react";
 import { useState } from "react";
 import { InputGroup, Form } from "react-bootstrap";
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
+import { useSnackbar } from "notistack";
+import { useNavigate } from "react-router";
 
-export default function FormCadastro({ handleCadastro }) {
-  const [nome, setNome] = useState("");
+export function FormCadastro({ onSave }) {
+  const [nomeCompleto, setNomeCompleto] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [confirmaSenha, setConfirmaSenha] = useState("");
@@ -23,20 +25,39 @@ export default function FormCadastro({ handleCadastro }) {
   const [linkedin, setLinkedin] = useState("");
   const [profissao, setProfissao] = useState("");
 
+  const snackbar = useSnackbar();
+  const navigate = useNavigate();
+  function handleSave() {
+    if (senha !== confirmaSenha) {
+      snackbar.enqueueSnackbar("As senhas devem ser iguais!");
+      return;
+    }
+    onSave({
+      nomeCompleto,
+      email,
+      senha,
+      fotoPerfil,
+      biografia,
+      linkedin,
+      profissao,
+    });
+  }
+
   return (
     <div>
-      <label>Nome</label>
+      <label>Nome Completo</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
-          <User size={16} color="#4d0057" weight="fill" />
+          <User size={16} color="#673AB7" weight="fill" />
         </InputGroup.Text>
         <Form.Control
+          type="text"
           placeholder="Nome do usuário"
           aria-label="Username"
           aria-describedby="inputGroup-sizing-default"
-          value={nome}
+          value={nomeCompleto}
           onChange={(e) => {
-            setNome(e.target.value);
+            setNomeCompleto(e.target.value);
           }}
         />
       </InputGroup>
@@ -45,9 +66,10 @@ export default function FormCadastro({ handleCadastro }) {
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
           {/* Aqui adiciona ícone do span */}
-          <Envelope size={16} color="#4d0057" weight="fill" />
+          <Envelope size={16} color="#673AB7" weight="fill" />
         </InputGroup.Text>
         <Form.Control
+          type="email"
           placeholder="E-mail"
           aria-label="Email"
           aria-describedby="inputGroup-sizing-default"
@@ -61,9 +83,10 @@ export default function FormCadastro({ handleCadastro }) {
       <label>Senha</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
-          <Password size={16} color="#4d0057" weight="fill" />
+          <Password size={16} color="#673AB7" weight="fill" />
         </InputGroup.Text>
         <Form.Control
+          type="password"
           placeholder="Senha"
           aria-label="Password"
           aria-describedby="inputGroup-sizing-default"
@@ -77,9 +100,10 @@ export default function FormCadastro({ handleCadastro }) {
       <label>Confirmação senha</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
-          <Password size={16} color="#4d0057" weight="fill" />
+          <Password size={16} color="#673AB7" weight="fill" />
         </InputGroup.Text>
         <Form.Control
+          type="password"
           placeholder="Confirmação senha"
           aria-label="Password confirm"
           aria-describedby="inputGroup-sizing-default"
@@ -93,9 +117,10 @@ export default function FormCadastro({ handleCadastro }) {
       <label>Foto de perfil</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
-          <Image size={16} color="#4d0057" weight="fill" />
+          <Image size={16} color="#673AB7" weight="fill" />
         </InputGroup.Text>
         <Form.Control
+          type="text"
           placeholder="Foto de perfil"
           aria-label="Photo"
           aria-describedby="inputGroup-sizing-default"
@@ -109,9 +134,10 @@ export default function FormCadastro({ handleCadastro }) {
       <label>Biografia</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
-          <BookOpenText size={16} color="#4d0057" weight="fill" />
+          <BookOpenText size={16} color="#673AB7" weight="fill" />
         </InputGroup.Text>
         <Form.Control
+          type="text"
           placeholder="Biografia"
           aria-label="Biography"
           aria-describedby="inputGroup-sizing-default"
@@ -125,9 +151,10 @@ export default function FormCadastro({ handleCadastro }) {
       <label>LinkedIn</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
-          <LinkedinLogo size={16} color="#4d0057" weight="fill" />
+          <LinkedinLogo size={16} color="#673AB7" weight="fill" />
         </InputGroup.Text>
         <Form.Control
+          type="text"
           placeholder="LinkedIn"
           aria-label="LinkedIn"
           aria-describedby="inputGroup-sizing-default"
@@ -141,7 +168,7 @@ export default function FormCadastro({ handleCadastro }) {
       <label>Profissão</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
-          <Desktop size={16} color="#4d0057" weight="fill" />
+          <Desktop size={16} color="#673AB7" weight="fill" />
         </InputGroup.Text>
         <Form.Control
           placeholder="Profissão"
@@ -152,7 +179,7 @@ export default function FormCadastro({ handleCadastro }) {
         />
       </InputGroup>
 
-      <MentorixButton>Cadastrar</MentorixButton>
+      <MentorixButton onClick={handleSave}>Cadastrar</MentorixButton>
     </div>
   );
 }
