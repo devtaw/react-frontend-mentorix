@@ -37,7 +37,7 @@ Desenvolvimento do Front-End que vai consumir todos os endpoints criados para a 
 
 <p align="justify"> O site <b>Mentorix</b> foi desenvolvido para a avaliação "Projeto em Grupo -  Ligando as Peças” do "Módulo 5: Frameworks, bibliotecas, tecnologias client-side/front-end + Postura profissional e Inovação" do curso de formação <b>WebDev Full Stack JavaScript</b> da Resilia Educação em parceria com o programa "Códigos do Amanhã" da <b>EBANX</b>.</p>
 
-<b>https://react-frontend-mentorix.vercel.app/:</b>
+<b>(https://react-frontend-mentorix.vercel.app/):</b>
 
 ## Tecnologias utilizadas :desktop_computer:
 
