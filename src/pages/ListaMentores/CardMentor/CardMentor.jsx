@@ -1,17 +1,28 @@
 import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
-import { ButtonCTA, CardContainer, TagList, TextBio, ContainerAvatar } from "./CardMentor.styled";
-import img from "../../../assets/img/lista-mentores/card-mentor/mentora-1.png";
-import { TextBody, TextH3, TextH5 } from "../../../common/typography";
+import { CardContainer, TagList, TextBio, ContainerAvatar } from "./CardMentor.styled";
+import { TextH3, TextH5 } from "../../../common/typography";
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
 
+const mapaDeEspecialidades = {
+  desenvolvimento: "Desenvolvimento",
+  criptomoedas: "Criptomoedas",
+  blockchain: "Blockchain",
+  financas: "Finanças",
+  investimentos: "Investimentos",
+  estrategia: "Estratégia",
+  criatividade: "Criatividade",
+  comunicacao: "Comunicação",
+  produtividade: "Produtividade",
+};
+
 //componente cardmentor recebe propriedade chamada onclick que representa função que será chamda quando usuário clicar no botão para agendar
-export function CardMentor({ nome, biografia, areasDeAtuacao, urlFoto, onClick = () => null }) {
+export function CardMentor({ nome, biografia, especialidades, urlFoto, onClick = () => null }) {
   //função que será chamada quando user clicar no botão
   function handleClickButton() {
     //chamar função a partir das propriedades significa que estou chamando um evento a partir de uma propriedade onClick / dispara evento onClick para componente pai ListaMentores
     onClick();
   }
+
   return (
     <CardContainer>
       <ContainerAvatar>
@@ -20,8 +31,8 @@ export function CardMentor({ nome, biografia, areasDeAtuacao, urlFoto, onClick =
       <Card.Body>
         {/* <Badge>Fínanças</Badge> */}
         <TagList>
-          {areasDeAtuacao.map((area) => (
-            <TextH5 key={area}>{area}</TextH5>
+          {especialidades.map((especialidade) => (
+            <TextH5 key={especialidade}>{mapaDeEspecialidades[especialidade]}</TextH5>
           ))}
         </TagList>
         <TextH3 bold="true">{nome}</TextH3>
@@ -31,7 +42,7 @@ export function CardMentor({ nome, biografia, areasDeAtuacao, urlFoto, onClick =
       </Card.Body>
       <Card.Body>
         {/* onClick chama a função handleClickButton quando o botão é clicado*/}
-        <MentorixButton onClick={handleClickButton}>Agende</MentorixButton>
+        <MentorixButton onClick={handleClickButton}>Solicitar</MentorixButton>
       </Card.Body>
     </CardContainer>
   );
