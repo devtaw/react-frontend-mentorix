@@ -1,5 +1,5 @@
 import { httpClient } from "../../core/httpClient";
 
 export function postAgendamento(agendamento) {
-  return httpClient.get("/agendamentos", agendamento).then((response) => response.data);
+  return httpClient.post("/agendamentos", agendamento).then((response) => response.data);
 }
