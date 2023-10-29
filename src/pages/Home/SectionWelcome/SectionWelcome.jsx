@@ -1,10 +1,9 @@
 import React from "react";
 import { WelcomeContainer, TextContainer, ImageContainer, Container } from "./SectionWelcome.styled";
-import { TextH1, TextH2, TextH6 } from "../../../common/typography";
+import { TextBody, TextH1 } from "../../../common/typography";
 import { useTheme } from "styled-components";
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
-import { Link, useNavigate } from "react-router-dom";
-import { ContentContainer } from "../../../common/ContentContainer.styled";
+import { useNavigate } from "react-router-dom";
 import image from "../../../assets/img/section-welcome.png";
 
 function SectionWelcome() {
@@ -19,11 +18,11 @@ function SectionWelcome() {
     <WelcomeContainer>
       <Container>
         <TextContainer>
-          <TextH6>MENTORES ESPECIALIZADOS </TextH6>
+          <span>MENTORES ESPECIALIZADOS </span>
           <TextH1 variant={"title-xxlg"}>Mude sua vida! Escolha Mentorix</TextH1>
-          <TextH2 variant={"body-xsm"}>
+          <TextBody variant={"body-xsm"}>
             Transforme sua carreira com nossa plataforma de mentoria. Conhecimento compartilhado, futuro assegurado.
-          </TextH2>
+          </TextBody>
 
           <MentorixButton color={"terciary-200"} onClick={handleClick} className="mt-4">
             Conheça os Mentores
