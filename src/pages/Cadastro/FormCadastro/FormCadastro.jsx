@@ -13,7 +13,7 @@ import { useState } from "react";
 import { InputGroup, Form } from "react-bootstrap";
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
 
-export default function FormCadastro() {
+export default function FormCadastro({ handleCadastro }) {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -85,7 +85,7 @@ export default function FormCadastro() {
           aria-describedby="inputGroup-sizing-default"
           value={confirmaSenha}
           onChange={(e) => {
-            setSenha(e.target.value);
+            setConfirmaSenha(e.target.value);
           }}
         />
       </InputGroup>
@@ -100,6 +100,9 @@ export default function FormCadastro() {
           aria-label="Photo"
           aria-describedby="inputGroup-sizing-default"
           value={fotoPerfil}
+          onChange={(e) => {
+            setFotoPerfil(e.target.value);
+          }}
         />
       </InputGroup>
 
@@ -113,6 +116,9 @@ export default function FormCadastro() {
           aria-label="Biography"
           aria-describedby="inputGroup-sizing-default"
           value={biografia}
+          onChange={(e) => {
+            setBiografia(e.target.value);
+          }}
         />
       </InputGroup>
 
@@ -126,6 +132,9 @@ export default function FormCadastro() {
           aria-label="LinkedIn"
           aria-describedby="inputGroup-sizing-default"
           value={linkedin}
+          onChange={(e) => {
+            setLinkedin(e.target.value);
+          }}
         />
       </InputGroup>
 
@@ -139,6 +148,7 @@ export default function FormCadastro() {
           aria-label="Occupation"
           aria-describedby="inputGroup-sizing-default"
           value={profissao}
+          onChange={(e) => setProfissao(e.target.value)}
         />
       </InputGroup>
 
