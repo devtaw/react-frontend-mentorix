@@ -12,7 +12,7 @@
 
 - [Descrição do projeto](#descrição-page_facing_up)
 
-- [Tecnologias utilizadas](#Tecnologias-desktop_computer)     
+- [Tecnologias utilizadas](#tecnologias)
 
 - [Paleta de Cores utilizada no projeto](#paleta-de-cores-art)
 
@@ -24,7 +24,7 @@
 
 - [Deploy](#deploy)
 
--[Apresentação](#apresentação)
+- [Apresentação](#apresentação)
 
 - [Desenvolvedores do projeto](#desenvolvedores-octocat)
 
@@ -32,7 +32,7 @@
 
 <p align="justify">
 
-O Mentorix é um ambiente que conecta mentores experientes a mentes em busca de orientação e desenvolvimento. Nossa plataforma oferece acesso a uma variedade de mentorias em diversas áreas, abrangendo tecnologia, negócios e desenvolvimento pessoal.
+O Mentorix é um  plataforma que conecta mentores experientes a mentes em busca de orientação e desenvolvimento. Nossa plataforma oferece acesso a uma variedade de mentorias em diversas áreas, abrangendo tecnologia, negócios e desenvolvimento pessoal.
 Desenvolvimento do Front-End que vai consumir todos os endpoints criados para a [API do Módulo 4](https://github.com/devtaw/api-rest-mentorix).
 
 </p>
@@ -43,7 +43,7 @@ Desenvolvimento do Front-End que vai consumir todos os endpoints criados para a 
 
 <b>(https://react-frontend-mentorix.vercel.app/):</b>
 
-## Tecnologias utilizadas :desktop_computer:
+## Tecnologias utilizadas 
 
 Node.js //React + Vite// Postman
 
@@ -165,4 +165,4 @@ Para ver a apresentação clique [aqui](https://www.canva.com/design/DAFyV38apvc
     </td>
   </tr>
  </table>
-<p>Feito com 💜 Squad 4.</p>
+<p>Feito com 💜 Squad 4..</p>
