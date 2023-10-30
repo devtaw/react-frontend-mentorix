@@ -1,6 +1,6 @@
 import { Button, Card } from "react-bootstrap";
 import styled from "styled-components";
-import { TextBody, TextH4 } from "../../../common/typography";
+import { TextBody } from "../../../common/typography";
 
 export const CardContainer = styled(Card)`
   border-radius: 5px;
@@ -17,14 +17,6 @@ export const TextBio = styled(TextBody)`
   letter-spacing: 0.3px;
 `;
 
-// export const Badge = styled(TextH4)`
-//   border-radius: 5px;
-//   padding: 0 10px;
-//   height: 25px;
-//   color: ${(props) => props.theme["terciary-800"]}; //#bf7831
-//   background: ${(props) => props.theme["terciary-50"]}; //#fffaf1;
-// `;
-
 export const TagList = styled.div`
   margin-top: 0.74rem;
   display: flex;
@@ -35,6 +27,21 @@ export const TagList = styled.div`
     border-radius: 5px;
     background-color: ${(props) => props.theme["terciary-50"]}; //#F1E9C9
     color: ${(props) => props.theme["terciary-800"]}; //#C47F17
+  }
+
+  h5.tecnologia {
+    background-color: ${(props) => props.theme["primary-200"]};
+    color: ${(props) => props.theme["primary-900"]};
+  }
+
+  h5.negocios {
+    background-color: ${(props) => props.theme["terciary-200"]};
+    color: ${(props) => props.theme["terciary-800"]};
+  }
+
+  h5.comportamento {
+    background-color: ${(props) => props.theme["secondary-100"]};
+    color: ${(props) => props.theme["secondary-800"]};
   }
 `;
 
@@ -57,5 +64,20 @@ export const ContainerAvatar = styled.div`
 
   img {
     object-fit: contain;
+  }
+`;
+
+export const LinkedinArea = styled.div`
+  background-color: ${(props) => props.theme["primary-900"]};
+
+  border-radius: 10px;
+  transition: all 0.3s ease-out 0s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: ${(props) => props.theme["blue-gray-600"]};
   }
 `;
