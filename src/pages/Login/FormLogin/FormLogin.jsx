@@ -8,6 +8,8 @@ import {
   Button,
   ContainerCadastreSe,
   TextH1Styled,
+  TextEmail,
+  StyledLabel,
 } from "./FormLogin.styled";
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
 import { useSnackbar } from "notistack";
@@ -37,7 +39,7 @@ export default function FormLogin({ onSave }) {
   return (
     <Container>
       <TextH1Styled>Login</TextH1Styled>
-      <label>E-mail</label>
+      <StyledLabel>E-mail</StyledLabel>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
           <Envelope size={16} color="#673AB7" weight="fill" />
@@ -50,8 +52,8 @@ export default function FormLogin({ onSave }) {
           onChange={(e) => setEmail(e.target.value)}
         />
       </InputGroup>
-      <label>Senha</label>
-      <InputGroup className="mb-3">
+      <StyledLabel>Senha</StyledLabel>
+      <InputGroup>
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
           <Lock size={16} color="#673AB7" weight="fill" />
         </InputGroup.Text>
@@ -65,7 +67,7 @@ export default function FormLogin({ onSave }) {
       </InputGroup>
 
       <SpanEsqueceuSenha>
-        Esqueceu sua senha? Envie e-mail{" "}
+        Esqueceu sua senha? &nbsp; <TextEmail>Envie e-mail </TextEmail>
         <Link
           className="linkEsqueceuSenha"
           to="mailto:suporte.mentorix@gmail.com"
@@ -80,7 +82,7 @@ export default function FormLogin({ onSave }) {
 
       <ContainerCadastreSe>
         <span>
-          Ainda não possui conta?{" "}
+          Ainda não possui conta? <br />
           <Link to="/cadastro" className="linkCadastro">
             Crie sua conta
           </Link>

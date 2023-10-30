@@ -2,6 +2,7 @@ import {
   BookOpenText,
   Desktop,
   Envelope,
+  GraduationCap,
   Image,
   LinkedinLogo,
   Password,
@@ -19,6 +20,7 @@ import {
   Container,
   EspecialidadesContainer,
   SpanBiografia,
+  StyledLabelCadastro,
   TextH1Styled,
 } from "./FormCadastro.styled";
 
@@ -67,7 +69,7 @@ export function FormCadastro({ onSave }) {
   return (
     <Container>
       <TextH1Styled>Cadastro</TextH1Styled>
-      <label>Foto de perfil</label>
+      <StyledLabelCadastro>Foto de perfil</StyledLabelCadastro>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
           <Image size={16} color="#673AB7" weight="fill" />
@@ -84,7 +86,7 @@ export function FormCadastro({ onSave }) {
         />
       </InputGroup>
 
-      <label>Nome Completo</label>
+      <StyledLabelCadastro>Nome Completo</StyledLabelCadastro>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
           <User size={16} color="#673AB7" weight="fill" />
@@ -101,7 +103,7 @@ export function FormCadastro({ onSave }) {
         />
       </InputGroup>
 
-      <label>Email</label>
+      <StyledLabelCadastro>Email</StyledLabelCadastro>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
           {/* Aqui adiciona ícone do span */}
@@ -119,7 +121,7 @@ export function FormCadastro({ onSave }) {
         />
       </InputGroup>
 
-      <label>Senha</label>
+      <StyledLabelCadastro>Senha</StyledLabelCadastro>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
           <Password size={16} color="#673AB7" weight="fill" />
@@ -137,7 +139,7 @@ export function FormCadastro({ onSave }) {
         />
       </InputGroup>
 
-      <label>Confirmação senha</label>
+      <StyledLabelCadastro>Confirmação senha</StyledLabelCadastro>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
           <Password size={16} color="#673AB7" weight="fill" />
@@ -154,7 +156,7 @@ export function FormCadastro({ onSave }) {
         />
       </InputGroup>
 
-      <label>Profissão</label>
+      <StyledLabelCadastro>Profissão</StyledLabelCadastro>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
           <Desktop size={16} color="#673AB7" weight="fill" />
@@ -168,7 +170,7 @@ export function FormCadastro({ onSave }) {
         />
       </InputGroup>
 
-      <label>LinkedIn (opcional)</label>
+      <StyledLabelCadastro>LinkedIn (opcional)</StyledLabelCadastro>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
           <LinkedinLogo size={16} color="#673AB7" weight="fill" />
@@ -185,8 +187,8 @@ export function FormCadastro({ onSave }) {
         />
       </InputGroup>
 
-      <label>Biografia</label>
-      <InputGroup className="mb-3">
+      <StyledLabelCadastro>Biografia</StyledLabelCadastro>
+      <InputGroup>
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
           <BookOpenText size={16} color="#673AB7" weight="fill" />
         </InputGroup.Text>
@@ -194,7 +196,7 @@ export function FormCadastro({ onSave }) {
           as="textarea"
           maxLength={400}
           rows={4}
-          placeholder="Biografia"
+          placeholder="&#10;Biografia"
           aria-label="Biography"
           aria-describedby="inputGroup-sizing-default"
           value={biografia}
@@ -206,8 +208,8 @@ export function FormCadastro({ onSave }) {
 
       <SpanBiografia>*Máximo de 400 caracteres</SpanBiografia>
 
-      <label>Especialidades</label>
-      <EspecialidadesContainer>
+      <StyledLabelCadastro>Especialidades</StyledLabelCadastro>
+      <EspecialidadesContainer className="mb-3">
         <Form.Check
           className="col-md-4"
           type="checkbox"
