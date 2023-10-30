@@ -71,7 +71,6 @@ export const Row2 = styled.div`
   img {
     object-fit: contain;
     width: 100%;
-    opacity: 0.5;
     position: relative;
     z-index: 0;
   }
