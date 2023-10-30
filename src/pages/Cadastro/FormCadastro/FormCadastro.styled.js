@@ -48,5 +48,5 @@ font-weight: bold;
 `
 
 export const StyledLabelCadastro = styled.label`
-margin-bottom: 10px;
+margin-bottom: 6px;
 `
