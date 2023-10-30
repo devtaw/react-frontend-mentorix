@@ -6,12 +6,18 @@ export function getMentores() {
 }
 
 export async function getMentoresEspecialidades() {
-  return httpClient.get("/mentor-especialidades").then((response) => response.data);
+  return httpClient
+    .get("/mentor-especialidades")
+    .then((response) => response.data);
 }
 
 export function getMentorById(id) {
   console.log(id);
-  return httpClient.get("/mentores/" + id).then((response) => response.data);
+  let teste = httpClient
+    .get("/mentores/" + id)
+    .then((response) => response.data);
+  console.log(teste);
+  return teste;
 }
 
 export function updateMentor(id, mentor) {
@@ -28,5 +34,3 @@ export async function postMentores(body) {
   const resposta = await httpClient.post("/mentores", body);
   return resposta.data;
 }
-
-

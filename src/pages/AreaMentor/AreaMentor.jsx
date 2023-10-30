@@ -26,15 +26,20 @@ export function AreaMentor() {
   const [especialidade, setEspecialidadeData] = useState(null);
   const [loading, setLoading] = useState(true);
 
- 
-
-
-  
-        
-   
-
-
-
+  useEffect(() => {
+    async function fetchMentorData() {
+      try {
+        const mentor = await getMentorById(id);
+        console.log(mentor);
+        setMentorData(mentor);
+        setLoading(false);
+      } catch (error) {
+        console.error("Erro ao buscar os dados do mentor:", error);
+        setLoading(false);
+      }
+    }
+    fetchMentorData();
+  }, [id]);
 
   return (
     <>
@@ -70,7 +75,7 @@ export function AreaMentor() {
               </TextBodyMentor>
             </div>
             {mentorData?.agendamentos?.map((agendamento) => (
-              <div key={agendamento.id} >
+              <div key={agendamento.id}>
                 <Agendamento
                   idDoAgendamento={agendamento.id}
                   nomeCompleto={agendamento.nomeCompleto}
