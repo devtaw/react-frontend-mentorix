@@ -15,10 +15,11 @@ export const CardBotton = styled.div`
   justify-content: space-between;
 `;
 
-export const CardIcone = styled.div``;
+export const CardIcone = styled.div`
 
-export const AgendamentoBox = styled.div`
-  height: 151px;
+`;
+
+export const Agendamentoborder = styled.div`
   border: 1px solid #700fb080;
   box-shadow: 0px 2px 5px #555;
   border-radius: 10px;

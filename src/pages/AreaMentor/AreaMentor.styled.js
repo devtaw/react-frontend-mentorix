@@ -11,11 +11,19 @@ export const TextH1Mentor = styled.h1`
   margin-bottom: 13px;
 `;
 
+export const TextH3Mentor = styled.h3`
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  text-align: left;
+`;
+
+
 export const TextH5Mentor = styled.h5`
   font-family: "Open Sans", sans-serif;
   font-style: normal;
   font-size: 1.5rem;
   font-weight: 400;
+  text-align: left;
   color: ${(props) => props.theme[props.color || "primary-900"]};
 `;
 
@@ -24,7 +32,18 @@ export const TextH6Mentor = styled.h6`
   font-style: normal;
   font-size: 1rem;
   font-weight: 400;
+  text-align: left;
   color: ${(props) => props.theme[props.color || "primary-900"]};
+`;
+
+export const TextBodyMentor = styled.p`
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  text-align: left;
+  font-weight: ${(props) => (props.bold ? 700 : 400)};
+  font-size: ${(props) => props.theme[props.variant || "body-md"]};
+  line-height: 1.3;
+  color: ${(props) => props.theme[props.color || "base-text"]};
 `;
 
 export const TextDescriptionMentor = styled.p`

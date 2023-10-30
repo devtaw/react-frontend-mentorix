@@ -12,16 +12,17 @@ import {
   ShareNetwork,
   Note,
 } from "@phosphor-icons/react";
-import { Textorodape } from "./FormMentor.styled";
+import { Textorodape, Labelleft } from "./FormMentor.styled";
 import EspecialidadesList from "./CardMentor.jsx";
 
 export function FormMentor(props) {
-
   const [isEditing, setIsEditing] = useState(false);
   const [newSenha, setNewSenha] = useState("");
   const [isSenhaModified, setIsSenhaModified] = useState(false);
   const [selectedEspecialidade, setSelectedEspecialidade] = useState([]);
-  const [tempSelectedEspecialidade, setTempSelectedEspecialidade] = useState([]);
+  const [tempSelectedEspecialidade, setTempSelectedEspecialidade] = useState(
+    []
+  );
 
   const [linkedin, setLinkedin] = useState(props.linkedin);
   const [profissao, setProfissao] = useState(props.profissao);
@@ -30,11 +31,9 @@ export function FormMentor(props) {
   const [biografia, setBiografia] = useState(props.biografia);
   const [foto, setFoto] = useState(props.foto);
 
-
   const handleLinkedinChange = (event) => {
     setLinkedin(event.target.value);
   };
-
 
   useEffect(() => {
     setNomeCompleto(props.nome);
@@ -43,15 +42,12 @@ export function FormMentor(props) {
     setBiografia(props.biografia);
     setFoto(props.foto);
   }, [props]);
-  
-  
 
-console.log("props",props);
+  console.log("props", props);
 
-useEffect(() => {
-  setSelectedEspecialidade(especialidades);
-}, [especialidades]);
-
+  useEffect(() => {
+    setSelectedEspecialidade(especialidades);
+  }, [especialidades]);
 
   const especialidadesList = [
     { label: "Estratégia", value: "estrategia" },
@@ -64,7 +60,6 @@ useEffect(() => {
     { label: "Comunicação", value: "comunicacao" },
     { label: "Produtividade", value: "produtividade" },
   ];
-  
 
   const handleProfissaoChange = (event) => {
     setProfissao(event.target.value);
@@ -87,37 +82,33 @@ useEffect(() => {
   };
 
   const handleSaveClick = async () => {
-  
-      const dadosAtualizados = {
-        profissao: profissao,
-        linkedin: linkedin,
-        biografia: biografia,
-        nome: nomeCompleto,
-        foto: foto,
-        senha: isSenhaModified ? newSenha : props.senha,
-        especialidade: selectedEspecialidade,
-      };
-
-      try {
-        const mentorAtualizado = await updateMentor(id, dadosAtualizados);
-        console.log("Mentor atualizado:", mentorAtualizado);
-      } catch (error) {
-        console.error("Erro ao atualizar mentor:", error);
-      }
-    
-      setIsEditing(false);
+    const dadosAtualizados = {
+      profissao: profissao,
+      linkedin: linkedin,
+      biografia: biografia,
+      nome: nomeCompleto,
+      foto: foto,
+      senha: isSenhaModified ? newSenha : props.senha,
+      especialidade: selectedEspecialidade,
     };
 
+    try {
+      const mentorAtualizado = await updateMentor(id, dadosAtualizados);
+      console.log("Mentor atualizado:", mentorAtualizado);
+    } catch (error) {
+      console.error("Erro ao atualizar mentor:", error);
+    }
 
+    setIsEditing(false);
+  };
 
   const handleCancelClick = () => {
-  setLinkedin(props.linkedin);
-  setProfissao(props.profissao);
-  setBiografia(props.biografia);
- 
-  setIsEditing(false);
-};
+    setLinkedin(props.linkedin);
+    setProfissao(props.profissao);
+    setBiografia(props.biografia);
 
+    setIsEditing(false);
+  };
 
   const handleSenhaChange = (event) => {
     const newPassword = event.target.value;
@@ -125,13 +116,15 @@ useEffect(() => {
     setIsSenhaModified(newPassword !== props.senha);
   };
 
-const handleTempCheckboxChange = (value) => {
-  if (tempSelectedEspecialidade.includes(value)) {
-    setTempSelectedEspecialidade(tempSelectedEspecialidade.filter((item) => item !== value));
-  } else {
-    setTempSelectedEspecialidade([...tempSelectedEspecialidade, value]);
-  }
-};
+  const handleTempCheckboxChange = (value) => {
+    if (tempSelectedEspecialidade.includes(value)) {
+      setTempSelectedEspecialidade(
+        tempSelectedEspecialidade.filter((item) => item !== value)
+      );
+    } else {
+      setTempSelectedEspecialidade([...tempSelectedEspecialidade, value]);
+    }
+  };
 
   return (
     <div
@@ -156,112 +149,121 @@ const handleTempCheckboxChange = (value) => {
         </MentorixButton>
       )}
       <hr />
-      <div>
-        <label>Foto</label>
-        <InputGroup size="sm" className="mb-3">
-          <InputGroup.Text id="inputGroup-sizing-sm">
-            <GooglePhotosLogo size={16} color="#4d0057" weight="fill" />
-          </InputGroup.Text>
-          <Form.Control
-            value={foto}
-            onChange={handleFotoChange}
-            aria-label="Small"
-            aria-describedby="inputGroup-sizing-sm"
-            disabled={!isEditing} // Tornar o campo editável
-          />
-        </InputGroup>
-      </div>
-      <label>Email</label>
-      <div>
-        <InputGroup size="sm" className="mb-3">
-          <InputGroup.Text id="inputGroup-sizing-sm">
-            <Envelope size={16} color="#4d0057" weight="fill" />
-          </InputGroup.Text>
-          <Form.Control
-            aria-label="Small"
-            aria-describedby="inputGroup-sizing-sm"
-            disabled={!isEditing}
-          />
-        </InputGroup>
-      </div>
-      <div>
-        <label>Senha</label>
-        <InputGroup size="sm" className="mb-3">
-          <InputGroup.Text id="inputGroup-sizing-sm">
-            <Password size={16} color="#4d0057" weight="fill" />
-          </InputGroup.Text>
-          <Form.Control
-            disabled={!isEditing}
-            onChange={handleSenhaChange}
-            value={isEditing ? newSenha : "***"}
-            aria-label="Small"
-            aria-describedby="inputGroup-sizing-sm"
-          />
-        </InputGroup>
-      </div>
-      <div>
-        <label>LinkedIn</label>
-        <InputGroup size="sm" className="mb-3">
-          <InputGroup.Text id="inputGroup-sizing-sm">
-            <LinkedinLogo size={16} color ="#4d0057" weight="fill" />
-          </InputGroup.Text>
-          <Form.Control
-            disabled={!isEditing}
-            onChange={handleLinkedinChange}
-            value={linkedin}
-            aria-label="Small"
-            aria-describedby="inputGroup-sizing-sm"
-          />
-        </InputGroup>
-      </div>
-      <div>
-        <label>Nome completo</label>
-        <InputGroup size="sm" className="mb-3">
-          <InputGroup.Text id="inputGroup-sizing-sm">
-            <IdentificationBadge size={16} color="#4d0057" weight="fill" />
-          </InputGroup.Text>
-          <Form.Control
-            onChange={handleNameChange}
-            value={nomeCompleto}
-            aria-label="Small"
-            aria-describedby="inputGroup-sizing-sm"
-            disabled={!isEditing}
-          />
-        </InputGroup>
 
-      </div>
       <div>
-        <label>Profissão</label>
-        <InputGroup size="sm" className="mb-3">
-          <InputGroup.Text id="inputGroup-sizing-sm">
-            <ShareNetwork size={16} color="#4d0057" weight="fill" />
-          </InputGroup.Text>
-          <Form.Control
-            onChange={handleProfissaoChange}
-            value={profissao}
-            aria-label="Small"
-            aria-describedby="inputGroup-sizing-sm"
-            disabled={!isEditing}
-          />
-        </InputGroup>
-      </div>
-      <div>
-        <label>Biografia</label>
-        <InputGroup size="sm" className="mb-3">
-          <InputGroup.Text id="inputGroup-sizing-sm">
-            <Note size={16} color="#4d0057" weight="fill" />
-          </InputGroup.Text>
-          <Form.Control
-            as="textarea"
-            rows={5}
-            value={biografia}
-            disabled={!isEditing}
-            onChange={handleBiografiaChange}
-          />
-        </InputGroup>
-        <Textorodape>
-          *O texto deve ter no máximo 400 caracteres (com espaços).
-        </Textorodape>
+        <div>
+          <label className="Label-left">Foto</label>
+          <InputGroup size="sm" className="mb-3">
+            <InputGroup.Text id="inputGroup-sizing-sm">
+              <GooglePhotosLogo size={16} color="#4d0057" weight="fill" />
+            </InputGroup.Text>
+            <Form.Control
+              value={foto}
+              onChange={handleFotoChange}
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+              disabled={!isEditing} // Tornar o campo editável
+            />
+          </InputGroup>
+        </div>
+
+        <div>
+          <label>Nome completo</label>
+          <InputGroup size="sm" className="mb-3">
+            <InputGroup.Text id="inputGroup-sizing-sm">
+              <IdentificationBadge size={16} color="#4d0057" weight="fill" />
+            </InputGroup.Text>
+            <Form.Control
+              onChange={handleNameChange}
+              value={nomeCompleto}
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+              disabled={!isEditing}
+            />
+          </InputGroup>
+        </div>
+
+        <div>
+          <label>Email</label>
+          <InputGroup size="sm" className="mb-3">
+            <InputGroup.Text id="inputGroup-sizing-sm">
+              <Envelope size={16} color="#4d0057" weight="fill" />
+            </InputGroup.Text>
+            <Form.Control
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+              disabled={!isEditing}
+            />
+          </InputGroup>
+        </div>
+
+        <div>
+          <label>Senha</label>
+          <InputGroup size="sm" className="mb-3">
+            <InputGroup.Text id="inputGroup-sizing-sm">
+              <Password size={16} color="#4d0057" weight="fill" />
+            </InputGroup.Text>
+            <Form.Control
+              disabled={!isEditing}
+              onChange={handleSenhaChange}
+              value={isEditing ? newSenha : "***"}
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </InputGroup>
+        </div>
+
+        <div>
+          <label>Biografia</label>
+          <InputGroup size="sm" className="mb-3">
+            <InputGroup.Text id="inputGroup-sizing-sm">
+              <Note size={16} color="#4d0057" weight="fill" />
+            </InputGroup.Text>
+            <Form.Control
+              as="textarea"
+              rows={5}
+              value={biografia}
+              maxLength={400} 
+              disabled={!isEditing}
+              onChange={handleBiografiaChange}
+            />
+          </InputGroup>
+          <Textorodape>
+            *O texto deve ter no máximo 400 caracteres (com espaços).
+          </Textorodape>
+        </div>
+
+        <div>
+          <label>LinkedIn</label>
+          <InputGroup size="sm" className="mb-3">
+            <InputGroup.Text id="inputGroup-sizing-sm">
+              <LinkedinLogo size={16} color="#4d0057" weight="fill" />
+            </InputGroup.Text>
+            <Form.Control
+              disabled={!isEditing}
+              onChange={handleLinkedinChange}
+              value={linkedin}
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </InputGroup>
+        </div>
+
+        <div>
+          <label>Profissão</label>
+          <InputGroup size="sm" className="mb-3">
+            <InputGroup.Text id="inputGroup-sizing-sm">
+              <ShareNetwork size={16} color="#4d0057" weight="fill" />
+            </InputGroup.Text>
+            <Form.Control
+              onChange={handleProfissaoChange}
+              value={profissao}
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+              disabled={!isEditing}
+            />
+          </InputGroup>
+        </div>
       </div>
       <div>
         <EspecialidadesList

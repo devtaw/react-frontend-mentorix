@@ -5,7 +5,9 @@ import {
   Avatar,
   TextH1Mentor,
   TextH5Mentor,
+  TextH3Mentor,
   TextDescriptionMentor,
+  TextBodyMentor,
   AgendamentoContainer,
 } from "./AreaMentor.styled";
 import { FormMentor } from "../../common/FormMentor/FormMentor";
@@ -65,11 +67,11 @@ export function AreaMentor() {
               )}
             </div>
             <div>
-              <h3>Solicitações de agendamento recebidas</h3>
-              <p>
+              <TextH3Mentor>Solicitações de agendamento recebidas</TextH3Mentor>
+              <TextBodyMentor>
                 Aceite ou recuse suas solicitações e você e o mentorado vão
                 receber um e-mail.
-              </p>
+              </TextBodyMentor>
             </div>
             <Agendamento />
             <TextH5Mentor className="mb-4 mt-3">

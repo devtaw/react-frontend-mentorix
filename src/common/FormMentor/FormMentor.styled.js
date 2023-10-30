@@ -46,7 +46,7 @@ export const Agendamento = styled.div`
   border-radius: 10px;
   margin-bottom: 25px;
   display: flex;
-  align-items: center;
+
 `;
 
 export const CardAvatar = styled.img`
@@ -59,14 +59,12 @@ export const CardMensagem = styled.div`
   height: 77px;
   background-color: #e5e7eb;
   display: flex;
-  align-items: center;
   justify-content: center;
   padding: 0 50px;
 `;
 
 export const CardBotton = styled.div`
   display: flex;
-  align-items: center;
   justify-content: space-between;
 `;
 
@@ -100,3 +98,8 @@ color: ${(props) => props.theme[props.color || "base-text"]};
 margin-top: 5px;
 `;
 
+export const Labelleft = styled.label`
+  text-align: left;
+  display: block;
+  width: 100%;
+`;
