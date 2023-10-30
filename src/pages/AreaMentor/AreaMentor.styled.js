@@ -60,10 +60,10 @@ export const Avatar = styled.div`
   background-size: cover;
   margin: 0 auto;
   margin-top: -100px;
-  /* background-image: url(${(props) => props.img}); */
+  background-image: url(${(props) => props.img});
 `;
 
-export const Agendamento = styled.div`
+export const AgendamentoContainer = styled.div`
   height: 151px;
   border: 1px solid #700fb080;
   box-shadow: 0px 2px 5px #555;
