@@ -10,7 +10,11 @@ align-items: center;
 background-color: #fff;
 padding: 16px;
 border-radius: 16px;
-box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px
+box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px;
+
+::placeholder {
+    font-size: 14px
+}
 `
 
 export const Button = styled.div`
@@ -25,7 +29,8 @@ flex-wrap: wrap;
 background-color: #fff;
 border: 1px solid #0288D1;
 border-radius: 6px;
-padding: 1rem
+padding: 1rem;
+
 `
 
 export const TextH1Styled = styled(TextH1)`
@@ -37,12 +42,12 @@ margin: 2.5rem;
 
 export const SpanBiografia = styled.div`
 width: 100%;
-margin-top: 8px;
+margin-top: 4px;
 margin-bottom: 16px;
 font-size: 12px;
 font-weight: bold;
 `
 
 export const StyledLabelCadastro = styled.label`
-margin-bottom: 8px;
+margin-bottom: 6px;
 `

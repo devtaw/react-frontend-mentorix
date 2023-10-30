@@ -67,7 +67,8 @@ export default function FormLogin({ onSave }) {
       </InputGroup>
 
       <SpanEsqueceuSenha>
-        Esqueceu sua senha? &nbsp; <TextEmail>Envie e-mail </TextEmail>
+        <TextEmail>Esqueceu sua senha?</TextEmail>
+        <br /> Envie e-mail{" "}
         <Link
           className="linkEsqueceuSenha"
           to="mailto:suporte.mentorix@gmail.com"
