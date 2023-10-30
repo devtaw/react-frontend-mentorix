@@ -13,13 +13,13 @@ export function Cadastro() {
 
   const handleCadastro = async (body) => {
     try {
-      const resposta = await postMentores(body);
-      if (resposta) {
+      const mentor = await postMentores(body);
+      if (mentor) {
         // todo: chamar notificação de sucesso, redirecionar para área mentor
         snackbar.enqueueSnackbar("Usuário cadastrado com sucesso!", {
           variant: "success",
         });
-        navigate("/area-mentor/" + resposta.id_mentor);
+        navigate("/area-mentor/" + mentor.id);
         return;
       }
     } catch (error) {
