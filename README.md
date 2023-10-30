@@ -41,7 +41,7 @@ Desenvolvimento do Front-End que vai consumir todos os endpoints criados para a 
 
 <p align="justify"> O site <b>Mentorix</b> foi desenvolvido para a avaliação "Projeto em Grupo -  Ligando as Peças” do "Módulo 5: Frameworks, bibliotecas, tecnologias client-side/front-end + Postura profissional e Inovação" do curso de formação <b>WebDev Full Stack JavaScript</b> da Resilia Educação em parceria com o programa "Códigos do Amanhã" da <b>EBANX</b>.</p>
 
-<b>(https://react-frontend-mentorix.vercel.app/):</b>
+<b>(http://mentorix.netlify.app/):</b>
 
 ## Tecnologias utilizadas 
 
@@ -107,7 +107,7 @@ npm run dev
 
 - Back-end - Google Cloud clique [aqui](https://console.cloud.google.com/sql/instances/mentorix/overview?authuser=1&hl=pt-BR&project=skilled-module-399502)
 
-- Front-end - Vercel clique [aqui](https://react-frontend-mentorix.vercel.app/).
+- Front-end - Netlify clique [aqui](http://mentorix.netlify.app//).
 
 ## Apresentação 
 Para ver a apresentação clique [aqui](https://www.canva.com/design/DAFyV38apvc/wmOX6JuP8HcggBEUTq9wNA/view?utm_content=DAFyV38apvc&utm_campaign=designshare&utm_medium=link&utm_source=recording_view).
