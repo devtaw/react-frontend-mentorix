@@ -53,3 +53,7 @@ margin: 2.5rem;
 export const TextEmail = styled.text`
 font-weight: bold;
 `
+
+export const StyledLabel = styled.label`
+margin-bottom: 8px;
+`
