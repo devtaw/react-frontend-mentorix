@@ -18,6 +18,7 @@ import {
   Button,
   Container,
   EspecialidadesContainer,
+  TextH1Styled,
 } from "./FormCadastro.styled";
 
 export function FormCadastro({ onSave }) {
@@ -64,6 +65,7 @@ export function FormCadastro({ onSave }) {
 
   return (
     <Container>
+      <TextH1Styled>Cadastro</TextH1Styled>
       <label>Foto de perfil</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">

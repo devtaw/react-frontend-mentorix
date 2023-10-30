@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { TextH1 } from "../../../common/typography";
 
 export const Container = styled.div`
 margin-top: 40px;
@@ -21,4 +22,9 @@ background-color: #fff;
 border: 1px solid #000;
 border-radius: 6px;
 padding: 1rem
+`
+
+export const TextH1Styled = styled(TextH1)`
+font-size: 52px;
+text-align: center;
 `
