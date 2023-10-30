@@ -1,25 +1,11 @@
 import { httpClient } from "../../core/httpClient";
 
 export const login = async (email, senha) => {
-    try {
-        const config = {
+        const resposta = await httpClient.post('/autenticacao', { email, senha }, {
             headers: {
-                'X-password': senha
-            },
-        }
-        const resposta = await httpClient.get('/autenticacao', { email, senha })
-        return resposta.data
+                'Content-Type': 'application/json'
+            }
+        })
+        return resposta.data.data
 
-    } catch (error) {
-        if(error.response) {
-            return {
-                message: error.response.data.message,
-                success: error.response.data.success
-            }
-        } else {
-            return {
-                message: 'erro inesperado',
-            }
-        }
-    }
 }
