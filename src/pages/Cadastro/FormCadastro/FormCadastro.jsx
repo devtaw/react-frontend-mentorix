@@ -195,8 +195,8 @@ export function FormCadastro({ onSave }) {
         <Form.Control
           as="textarea"
           maxLength={400}
-          rows={4}
-          placeholder="&#10;Biografia"
+          rows={5}
+          placeholder="&#10;&#10;Biografia"
           aria-label="Biography"
           aria-describedby="inputGroup-sizing-default"
           value={biografia}
