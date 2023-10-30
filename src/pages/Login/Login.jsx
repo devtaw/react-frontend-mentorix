@@ -6,18 +6,19 @@ import Footer from "../../common/Footer/Footer";
 import { useSnackbar } from "notistack";
 import { login } from "../../common/services/AutenticacaoService";
 
-export function Login({ email, senha }) {
+export function Login() {
   const navigate = useNavigate();
   const snackbar = useSnackbar();
 
-  const handleLogin = async () => {
+  const handleLogin = async ({ email, senha }) => {
     try {
       const resposta = await login(email, senha);
       if (resposta) {
         snackbar.enqueueSnackbar("Login efetuado com sucesso!", {
           variant: "success",
         });
-        navigate("/area-mentor/" + resposta.id);
+        console.log("resposta", resposta);
+        navigate("/area-mentor/" + resposta.user.id);
         return;
       }
     } catch (error) {
