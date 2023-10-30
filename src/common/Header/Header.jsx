@@ -63,8 +63,8 @@ const Header = () => {
             <SignIn color="#311B92" weight="fill" size={27} />
           </Link>
 
-          <MentorixButton color={"terciary-200"} onClick={handleClick}>
-            Cadastrar
+          <MentorixButton variant="cta" onClick={handleClick}>
+            Criar conta
           </MentorixButton>
         </div>
       </StyleHeader>
