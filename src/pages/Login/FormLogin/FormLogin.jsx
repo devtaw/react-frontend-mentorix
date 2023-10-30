@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { InputGroup, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { SpanEsqueceuSenha, Container, Button } from "./FormLogin.styled";
-
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
 
 export default function FormLogin({ onSave }) {
@@ -13,25 +12,8 @@ export default function FormLogin({ onSave }) {
   const navigate = useNavigate();
   function handleLogin() {
     console.log(email, senha);
-    // if (email.length == 0 || email.indexOf("@") == -1) {
-    //   alert("E-mail inválido");
-    //   return;
-    // }
-
-    // if (senha.length < 5) {
-    //   alert("Senha inválida");
-    //   return;
-    // }
-
-    onSave({
-      email,
-      senha,
-    });
+    onSave({ email, senha });
   }
-
-  // function handleLogin () {
-  //     navigate("/area-mentor");
-  // }
 
   return (
     <Container>
