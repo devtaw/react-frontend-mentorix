@@ -1,11 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import Col from "react-bootstrap/Form";
-import { Card, ListGroup } from "react-bootstrap";
-import { TextBody } from "../../common/typography";
 import { MentorixButton } from "../Button/MentorixButton.styled.js";
+import { updateMentor } from "../../common/services/MentorService";
 import {
   Envelope,
   Password,
@@ -15,116 +12,202 @@ import {
   ShareNetwork,
   Note,
 } from "@phosphor-icons/react";
-import {
-  MentorDescription,
-  MentorName,
-  MentorPosition,
-  Container,
-  Row2,
-  Avatar,
-  Agendamento,
-  CardAvatar,
-  CardMensagem,
-  CardIcone,
-  CardBotton,
-  Textorodape,
-} from "./FormMentor.styled";
+import { Textorodape } from "./FormMentor.styled";
+import EspecialidadesList from "./CardMentor.jsx";
 
-const foto = "LuckStarwalker.png";
+export function FormMentor(props) {
 
-export function FormMentor() {
-  const [isDisabled, setIsDisabled] = useState(true);
-  const [name, setName] = useState("Luck Starwalker");
-  const [senha, setSenha] = useState("*******");
-  const [linkedin, setLinkedin] = useState("www.linkedin/in/luckstarwars");
-  const [profissao, setProfissao] = useState("Desenvolvedor");
-  const [biografia, setBiografia] = useState(
-    "Luck é um desenvolvedor altamente experiente e inovador, com anos de sucesso na área de tecnologia. Ele é conhecido por suas habilidades excepcionais de programação e sua capacidade de resolver problemas complexos. Luck já trabalhou em uma variedade de projetos, desde startups promissoras até grandes empresas de tecnologia, sempre deixando sua marca e liderando equipes para o sucesso. Com um profundo conhecimento em várias linguagens de programação e uma paixão por compartilhar seu conhecimento, Luck é um mentor valioso para qualquer pessoa que deseje aprimorar suas habilidades e atingir o sucesso na área de tecnologia."
-  );
-  const [email, setEmail] = useState("luckstarwalker@gmail.com");
+  const [isEditing, setIsEditing] = useState(false);
+  const [newSenha, setNewSenha] = useState("");
+  const [isSenhaModified, setIsSenhaModified] = useState(false);
+  const [selectedEspecialidade, setSelectedEspecialidade] = useState([]);
+  const [tempSelectedEspecialidade, setTempSelectedEspecialidade] = useState([]);
+
+  const [linkedin, setLinkedin] = useState(props.linkedin);
+  const [profissao, setProfissao] = useState(props.profissao);
+  const [nomeCompleto, setNomeCompleto] = useState(props.nome);
+  const [especialidades, setEspecialidades] = useState(props.especialidades);
+  const [biografia, setBiografia] = useState(props.biografia);
+  const [foto, setFoto] = useState(props.foto);
+
+
+  const handleLinkedinChange = (event) => {
+    setLinkedin(event.target.value);
+  };
+
+
+  useEffect(() => {
+    setNomeCompleto(props.nome);
+    setLinkedin(props.linkedin);
+    setProfissao(props.profissao);
+    setBiografia(props.biografia);
+    setFoto(props.foto);
+  }, [props]);
+  
+  
+
+console.log("props",props);
+
+useEffect(() => {
+  setSelectedEspecialidade(especialidades);
+}, [especialidades]);
+
+
+  const especialidadesList = [
+    { label: "Estratégia", value: "estrategia" },
+    { label: "Finanças", value: "financas" },
+    { label: "Investimentos", value: "investimentos" },
+    { label: "Desenvolvimento", value: "desenvolvimento" },
+    { label: "Criptomoedas", value: "criptomoedas" },
+    { label: "Blockchain", value: "blockchain" },
+    { label: "Criatividade", value: "criatividade" },
+    { label: "Comunicação", value: "comunicacao" },
+    { label: "Produtividade", value: "produtividade" },
+  ];
+  
+
+  const handleProfissaoChange = (event) => {
+    setProfissao(event.target.value);
+  };
+
+  const handleNameChange = (event) => {
+    setNomeCompleto(event.target.value);
+  };
+
+  const handleBiografiaChange = (event) => {
+    setBiografia(event.target.value);
+  };
+
+  const handleFotoChange = (event) => {
+    setFoto(event.target.value);
+  };
 
   const handleEditClick = () => {
-    setIsDisabled(false);
+    setIsEditing(true);
   };
 
-  const handleSaveClick = () => {
-    console.log(name);
-    console.log(email);
+  const handleSaveClick = async () => {
+  
+      const dadosAtualizados = {
+        profissao: profissao,
+        linkedin: linkedin,
+        biografia: biografia,
+        nome: nomeCompleto,
+        foto: foto,
+        senha: isSenhaModified ? newSenha : props.senha,
+        especialidade: selectedEspecialidade,
+      };
 
-    setIsDisabled(true);
+      try {
+        const mentorAtualizado = await updateMentor(id, dadosAtualizados);
+        console.log("Mentor atualizado:", mentorAtualizado);
+      } catch (error) {
+        console.error("Erro ao atualizar mentor:", error);
+      }
+    
+      setIsEditing(false);
+    };
+
+
+
+  const handleCancelClick = () => {
+  setLinkedin(props.linkedin);
+  setProfissao(props.profissao);
+  setBiografia(props.biografia);
+ 
+  setIsEditing(false);
+};
+
+
+  const handleSenhaChange = (event) => {
+    const newPassword = event.target.value;
+    setNewSenha(newPassword);
+    setIsSenhaModified(newPassword !== props.senha);
   };
+
+const handleTempCheckboxChange = (value) => {
+  if (tempSelectedEspecialidade.includes(value)) {
+    setTempSelectedEspecialidade(tempSelectedEspecialidade.filter((item) => item !== value));
+  } else {
+    setTempSelectedEspecialidade([...tempSelectedEspecialidade, value]);
+  }
+};
 
   return (
     <div
       style={{ border: "1px solid #ccc", padding: "20px", borderRadius: "5px" }}
     >
-      {isDisabled ? (
-        // No modo de visualização, exibir o botão "Editar"
+      {isEditing ? (
+        <>
+          <MentorixButton
+            color={"terciary-200"}
+            onClick={handleSaveClick}
+            style={{ marginRight: "10px" }}
+          >
+            Salvar
+          </MentorixButton>
+          <MentorixButton color={"secondary-100"} onClick={handleCancelClick}>
+            Cancelar
+          </MentorixButton>
+        </>
+      ) : (
         <MentorixButton color={"terciary-200"} onClick={handleEditClick}>
           Editar perfil
-        </MentorixButton>
-      ) : (
-        // No modo de edição, exibir o botão "Salvar"
-        <MentorixButton color={"terciary-200"} onClick={handleSaveClick}>
-          Salvar alterações
         </MentorixButton>
       )}
       <hr />
       <div>
+        <label>Foto</label>
         <InputGroup size="sm" className="mb-3">
           <InputGroup.Text id="inputGroup-sizing-sm">
             <GooglePhotosLogo size={16} color="#4d0057" weight="fill" />
-            <label className="ms-2">Foto </label>
           </InputGroup.Text>
           <Form.Control
-            disabled={isDisabled}
             value={foto}
-            onChange={(event) => setName(event.target.value)}
+            onChange={handleFotoChange}
             aria-label="Small"
             aria-describedby="inputGroup-sizing-sm"
+            disabled={!isEditing} // Tornar o campo editável
           />
         </InputGroup>
       </div>
+      <label>Email</label>
       <div>
         <InputGroup size="sm" className="mb-3">
           <InputGroup.Text id="inputGroup-sizing-sm">
             <Envelope size={16} color="#4d0057" weight="fill" />
-            <label className="ms-2"> Email </label>
           </InputGroup.Text>
           <Form.Control
-            disabled={isDisabled}
-            onChange={(event) => setEmail(event.target.value)}
-            value={email}
             aria-label="Small"
             aria-describedby="inputGroup-sizing-sm"
+            disabled={!isEditing}
           />
         </InputGroup>
       </div>
-
       <div>
+        <label>Senha</label>
         <InputGroup size="sm" className="mb-3">
           <InputGroup.Text id="inputGroup-sizing-sm">
             <Password size={16} color="#4d0057" weight="fill" />
-            <label className="ms-2"> Senha </label>
           </InputGroup.Text>
           <Form.Control
-            disabled={isDisabled}
-            onChange={(event) => setSenha(event.target.value)}
-            value={senha}
+            disabled={!isEditing}
+            onChange={handleSenhaChange}
+            value={isEditing ? newSenha : "***"}
             aria-label="Small"
             aria-describedby="inputGroup-sizing-sm"
           />
         </InputGroup>
       </div>
       <div>
+        <label>LinkedIn</label>
         <InputGroup size="sm" className="mb-3">
           <InputGroup.Text id="inputGroup-sizing-sm">
-            <LinkedinLogo size={16} color="#4d0057" weight="fill" />
-            <label className="ms-2"> LinkedIn </label>
+            <LinkedinLogo size={16} color ="#4d0057" weight="fill" />
           </InputGroup.Text>
           <Form.Control
-            disabled={isDisabled}
-            onChange={(event) => setLinkedin(event.target.value)}
+            disabled={!isEditing}
+            onChange={handleLinkedinChange}
             value={linkedin}
             aria-label="Small"
             aria-describedby="inputGroup-sizing-sm"
@@ -132,125 +215,61 @@ export function FormMentor() {
         </InputGroup>
       </div>
       <div>
+        <label>Nome completo</label>
         <InputGroup size="sm" className="mb-3">
           <InputGroup.Text id="inputGroup-sizing-sm">
             <IdentificationBadge size={16} color="#4d0057" weight="fill" />
-            <label className="ms-2"> Nome completo</label>
           </InputGroup.Text>
           <Form.Control
-            onChange={(event) => setName(event.target.value)}
-            value={name}
+            onChange={handleNameChange}
+            value={nomeCompleto}
             aria-label="Small"
             aria-describedby="inputGroup-sizing-sm"
-            disabled={isDisabled}
+            disabled={!isEditing}
           />
         </InputGroup>
+
       </div>
       <div>
+        <label>Profissão</label>
         <InputGroup size="sm" className="mb-3">
           <InputGroup.Text id="inputGroup-sizing-sm">
             <ShareNetwork size={16} color="#4d0057" weight="fill" />
-            <label className="ms-2"> Profissão</label>
           </InputGroup.Text>
           <Form.Control
-            onChange={(event) => setName(event.target.value)}
+            onChange={handleProfissaoChange}
             value={profissao}
             aria-label="Small"
             aria-describedby="inputGroup-sizing-sm"
-            disabled={isDisabled}
+            disabled={!isEditing}
           />
         </InputGroup>
       </div>
-
       <div>
-      <InputGroup size="sm" className="mb-3">
-      <InputGroup.Text id="inputGroup-sizing-sm">
-        <Note size={16} color="#4d0057" weight="fill" />
-        <label className="ms-2"> Biografia</label>
-      </InputGroup.Text>
-      <Form.Control
-        as="textarea" // Use "as" com o valor "textarea" para criar um elemento textarea
-        rows={5} // Defina o número de linhas desejado para o textarea (ajuste conforme necessário)
-        value={biografia}
-        disabled={isDisabled}
-        onChange={(event) => setBiografia(event.target.value)}
-      />
-    </InputGroup>
+        <label>Biografia</label>
+        <InputGroup size="sm" className="mb-3">
+          <InputGroup.Text id="inputGroup-sizing-sm">
+            <Note size={16} color="#4d0057" weight="fill" />
+          </InputGroup.Text>
+          <Form.Control
+            as="textarea"
+            rows={5}
+            value={biografia}
+            disabled={!isEditing}
+            onChange={handleBiografiaChange}
+          />
+        </InputGroup>
         <Textorodape>
           *O texto deve ter no máximo 400 caracteres (com espaços).
         </Textorodape>
       </div>
-
       <div>
-        <p>
-          <strong>Especialidades por áreas de atuação:</strong>
-        </p>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Card style={{ width: "18rem", marginRight: "10px" }}>
-            <Card.Header>
-              {" "}
-              <strong>Negócios</strong>
-            </Card.Header>
-            <Card.Body>
-              <Form.Check type="checkbox" label="Estratégia" id="checkbox-1" />
-              <Form.Check type="checkbox" label="Finanças" id="checkbox-2" />
-              <Form.Check
-                type="checkbox"
-                label="Investimentos"
-                id="checkbox-3"
-              />
-            </Card.Body>
-          </Card>
-          <Card style={{ width: "18rem", marginRight: "10px" }}>
-            <Card.Header>
-              {" "}
-              <strong> Comportamento</strong>
-            </Card.Header>
-            <Card.Body>
-              <Form.Check
-                type="checkbox"
-                label="Criatividade"
-                id="checkbox-1"
-              />
-              <Form.Check type="checkbox" label="Comunicação" id="checkbox-2" />
-              <Form.Check
-                type="checkbox"
-                label="Produtividade"
-                id="checkbox-3"
-              />
-            </Card.Body>
-          </Card>
-
-          <Card style={{ width: "18rem" }}>
-            <Card.Header>
-              {" "}
-              <strong>Tecnologia </strong>
-            </Card.Header>
-            <Card.Body>
-              <Form.Check
-                type="checkbox"
-                label="Cibersegurança"
-                id="checkbox-1"
-              />
-              <Form.Check
-                type="checkbox"
-                label="Criptomoedas"
-                id="checkbox-2"
-              />
-              <Form.Check
-                type="checkbox"
-                label="Desenvolvimento"
-                id="checkbox-3"
-              />
-            </Card.Body>
-          </Card>
-        </div>
+        <EspecialidadesList
+          especialidades={especialidadesList}
+          selectedEspecialidade={tempSelectedEspecialidade}
+          onEspecialidadeChange={handleTempCheckboxChange}
+          isEditing={isEditing}
+        />
         <div
           style={{
             display: "flex",
