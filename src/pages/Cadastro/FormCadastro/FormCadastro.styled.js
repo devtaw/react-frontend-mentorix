@@ -10,7 +10,7 @@ align-items: center;
 background-color: #fff;
 padding: 16px;
 border-radius: 16px;
-box-shadow: rgba(0, 0, 0, 0.5)
+box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px
 `
 
 export const Button = styled.div`
@@ -40,4 +40,9 @@ width: 100%;
 margin-top: 8px;
 margin-bottom: 16px;
 font-size: 12px;
+font-weight: bold;
+`
+
+export const StyledLabelCadastro = styled.label`
+margin-bottom: 8px;
 `
