@@ -1,20 +1,20 @@
 import styled from "styled-components";
 
 export const StyleHeader = styled.header`
-  display: flex;
+  display: grid;
+  grid-template-columns: min-content minmax(160px, 1fr) minmax(min-content, auto);
+  align-items: stretch;
+  -webkit-box-align: stretch;
+  justify-content: space-between;
   position: relative;
   z-index: 1;
-  align-items: center;
-  justify-content: space-between;
   padding: 25px 25px;
-  background-color: ${(p) => p.theme["background-dark"]};
+  background-color: ${(p) => p.theme["background-ligth"]};
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  width: 100%;
 
-  .logo {
-    color: ${(p) => p.theme["background-dark"]};
-    line-height: normal;
-    max-width: 130px;
-    height: auto;
+  img {
+    width: 87px;
   }
 
   .lista_links {
@@ -25,9 +25,9 @@ export const StyleHeader = styled.header`
 
   .link {
     text-decoration: none;
-    color: ${(p) => p.theme["text-light"]} !important;
+    color: ${(p) => p.theme["background-dark"]} !important;
     font-family: "Open Sans", sans-serif;
-    font-size: 18.72px;
+    font-size: 16px;
     font-weight: 700;
     letter-spacing: -0.374px;
     margin-right: 50px; // Espaçamento entre os links
@@ -35,6 +35,6 @@ export const StyleHeader = styled.header`
 
   .login-link {
     text-decoration: none;
-    color: ${(p) => p.theme["terciary-a100"]} !important;
+    color: ${(p) => p.theme["background-dark"]} !important;
   }
 `;

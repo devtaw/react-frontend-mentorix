@@ -24,7 +24,7 @@ function SectionWelcome() {
             Transforme sua carreira com nossa plataforma de mentoria. Conhecimento compartilhado, futuro assegurado.
           </TextBody>
 
-          <MentorixButton color={"terciary-200"} onClick={handleClick} className="mt-4">
+          <MentorixButton variant="cta" onClick={handleClick} className="mt-4">
             Conheça os Mentores
           </MentorixButton>
         </TextContainer>
