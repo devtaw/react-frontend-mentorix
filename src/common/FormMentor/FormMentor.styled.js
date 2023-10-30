@@ -108,7 +108,7 @@ export const EspecialidadesContainer = styled.div`
 display: flex;
 flex-wrap: wrap;
 background-color: #f5f5f5;
-border: 1px solid #000;
+border: 1px solid #ccc;
 border-radius: 6px;
 padding: 1rem;
 text-align: left;

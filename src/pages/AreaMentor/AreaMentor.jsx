@@ -30,6 +30,7 @@ export function AreaMentor() {
     async function fetchMentorData() {
       try {
         const mentor = await getMentorById(id);
+        console.log(mentor);
         setMentorData(mentor);
         setEspecialidadeData(mentor.especialidades);
         console.log(mentor);
@@ -42,6 +43,10 @@ export function AreaMentor() {
     }
     fetchMentorData();
   }, [id]);
+  console.log("aqui", mentorData);
+
+
+  console.log("agendamentos", mentorData?.agendamentos);
 
   return (
     <>
@@ -55,8 +60,7 @@ export function AreaMentor() {
             <img src={imgCapa} alt="" />
             <div className="col-12"></div>
           </Row2>
-          <Avatar img={mentorData?.fotoPerfil}></Avatar>
-
+          <Avatar img={mentorData?.mentor?.fotoPerfil}></Avatar>
           <div>
             <div>
               {loading ? (
@@ -69,20 +73,31 @@ export function AreaMentor() {
               )}
             </div>
             <div>
-              <TextH3Mentor className="mb-3 mt-3">Solicitações de agendamento recebidas</TextH3Mentor>
+              <TextH3Mentor className="mb-3 mt-3">
+                Solicitações de agendamento recebidas
+              </TextH3Mentor>
               <TextBodyMentor>
                 Aceite ou recuse suas solicitações e você e o mentorado vão
                 receber um e-mail.
               </TextBodyMentor>
             </div>
-            <Agendamento />
+            {mentorData?.agendamentos?.map((agendamento) => (
+              <div key={agendamento.id} >
+                <Agendamento
+                  idDoAgendamento={agendamento.id}
+                  nomeCompleto={agendamento.nomeCompleto}
+                  profissao={agendamento.profissao}
+                  email={agendamento.email}
+                  mensagem={agendamento.campoMensagem}
+                />
+              </div>
+            ))}
             <hr />
             <TextH5Mentor className="mb-4 mt-5">
               Aqui na Área do Mentor você pode editar seu perfil.
             </TextH5Mentor>
-
           </div>
-         
+
           <TextDescriptionMentor>
             {" "}
             <strong>Perfil Mentor (Dados Pessoais): </strong>

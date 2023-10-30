@@ -133,5 +133,5 @@ export const Input = styled.input`
   color: ${(props) => props.inputColor || "palevioletred"};
   background: papayawhip;
   border: none;
-  border-radius: 3px;
+  border-radius: 1px;
 `;

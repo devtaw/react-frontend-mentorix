@@ -142,7 +142,7 @@ export function FormMentor(props) {
 
   return (
     <div>
-    <div style={{ border: "1px solid #ccc", padding: "20px", borderRadius: "5px", textAlign: "right" }}>
+    <div style={{ padding: "20px", textAlign: "right", backgroundColor: "#E3F2FD" }}>
   {isEditing ? (
     <>
       <MentorixButton

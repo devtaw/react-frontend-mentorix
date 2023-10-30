@@ -1,6 +1,6 @@
 import { putAgendamento } from "../../common/services/AgendamentoService";
 
-const idDoAgendamento = 123;
+const idDoAgendamento = obterIDDoAgendamento();
 
 export async function atualizarAceite(idDoAgendamento, aceite) {
   const agendamento = {
