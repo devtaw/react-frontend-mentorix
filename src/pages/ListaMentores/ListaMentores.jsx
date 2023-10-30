@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import {
-  ContainerList,
-  ContentSection,
-  SpanTitle,
-  TextDescription,
-  Title,
-  Container,
-  ListaEspecialidades,
-} from "./ListaMentores.styled";
+import { ContainerList, ContentSection, SpanTitle, TextDescription, Title, Container } from "./ListaMentores.styled";
 import { CardMentor } from "./CardMentor/CardMentor";
 import { useQuery } from "@tanstack/react-query";
 import { getMentores, getMentoresEspecialidades } from "../../common/services/MentorService";
