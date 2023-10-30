@@ -11,6 +11,10 @@ export const Container = styled.div`
   width: 25rem;
   margin-top: 40px;
   margin-bottom: 40px;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.5);
 
   .linkCadastro {
     text-decoration: none;
@@ -39,4 +43,6 @@ margin-top: 16px;
 export const TextH1Styled = styled(TextH1)`
 font-size: 52px;
 text-align: center;
+font-weight: bold;
+margin: 2.5rem;
 `
