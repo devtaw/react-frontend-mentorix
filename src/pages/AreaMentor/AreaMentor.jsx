@@ -26,11 +26,15 @@ export function AreaMentor() {
   const [especialidade, setEspecialidadeData] = useState(null);
   const [loading, setLoading] = useState(true);
 
+ 
+
+
   useEffect(() => {
     async function fetchMentorData() {
       try {
         const mentor = await getMentorById(id);
         console.log(mentor);
+        
         setMentorData(mentor);
         setEspecialidadeData(mentor.especialidades);
         console.log(mentor);
@@ -38,6 +42,7 @@ export function AreaMentor() {
         setLoading(false);
       } catch (error) {
         console.error("Erro ao buscar os dados do mentor:", error);
+        
         setLoading(false);
       }
     }
@@ -60,7 +65,7 @@ export function AreaMentor() {
             <img src={imgCapa} alt="" />
             <div className="col-12"></div>
           </Row2>
-          <Avatar img={mentorData?.mentor?.fotoPerfil}></Avatar>
+          <Avatar img={mentorData?.fotoPerfil}></Avatar>
           <div>
             <div>
               {loading ? (

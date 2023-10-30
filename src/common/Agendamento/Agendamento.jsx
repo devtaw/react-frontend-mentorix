@@ -4,19 +4,31 @@ import {
   CardIcone,
   Agendamentoborder,
 } from "./Agendamento.styled";
+import { useSnackbar } from "notistack";
 import { ThumbsDown, ThumbsUp } from "@phosphor-icons/react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { putAgendamento } from "../../common/services/AgendamentoService";
 
+
+
+
+
 export function Agendamento({ idDoAgendamento, nomeCompleto, email, mensagem, profissao, }) {
+   const snackbar = useSnackbar();
   const handleThumbsUpClick = async () => {
     await atualizarAceite(idDoAgendamento, true);
+    snackbar.enqueueSnackbar("Solicitação respondida com Sucesso!",{
+      variant:"success"
+    })
   };
 
   const handleThumbsDownClick = async () => {
     await atualizarAceite(idDoAgendamento, false);
+    snackbar.enqueueSnackbar("Houve um erro ao responder a solicitação!",{
+      variant:"error"
+    })
   };
 
   async function atualizarAceite(idAgendamento, aceite) {
