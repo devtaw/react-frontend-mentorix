@@ -29,29 +29,12 @@ export function AreaMentor() {
  
 
 
-  useEffect(() => {
-    async function fetchMentorData() {
-      try {
-        const mentor = await getMentorById(id);
-        console.log(mentor);
+  
         
-        setMentorData(mentor);
-        setEspecialidadeData(mentor.especialidades);
-        console.log(mentor);
-        console.log(mentor.especialidades);
-        setLoading(false);
-      } catch (error) {
-        console.error("Erro ao buscar os dados do mentor:", error);
-        
-        setLoading(false);
-      }
-    }
-    fetchMentorData();
-  }, [id]);
-  console.log("aqui", mentorData);
+   
 
 
-  console.log("agendamentos", mentorData?.agendamentos);
+
 
   return (
     <>

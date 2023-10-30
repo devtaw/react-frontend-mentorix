@@ -19,16 +19,12 @@ export function Agendamento({ idDoAgendamento, nomeCompleto, email, mensagem, pr
    const snackbar = useSnackbar();
   const handleThumbsUpClick = async () => {
     await atualizarAceite(idDoAgendamento, true);
-    snackbar.enqueueSnackbar("Solicitação respondida com Sucesso!",{
-      variant:"success"
-    })
+  
   };
 
   const handleThumbsDownClick = async () => {
     await atualizarAceite(idDoAgendamento, false);
-    snackbar.enqueueSnackbar("Houve um erro ao responder a solicitação!",{
-      variant:"error"
-    })
+   
   };
 
   async function atualizarAceite(idAgendamento, aceite) {
@@ -38,11 +34,16 @@ export function Agendamento({ idDoAgendamento, nomeCompleto, email, mensagem, pr
 
     try {
       const resposta = await putAgendamento(idAgendamento, agendamento);
-      console.log("Aceite atualizado com sucesso:", resposta);
+      enqueueSnackbar("Aceite atualizado com sucesso", {
+        variant: "success",
+      });
     } catch (error) {
-      console.error("Erro ao atualizar o aceite:", error);
+      enqueueSnackbar("Erro ao atualizar o aceite", {
+        variant: "error",
+      });
     }
   }
+
   
   return (
     <Container>
