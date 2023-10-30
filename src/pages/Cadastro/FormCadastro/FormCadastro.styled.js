@@ -9,6 +9,16 @@ align-items: center;
 `
 
 export const Button = styled.div`
+margin-top: 16px;
 width: 100%;
 text-align: right;
+`
+
+export const EspecialidadesContainer = styled.div`
+display: flex;
+flex-wrap: wrap;
+background-color: #fff;
+border: 1px solid #000;
+border-radius: 6px;
+padding: 1rem
 `

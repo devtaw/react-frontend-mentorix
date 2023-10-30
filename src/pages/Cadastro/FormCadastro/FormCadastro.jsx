@@ -14,7 +14,11 @@ import { InputGroup, Form } from "react-bootstrap";
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
 import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router";
-import { Button, Container } from "./FormCadastro.styled";
+import {
+  Button,
+  Container,
+  EspecialidadesContainer,
+} from "./FormCadastro.styled";
 
 export function FormCadastro({ onSave }) {
   const [nomeCompleto, setNomeCompleto] = useState("");
@@ -179,6 +183,72 @@ export function FormCadastro({ onSave }) {
           }}
         />
       </InputGroup>
+      <label>Especialidades</label>
+      <EspecialidadesContainer>
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Desenvolvimento"
+          id="checkbox-1"
+          value="desenvolvimento"
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Criptomoedas"
+          id="checkbox-2"
+          value="criptomoedas"
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Blockchain"
+          id="checkbox-3"
+          value="blockchain"
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Finanças"
+          id="checkbox-1"
+          value="financas"
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Investimentos"
+          id="checkbox-2"
+          value="investimentos"
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Estratégia"
+          id="checkbox-3"
+          value="estrategia"
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Criatividade"
+          id="checkbox-1"
+          value="criatividade"
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Comunicação"
+          id="checkbox-2"
+          value="comunicacao"
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Produtividade"
+          id="checkbox-3"
+          value="produtividade"
+        />
+      </EspecialidadesContainer>
       <Button>
         <MentorixButton onClick={handleSave}>Cadastrar</MentorixButton>
       </Button>
