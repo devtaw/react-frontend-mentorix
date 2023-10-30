@@ -14,7 +14,12 @@ import { InputGroup, Form } from "react-bootstrap";
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
 import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router";
-import { Container } from "./FormCadastro.styled";
+import {
+  Button,
+  Container,
+  EspecialidadesContainer,
+  TextH1Styled,
+} from "./FormCadastro.styled";
 
 export function FormCadastro({ onSave }) {
   const [nomeCompleto, setNomeCompleto] = useState("");
@@ -25,6 +30,7 @@ export function FormCadastro({ onSave }) {
   const [biografia, setBiografia] = useState("");
   const [linkedin, setLinkedin] = useState("");
   const [profissao, setProfissao] = useState("");
+  const [especialidades, setEspecialidades] = useState([]);
 
   const snackbar = useSnackbar();
   const navigate = useNavigate();
@@ -41,11 +47,25 @@ export function FormCadastro({ onSave }) {
       biografia,
       linkedin,
       profissao,
+      especialidades,
     });
+  }
+
+  function handleClickCheckbox(value, checked) {
+    if (checked) {
+      setEspecialidades([...especialidades, value]);
+      return;
+    } else {
+      const novaLista = especialidades.filter(
+        (especialidade) => especialidade !== value
+      );
+      setEspecialidades(novaLista);
+    }
   }
 
   return (
     <Container>
+      <TextH1Styled>Cadastro</TextH1Styled>
       <label>Foto de perfil</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
@@ -107,6 +127,7 @@ export function FormCadastro({ onSave }) {
           type="password"
           placeholder="Senha"
           aria-label="Password"
+          minLength={6}
           aria-describedby="inputGroup-sizing-default"
           value={senha}
           onChange={(e) => {
@@ -146,7 +167,7 @@ export function FormCadastro({ onSave }) {
         />
       </InputGroup>
 
-      <label>LinkedIn</label>
+      <label>LinkedIn (opcional)</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
           <LinkedinLogo size={16} color="#673AB7" weight="fill" />
@@ -170,6 +191,8 @@ export function FormCadastro({ onSave }) {
         </InputGroup.Text>
         <Form.Control
           type="text"
+          maxLength={400}
+          rows={5}
           placeholder="Biografia"
           aria-label="Biography"
           aria-describedby="inputGroup-sizing-default"
@@ -180,7 +203,102 @@ export function FormCadastro({ onSave }) {
         />
       </InputGroup>
 
-      <MentorixButton onClick={handleSave}>Cadastrar</MentorixButton>
+      <label>Especialidades</label>
+      <EspecialidadesContainer>
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Desenvolvimento"
+          id="checkbox-1"
+          value="desenvolvimento"
+          onChange={(e) =>
+            handleClickCheckbox(e.target.value, e.target.checked)
+          }
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Criptomoedas"
+          id="checkbox-2"
+          value="criptomoedas"
+          onChange={(e) =>
+            handleClickCheckbox(e.target.value, e.target.checked)
+          }
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Blockchain"
+          id="checkbox-3"
+          value="blockchain"
+          onChange={(e) =>
+            handleClickCheckbox(e.target.value, e.target.checked)
+          }
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Finanças"
+          id="checkbox-1"
+          value="financas"
+          onChange={(e) =>
+            handleClickCheckbox(e.target.value, e.target.checked)
+          }
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Investimentos"
+          id="checkbox-2"
+          value="investimentos"
+          onChange={(e) =>
+            handleClickCheckbox(e.target.value, e.target.checked)
+          }
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Estratégia"
+          id="checkbox-3"
+          value="estrategia"
+          onChange={(e) =>
+            handleClickCheckbox(e.target.value, e.target.checked)
+          }
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Criatividade"
+          id="checkbox-1"
+          value="criatividade"
+          onChange={(e) =>
+            handleClickCheckbox(e.target.value, e.target.checked)
+          }
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Comunicação"
+          id="checkbox-2"
+          value="comunicacao"
+          onChange={(e) =>
+            handleClickCheckbox(e.target.value, e.target.checked)
+          }
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Produtividade"
+          id="checkbox-3"
+          value="produtividade"
+          onChange={(e) =>
+            handleClickCheckbox(e.target.value, e.target.checked)
+          }
+        />
+      </EspecialidadesContainer>
+      <Button>
+        <MentorixButton onClick={handleSave}>Cadastrar</MentorixButton>
+      </Button>
     </Container>
   );
 }

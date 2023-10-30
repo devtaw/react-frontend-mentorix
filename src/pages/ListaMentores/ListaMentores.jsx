@@ -11,6 +11,7 @@ import { ModalAgendamento } from "./ModalAgendamento/ModalAgendamento";
 export function ListaMentores() {
   //cria estado p/ guardar se modal estar aberta ou fechada
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [idMentor, setIdMentor] = useState(null);
   //data é preenchido quando a query retorna um resultado e isLoading será true quando a query estiver sendo executada
   const listaMentoresQuery = useQuery({
     queryKey: ["lista-mentores"],
@@ -33,11 +34,14 @@ export function ListaMentores() {
   );
 
   //função que será chamada quando user clicar no botão do card mentor
-  function handleClickCardMentor() {
+  function handleClickCardMentor(idMentor) {
+    setIdMentor(idMentor);
     setIsModalOpen(true);
   }
   //função será chamada quando user clicar para fechar modal
   function handleModalClose() {
+    setIdMentor(null);
+
     //volta estado de isModalOpen para false, logo como estamos passando isModalOpen como parametros para modal, ela entederá que deve ser fechada
     setIsModalOpen(false);
   }
@@ -62,7 +66,7 @@ export function ListaMentores() {
                   biografia={mentor.biografia}
                   especialidades={mentorEspecialidadesMap.get(mentor.id) || []}
                   linkedin={mentor.linkedin}
-                  onClick={handleClickCardMentor}
+                  onClick={() => handleClickCardMentor(mentor.id)}
                 />
               </div>
             ))}
@@ -70,7 +74,7 @@ export function ListaMentores() {
         </ContentSection>
       </Container>
       <Footer />
-      <ModalAgendamento isModalOpen={isModalOpen} onClose={handleModalClose} />
+      <ModalAgendamento idMentor={idMentor} isModalOpen={isModalOpen} onClose={handleModalClose} />
     </>
   );
 }
