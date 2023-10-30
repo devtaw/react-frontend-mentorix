@@ -293,7 +293,6 @@ export function FormCadastro({ onSave }) {
             handleClickCheckbox(e.target.value, e.target.checked)
           }
         />
-        <div img=""></div>
       </EspecialidadesContainer>
       <Button>
         <MentorixButton onClick={handleSave}>Cadastrar</MentorixButton>
