@@ -3,23 +3,12 @@ import { StyleHeader } from "./Header.styled.js";
 import { Link, useNavigate } from "react-router-dom";
 import { useTheme } from "styled-components";
 import { MentorixButton } from "../Button/MentorixButton.styled.js";
-import { useState } from "react";
 import logoImg from "../../assets/img/logo-header.png";
 import { SignIn } from "@phosphor-icons/react";
 
 const Header = () => {
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-
   const navigate = useNavigate();
   const theme = useTheme();
-
-  function handleOpenLoginModal() {
-    setIsLoginModalOpen(true);
-  }
-
-  function handleCloseLoginModal() {
-    setIsLoginModalOpen(false);
-  }
 
   const handleClick = () => {
     navigate("/cadastro");
@@ -60,10 +49,10 @@ const Header = () => {
         <div className="d-flex align-items-center">
           <Link to="/login" className="link login-link d-flex align-items-center gap-1">
             Acessar
-            <SignIn color="#311B92" weight="fill" size={27} />
+            <SignIn color={theme["background-dark"]} weight="fill" size={27} />
           </Link>
 
-          <MentorixButton variant="cta" onClick={handleClick}>
+          <MentorixButton variant="primary" onClick={handleClick}>
             Criar conta
           </MentorixButton>
         </div>
