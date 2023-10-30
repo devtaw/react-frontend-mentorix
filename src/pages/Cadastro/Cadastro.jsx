@@ -19,7 +19,7 @@ export function Cadastro() {
         snackbar.enqueueSnackbar("Usuário cadastrado com sucesso!", {
           variant: "success",
         });
-        navigate("/area-mentor/" + mentor.id);
+        navigate("/login");
         return;
       }
     } catch (error) {
