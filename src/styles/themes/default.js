@@ -1,9 +1,11 @@
 export const defaultTheme = {
-  "background-light": "#E3F2FD",
-  "background-dark": "#4A148C",
+  white: "#FFFFFF",
+
+  "background-light": "#F6FBFE",
+  "background-dark": "#311B92",
 
   "text-light": "#EDE7F6",
-  "text-dark": "#0D47A1",
+  "text-dark": "#161616",
 
   // "title-color": "#",
   // "text-color": "#",

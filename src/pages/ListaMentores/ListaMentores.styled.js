@@ -57,3 +57,18 @@ export const ContainerList = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
 `;
+
+// export const ListaEspecialidades = styled.ul`
+//   flex-wrap: wrap;
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -webkit-box-align: center;
+//   -ms-flex-align: center;
+//   align-items: center;
+//   -webkit-box-pack: center;
+//   -ms-flex-pack: center;
+//   justify-content: center;
+//   margin-left: -10px;
+//   margin-right: -10px;
+// `;

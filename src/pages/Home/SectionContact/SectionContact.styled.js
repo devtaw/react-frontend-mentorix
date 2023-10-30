@@ -1,6 +1,7 @@
 import { SpeakerNone } from "@phosphor-icons/react";
 import styled from "styled-components";
 import { ContentContainer } from "../../../common/ContentContainer.styled";
+import contactSectionImage from "../../../assets/img/bg-section-contact.png";
 
 export const Container = styled(ContentContainer)`
   display: flex;
@@ -14,18 +15,20 @@ export const ContactContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: ${(p) => p.theme["background-dark"]};
-  color: ${(p) => p.theme["secondary-50"]};
+  /* background-color: ${(p) => p.theme["background-dark"]}; */
+  color: ${(p) => p.theme["text-dark"]};
   padding: 50px;
+  background-image: url(${contactSectionImage});
+  background-size: cover;
 
   h1 {
-    color: ${(p) => p.theme["blue-gray-50"]};
+    color: ${(p) => p.theme["text-dark"]};
     line-height: normal;
     letter-spacing: -0.48px;
   }
 
   h2 {
-    color: ${(p) => p.theme["blue-a400"]};
+    color: ${(p) => p.theme["background-light"]};
     line-height: normal;
     letter-spacing: -0.48px;
   }
@@ -49,22 +52,22 @@ export const Column = styled.div`
   }
 `;
 export const Card = styled.div`
-  background: ${(p) => p.theme["primary-900"]};
-  border: 1px solid #fff59d;
+  background: ${(p) => p.theme["background-dark"]};
+  /* border: 1px solid #fff59d; */
   padding: 30px;
   text-align: center;
   border-radius: 10px;
-  color: ${(p) => p.theme["blue-gray-50"]};
+  color: ${(p) => p.theme["background-light"]};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 250px;
-  height: 260px;
-  min-height: 260px;
+  height: 210px;
+  min-height: 210px;
 
   h4 {
-    color: ${(p) => p.theme["green-500"]};
+    color: ${(p) => p.theme["primary-100"]};
   }
 `;
 
@@ -76,7 +79,7 @@ export const SocialIcons = styled.div`
   padding-top: 10px;
 
   a {
-    color: ${(p) => p.theme["blue-gray-800"]};
+    color: ${(p) => p.theme["background-light"]};
     font-family: Open Sans;
     text-decoration: none;
     align-items: center;
@@ -92,7 +95,7 @@ export const IconLink = styled.div`
     display: flex;
     align-items: center;
     margin: 10px 0;
-    color: ${(p) => p.theme["blue-gray-500"]} !important;
+    color: ${(p) => p.theme["background-light"]} !important;
     font-family: Open Sans;
     text-decoration: none;
   }
@@ -112,12 +115,12 @@ export const Frase = styled.p`
   width: 100%;
   height: 100px;
   margin-top: auto;
-  color: ${(p) => p.theme["white"]};
+  color: ${(p) => p.theme["background-light"]};
 
   p {
     background-color: transparent;
     margin: 10px 0;
-    color: ${(p) => p.theme["secondary-100"]} !important;
+    color: ${(p) => p.theme["background-light"]} !important;
     font-family: Open Sans;
     text-decoration: none;
   }

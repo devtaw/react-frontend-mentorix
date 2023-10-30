@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ContentContainer } from "../../../common/ContentContainer.styled";
+import aboutSectionImage from "../../../assets/img/bg-section-about.png";
 
 export const Container = styled(ContentContainer)`
   display: flex;
@@ -13,6 +14,8 @@ export const AboutSection = styled.div`
   align-items: center;
   justify-content: space-between;
   background-color: ${(p) => p.theme["background-light"]};
+  background-image: url(${aboutSectionImage});
+  background-size: cover;
 `;
 
 export const TextContainer = styled.div`
