@@ -9,5 +9,6 @@ align-items: center;
 `
 
 export const Button = styled.div`
-margin-left: 73.6%;
+width: 100%;
+text-align: right;
 `
