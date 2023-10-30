@@ -17,7 +17,6 @@ export const TextH3Mentor = styled.h3`
   text-align: left;
 `;
 
-
 export const TextH5Mentor = styled.h5`
   font-family: "Open Sans", sans-serif;
   font-style: normal;
@@ -68,7 +67,14 @@ export const Container = styled.div`
 
 export const Row2 = styled.div`
   height: 240px;
-  background-image: url(${(props) => props.img});
+  top: 0;
+  img {
+    object-fit: contain;
+    width: 100%;
+    opacity: 0.5;
+    position: relative;
+    z-index: 0;
+  }
 `;
 
 export const Avatar = styled.div`
@@ -80,6 +86,9 @@ export const Avatar = styled.div`
   margin: 0 auto;
   margin-top: -100px;
   background-image: url(${(props) => props.img});
+  position: relative;
+  z-index: 1;
+  margin-top: -130px;
 `;
 
 export const AgendamentoContainer = styled.div`

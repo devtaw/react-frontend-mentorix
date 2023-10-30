@@ -103,3 +103,12 @@ export const Labelleft = styled.label`
   display: block;
   width: 100%;
 `;
+
+export const EspecialidadesContainer = styled.div`
+display: flex;
+flex-wrap: wrap;
+background-color: #fff;
+border: 1px solid #000;
+border-radius: 6px;
+padding: 1rem;
+`;

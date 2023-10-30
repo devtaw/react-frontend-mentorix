@@ -31,8 +31,8 @@ export function Agendamento() {
         <Col className="col-3 d-flex justify-content-center">
   <div className="d-flex justify-content-center align-items-center">
     <CardIcone>
-      <ThumbsUp style={{ marginRight: "15px" }} size={45} color="#43A047" weight="fill" />
-      <ThumbsDown style={{ marginLeft: "15px" }} size={45} color="#D32F2F" weight="fill" />
+      <ThumbsUp style={{ marginRight: "20px" }} size={45} color="#43A047" weight="fill" />
+      <ThumbsDown style={{ marginLeft: "20px" }} size={45} color="#D32F2F" weight="fill" />
     </CardIcone>
   </div>
 </Col>

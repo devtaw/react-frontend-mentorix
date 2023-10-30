@@ -12,7 +12,7 @@ import {
   ShareNetwork,
   Note,
 } from "@phosphor-icons/react";
-import { Textorodape, Labelleft } from "./FormMentor.styled";
+import { Textorodape, Labelleft, EspecialidadesContainer } from "./FormMentor.styled";
 import EspecialidadesList from "./CardMentor.jsx";
 
 export function FormMentor(props) {
@@ -150,8 +150,8 @@ export function FormMentor(props) {
       )}
       <hr />
 
-      <div>
-        <div>
+      <div >
+        <Labelleft>
           <label className="Label-left">Foto</label>
           <InputGroup size="sm" className="mb-3">
             <InputGroup.Text id="inputGroup-sizing-sm">
@@ -165,9 +165,9 @@ export function FormMentor(props) {
               disabled={!isEditing} // Tornar o campo editável
             />
           </InputGroup>
-        </div>
+        </Labelleft>
 
-        <div>
+        <Labelleft>
           <label>Nome completo</label>
           <InputGroup size="sm" className="mb-3">
             <InputGroup.Text id="inputGroup-sizing-sm">
@@ -181,9 +181,9 @@ export function FormMentor(props) {
               disabled={!isEditing}
             />
           </InputGroup>
-        </div>
+        </Labelleft>
 
-        <div>
+        <Labelleft>
           <label>Email</label>
           <InputGroup size="sm" className="mb-3">
             <InputGroup.Text id="inputGroup-sizing-sm">
@@ -195,9 +195,9 @@ export function FormMentor(props) {
               disabled={!isEditing}
             />
           </InputGroup>
-        </div>
+        </Labelleft>
 
-        <div>
+        <Labelleft>
           <label>Senha</label>
           <InputGroup size="sm" className="mb-3">
             <InputGroup.Text id="inputGroup-sizing-sm">
@@ -211,9 +211,9 @@ export function FormMentor(props) {
               aria-describedby="inputGroup-sizing-sm"
             />
           </InputGroup>
-        </div>
+        </Labelleft>
 
-        <div>
+        <Labelleft>
           <label>Biografia</label>
           <InputGroup size="sm" className="mb-3">
             <InputGroup.Text id="inputGroup-sizing-sm">
@@ -231,9 +231,9 @@ export function FormMentor(props) {
           <Textorodape>
             *O texto deve ter no máximo 400 caracteres (com espaços).
           </Textorodape>
-        </div>
+        </Labelleft>
 
-        <div>
+        <Labelleft>
           <label>LinkedIn</label>
           <InputGroup size="sm" className="mb-3">
             <InputGroup.Text id="inputGroup-sizing-sm">
@@ -247,9 +247,9 @@ export function FormMentor(props) {
               aria-describedby="inputGroup-sizing-sm"
             />
           </InputGroup>
-        </div>
+        </Labelleft>
 
-        <div>
+        <Labelleft>
           <label>Profissão</label>
           <InputGroup size="sm" className="mb-3">
             <InputGroup.Text id="inputGroup-sizing-sm">
@@ -263,9 +263,9 @@ export function FormMentor(props) {
               disabled={!isEditing}
             />
           </InputGroup>
-        </div>
+        </Labelleft>
       </div>
-      <div>
+      {/* <div>
         <EspecialidadesList
           especialidades={especialidadesList}
           selectedEspecialidade={tempSelectedEspecialidade}
@@ -281,7 +281,75 @@ export function FormMentor(props) {
         >
           <Textorodape>*Você pode marcar mais de 1 opção.</Textorodape>
         </div>
-      </div>
+      </div> */}
+
+<label>Especialidades</label>
+      <EspecialidadesContainer>
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Desenvolvimento"
+          id="checkbox-1"
+          value="desenvolvimento"
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Criptomoedas"
+          id="checkbox-2"
+          value="criptomoedas"
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Blockchain"
+          id="checkbox-3"
+          value="blockchain"
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Finanças"
+          id="checkbox-1"
+          value="financas"
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Investimentos"
+          id="checkbox-2"
+          value="investimentos"
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Estratégia"
+          id="checkbox-3"
+          value="estrategia"
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Criatividade"
+          id="checkbox-1"
+          value="criatividade"
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Comunicação"
+          id="checkbox-2"
+          value="comunicacao"
+        />
+        <Form.Check
+          className="col-md-4"
+          type="checkbox"
+          label="Produtividade"
+          id="checkbox-3"
+          value="produtividade"
+        />
+        <div img=""></div>
+      </EspecialidadesContainer>
     </div>
   );
 }

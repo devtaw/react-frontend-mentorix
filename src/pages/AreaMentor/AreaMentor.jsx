@@ -12,6 +12,7 @@ import {
 } from "./AreaMentor.styled";
 import { FormMentor } from "../../common/FormMentor/FormMentor";
 import "bootstrap/dist/js/bootstrap.bundle";
+import imgCapa from "../../assets/img/div-capa-areaMentor.png";
 import Footer from "../../common/Footer/Footer";
 import Header from "../../common/Header/Header";
 import { useEffect, useState } from "react";
@@ -29,9 +30,9 @@ export function AreaMentor() {
     async function fetchMentorData() {
       try {
         const mentor = await getMentorById(id);
-        setMentorData(mentor.mentor);
+        setMentorData(mentor);
         setEspecialidadeData(mentor.especialidades);
-        console.log(mentor.mentor);
+        console.log(mentor);
         console.log(mentor.especialidades);
         setLoading(false);
       } catch (error) {
@@ -50,7 +51,8 @@ export function AreaMentor() {
           <div className="row">
             <div className="col-12"></div>
           </div>
-          <Row2 img="src/assets/img/div-capa-areaMentor.png">
+          <Row2>
+            <img src={imgCapa} alt="" />
             <div className="col-12"></div>
           </Row2>
           <Avatar img={mentorData?.fotoPerfil}></Avatar>
@@ -67,20 +69,20 @@ export function AreaMentor() {
               )}
             </div>
             <div>
-              <TextH3Mentor>Solicitações de agendamento recebidas</TextH3Mentor>
+              <TextH3Mentor className="mb-3 mt-3">Solicitações de agendamento recebidas</TextH3Mentor>
               <TextBodyMentor>
                 Aceite ou recuse suas solicitações e você e o mentorado vão
                 receber um e-mail.
               </TextBodyMentor>
             </div>
             <Agendamento />
-            <TextH5Mentor className="mb-4 mt-3">
+            <hr />
+            <TextH5Mentor className="mb-4 mt-5">
               Aqui na Área do Mentor você pode editar seu perfil.
             </TextH5Mentor>
 
-            {/* <TextDescriptionMentor className="mb-4 mt-4"> Receba solicitações de agendamento através do seu email cadastrado em nossa plataforma. Tenha o controle total para aceitar ou recusar mentorias, proporcionando um serviço personalizado aos seus mentorados. Além disso, ofereça a possibilidade de marcar uma conversa inicial para compreender as necessidades e expectativas dos seus mentorados, estabelecendo assim um sólido relacionamento de mentoria. </TextDescriptionMentor> */}
           </div>
-          <hr />
+         
           <TextDescriptionMentor>
             {" "}
             <strong>Perfil Mentor (Dados Pessoais): </strong>
@@ -90,7 +92,7 @@ export function AreaMentor() {
             profissao={mentorData ? mentorData.profissao : ""}
             linkedin={mentorData ? mentorData.linkedin : ""}
             biografia={mentorData ? mentorData.biografia : ""}
-            // email={mentorData ? mentorData.email : ""},
+            email={mentorData ? mentorData.email : ""}
             nome={mentorData ? mentorData.nomeCompleto : ""}
             foto={mentorData ? mentorData.fotoPerfil : ""}
             especialidade={especialidade ? especialidade : ""}

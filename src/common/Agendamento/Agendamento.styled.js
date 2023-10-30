@@ -24,6 +24,6 @@ export const Agendamentoborder = styled.div`
   box-shadow: 0px 2px 5px #555;
   border-radius: 10px;
   margin-bottom: 25px;
-  display: flex;
   align-items: center;
+  padding: 15px; 
 `;
