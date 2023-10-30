@@ -18,6 +18,7 @@ import {
   Button,
   Container,
   EspecialidadesContainer,
+  SpanBiografia,
   TextH1Styled,
 } from "./FormCadastro.styled";
 
@@ -190,9 +191,9 @@ export function FormCadastro({ onSave }) {
           <BookOpenText size={16} color="#673AB7" weight="fill" />
         </InputGroup.Text>
         <Form.Control
-          type="text"
+          as="textarea"
           maxLength={400}
-          rows={5}
+          rows={4}
           placeholder="Biografia"
           aria-label="Biography"
           aria-describedby="inputGroup-sizing-default"
@@ -202,6 +203,8 @@ export function FormCadastro({ onSave }) {
           }}
         />
       </InputGroup>
+
+      <SpanBiografia>*Máximo de 400 caracteres</SpanBiografia>
 
       <label>Especialidades</label>
       <EspecialidadesContainer>

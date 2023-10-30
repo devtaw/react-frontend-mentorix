@@ -34,3 +34,10 @@ text-align: center;
 font-weight: bold;
 margin: 2.5rem;
 `
+
+export const SpanBiografia = styled.div`
+width: 100%;
+margin-top: 8px;
+margin-bottom: 16px;
+font-size: 12px;
+`
