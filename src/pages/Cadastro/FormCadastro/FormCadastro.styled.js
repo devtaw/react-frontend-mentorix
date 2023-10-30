@@ -9,7 +9,7 @@ align-items: center;
 `
 
 export const Button = styled.div`
-margin-top: 16px;
+margin-top: 32px;
 width: 100%;
 text-align: right;
 `
