@@ -2,31 +2,32 @@ import { Envelope, Lock } from "@phosphor-icons/react";
 import React, { useState } from "react";
 import { InputGroup, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { SpanEsqueceuSenha, Container } from "./FormLogin.styled";
+import { SpanEsqueceuSenha, Container, Button } from "./FormLogin.styled";
 
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
 
-export default function FormLogin() {
-  // const [email, setEmail] = useState('')
-  // const [senha, setSenha] = useState('')
-
-  function handleLogin(e) {
-    e.preventDefault();
-
-    if (email.length == 0 || email.indexOf("@") === -1) {
-      alert("E-mail inválido");
-      return;
-    }
-
-    if (senha.length < 5) {
-      alert("E-mail inválido");
-      return;
-    }
-
-    navigate("/area-mentor");
-  }
+export default function FormLogin({ onSave }) {
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
 
   const navigate = useNavigate();
+  function handleLogin() {
+    console.log(email, senha);
+    // if (email.length == 0 || email.indexOf("@") == -1) {
+    //   alert("E-mail inválido");
+    //   return;
+    // }
+
+    // if (senha.length < 5) {
+    //   alert("Senha inválida");
+    //   return;
+    // }
+
+    onSave({
+      email,
+      senha,
+    });
+  }
 
   // function handleLogin () {
   //     navigate("/area-mentor");
@@ -44,7 +45,7 @@ export default function FormLogin() {
           aria-label="Email"
           aria-describedby="inputGroup-sizing-default"
           type="email"
-          //   onChange={(e) => setUsuario(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </InputGroup>
       <label>Senha</label>
@@ -57,11 +58,13 @@ export default function FormLogin() {
           aria-label="Password"
           aria-describedby="inputGroup-sizing-default"
           type="password"
-          //   onChange={(e) => setSenha(e.target.value)}
+          onChange={(e) => setSenha(e.target.value)}
         />
       </InputGroup>
 
-      <MentorixButton onClick={handleLogin}>Entrar</MentorixButton>
+      <Button>
+        <MentorixButton onClick={handleLogin}>Entrar</MentorixButton>
+      </Button>
 
       <SpanEsqueceuSenha className="spanSenha">
         <p>Esqueceu sua senha? Entre em contato com suporte@mentorix.com</p>
