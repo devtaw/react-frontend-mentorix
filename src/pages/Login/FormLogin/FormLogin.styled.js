@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { TextH1 } from "../../../common/typography";
 
 export const SpanEsqueceuSenha = styled.div`
     font-size: 12px;
@@ -33,4 +34,9 @@ width: 100%;
 text-align: center;
 margin-top: 16px;
 
+`
+
+export const TextH1Styled = styled(TextH1)`
+font-size: 52px;
+text-align: center;
 `

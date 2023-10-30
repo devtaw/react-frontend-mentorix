@@ -7,6 +7,7 @@ import {
   Container,
   Button,
   ContainerCadastreSe,
+  TextH1Styled,
 } from "./FormLogin.styled";
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
 import { useSnackbar } from "notistack";
@@ -35,6 +36,7 @@ export default function FormLogin({ onSave }) {
 
   return (
     <Container>
+      <TextH1Styled>Login</TextH1Styled>
       <label>E-mail</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
