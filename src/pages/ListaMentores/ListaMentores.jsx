@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { ContainerList, ContentSection, SpanTitle, TextDescription, Title, Container } from "./ListaMentores.styled";
+import {
+  ContainerList,
+  ContentSection,
+  SpanTitle,
+  TextDescription,
+  Title,
+  Container,
+  ListaEspecialidades,
+} from "./ListaMentores.styled";
 import { CardMentor } from "./CardMentor/CardMentor";
 import { useQuery } from "@tanstack/react-query";
 import { getMentores, getMentoresEspecialidades } from "../../common/services/MentorService";
@@ -52,10 +60,17 @@ export function ListaMentores() {
         <ContentSection>
           <SpanTitle>Expert Team</SpanTitle>
           <Title>Encontre o melhor mentor online para você</Title>
-          <TextDescription>Você não precisa lutar sozinho, você conta com nossa assistência e ajuda.</TextDescription>
+          <TextDescription>
+            Aqui você conta com nossa assistência e ajuda. Mentorix facilitando conexões!
+          </TextDescription>
           <ContainerList className="row">
             {listaMentoresQuery.isLoading && <TextBody className="mt-5">Carregando...</TextBody>}
-
+            {/* <ListaEspecialidades>
+              <li>Desenvolvimento</li>
+              <li>Finanças</li>
+              <li>Criatividade</li>
+              <li>Criptomoedas</li>
+            </ListaEspecialidades> */}
             {listaMentoresQuery?.data?.map((mentor) => (
               <div key={mentor.id} className="col-lg-4 col-md-6 col-xs-12">
                 {/* oncClick vai disparar função handleClickMentor quando botão for clicado */}

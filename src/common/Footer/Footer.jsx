@@ -37,7 +37,7 @@ function Footer() {
               Plataforma gratuita que conecta de forma simples e rápida mentores a pessoas que desejam ser mentoradas
             </Description>
 
-            <TextH2> siga a gente </TextH2>
+            <TextH2> Siga a gente </TextH2>
 
             <SocialIcons>
               <a href="https://pt-br.facebook.com/" target="_blank" rel="noopener noreferrer">
