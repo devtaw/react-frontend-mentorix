@@ -17,14 +17,6 @@ export const TextBio = styled(TextBody)`
   letter-spacing: 0.3px;
 `;
 
-// export const Badge = styled(TextH4)`
-//   border-radius: 5px;
-//   padding: 0 10px;
-//   height: 25px;
-//   color: ${(props) => props.theme["terciary-800"]}; //#bf7831
-//   background: ${(props) => props.theme["terciary-50"]}; //#fffaf1;
-// `;
-
 export const TagList = styled.div`
   margin-top: 0.74rem;
   display: flex;
@@ -57,5 +49,20 @@ export const ContainerAvatar = styled.div`
 
   img {
     object-fit: contain;
+  }
+`;
+
+export const LinkedinArea = styled.div`
+  background-color: ${(props) => props.theme["primary-900"]};
+
+  border-radius: 10px;
+  transition: all 0.3s ease-out 0s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: ${(props) => props.theme["blue-gray-600"]};
   }
 `;
