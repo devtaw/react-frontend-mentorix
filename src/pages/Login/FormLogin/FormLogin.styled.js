@@ -4,6 +4,8 @@ import { TextH1 } from "../../../common/typography";
 export const SpanEsqueceuSenha = styled.div`
     font-size: 12px;
     margin-top: 8px;
+    width: 100%;
+    text-align: right;
 `
 
 export const Container = styled.div`
@@ -14,10 +16,11 @@ export const Container = styled.div`
   background-color: #fff;
   padding: 16px;
   border-radius: 16px;
-  box-shadow: rgba(0, 0, 0, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px;
 
   .linkCadastro {
     text-decoration: none;
+    font-weight: bold;
   }
 
   .linkEsqueceuSenha {
@@ -45,4 +48,8 @@ font-size: 52px;
 text-align: center;
 font-weight: bold;
 margin: 2.5rem;
+`
+
+export const TextEmail = styled.text`
+font-weight: bold;
 `
