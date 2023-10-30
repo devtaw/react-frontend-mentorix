@@ -23,6 +23,7 @@ export function FormMentor(props) {
   const [tempSelectedEspecialidade, setTempSelectedEspecialidade] = useState(
     []
   );
+  const [ especialidade, setEspecialidade] = useState ([]);
 
   const [linkedin, setLinkedin] = useState(props.linkedin);
   const [profissao, setProfissao] = useState(props.profissao);
@@ -30,6 +31,7 @@ export function FormMentor(props) {
   const [especialidades, setEspecialidades] = useState(props.especialidades);
   const [biografia, setBiografia] = useState(props.biografia);
   const [foto, setFoto] = useState(props.foto);
+  
 
   const handleLinkedinChange = (event) => {
     setLinkedin(event.target.value);
@@ -125,29 +127,42 @@ export function FormMentor(props) {
       setTempSelectedEspecialidade([...tempSelectedEspecialidade, value]);
     }
   };
+  function handleClickCheckbox (value, checked){
+    if (checked){
+      setEspecialidade([...especialidade, value])
+      return
+    }
+    else {
+      const novaLista = especialidade.filter (
+        (especialidade) => especialidade !== value 
+      )
+      setEspecialidade (novaLista)
+    }
+  }
 
   return (
-    <div
-      style={{ border: "1px solid #ccc", padding: "20px", borderRadius: "5px" }}
-    >
-      {isEditing ? (
-        <>
-          <MentorixButton
-            color={"terciary-200"}
-            onClick={handleSaveClick}
-            style={{ marginRight: "10px" }}
-          >
-            Salvar
-          </MentorixButton>
-          <MentorixButton color={"secondary-100"} onClick={handleCancelClick}>
-            Cancelar
-          </MentorixButton>
-        </>
-      ) : (
-        <MentorixButton color={"terciary-200"} onClick={handleEditClick}>
-          Editar perfil
-        </MentorixButton>
-      )}
+    <div>
+    <div style={{ border: "1px solid #ccc", padding: "20px", borderRadius: "5px", textAlign: "right" }}>
+  {isEditing ? (
+    <>
+      <MentorixButton
+        color={"terciary-200"}
+        onClick={handleSaveClick}
+        style={{ marginRight: "10px" }}
+      >
+        Salvar
+      </MentorixButton>
+      <MentorixButton color={"secondary-100"} onClick={handleCancelClick}>
+        Cancelar
+      </MentorixButton>
+    </>
+  ) : (
+    <MentorixButton color={"terciary-200"} onClick={handleEditClick}>
+      Editar perfil
+    </MentorixButton>
+  )}
+</div>
+
       <hr />
 
       <div >
@@ -283,7 +298,7 @@ export function FormMentor(props) {
         </div>
       </div> */}
 
-<label>Especialidades</label>
+<Labelleft>Especialidades</Labelleft>
       <EspecialidadesContainer>
         <Form.Check
           className="col-md-4"
@@ -291,6 +306,7 @@ export function FormMentor(props) {
           label="Desenvolvimento"
           id="checkbox-1"
           value="desenvolvimento"
+          onChange={(e) => handleClickCheckbox (e.target.value, e.target.checked) }
         />
         <Form.Check
           className="col-md-4"
@@ -298,6 +314,7 @@ export function FormMentor(props) {
           label="Criptomoedas"
           id="checkbox-2"
           value="criptomoedas"
+          onChange={(e) => handleClickCheckbox (e.target.value, e.target.checked) }
         />
         <Form.Check
           className="col-md-4"
@@ -305,6 +322,7 @@ export function FormMentor(props) {
           label="Blockchain"
           id="checkbox-3"
           value="blockchain"
+          onChange={(e) => handleClickCheckbox (e.target.value, e.target.checked) }
         />
         <Form.Check
           className="col-md-4"
@@ -312,6 +330,7 @@ export function FormMentor(props) {
           label="Finanças"
           id="checkbox-1"
           value="financas"
+          onChange={(e) => handleClickCheckbox (e.target.value, e.target.checked) }
         />
         <Form.Check
           className="col-md-4"
@@ -319,6 +338,7 @@ export function FormMentor(props) {
           label="Investimentos"
           id="checkbox-2"
           value="investimentos"
+          onChange={(e) => handleClickCheckbox (e.target.value, e.target.checked) }
         />
         <Form.Check
           className="col-md-4"
@@ -326,6 +346,7 @@ export function FormMentor(props) {
           label="Estratégia"
           id="checkbox-3"
           value="estrategia"
+          onChange={(e) => handleClickCheckbox (e.target.value, e.target.checked) }
         />
         <Form.Check
           className="col-md-4"
@@ -333,6 +354,7 @@ export function FormMentor(props) {
           label="Criatividade"
           id="checkbox-1"
           value="criatividade"
+          onChange={(e) => handleClickCheckbox (e.target.value, e.target.checked) }
         />
         <Form.Check
           className="col-md-4"
@@ -340,6 +362,7 @@ export function FormMentor(props) {
           label="Comunicação"
           id="checkbox-2"
           value="comunicacao"
+          onChange={(e) => handleClickCheckbox (e.target.value, e.target.checked) }
         />
         <Form.Check
           className="col-md-4"
@@ -347,6 +370,7 @@ export function FormMentor(props) {
           label="Produtividade"
           id="checkbox-3"
           value="produtividade"
+          onChange={(e) => handleClickCheckbox (e.target.value, e.target.checked) }
         />
         <div img=""></div>
       </EspecialidadesContainer>
