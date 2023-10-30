@@ -12,36 +12,39 @@ export const AboutSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: ${(p) => p.theme["blue-gray-50"]};
+  background-color: ${(p) => p.theme["background-light"]};
 `;
 
 export const TextContainer = styled.div`
   flex: 1;
   padding: 20px;
 
-  H1 {
-    font-family: "Open Sans", sans-serif;
-    color: ${(p) => p.theme["blue-a400"]};
+  H2 {
     padding: 5px 10px;
     display: inline-block;
     width: auto;
+    font-size: 45px;
+    color: ${(p) => p.theme["text-dark"]};
   }
 
-  h3 {
-    font-family: "Open Sans", sans-serif;
-    color: ${(p) => p.theme["blue-a400"]};
+  p {
+    color: ${(p) => p.theme["text-dark"]};
     padding: 5px 10px;
     display: inline-block;
     width: auto;
+    font-size: 20px;
   }
 
-  h6 {
+  span {
     font-family: "Open Sans", sans-serif;
-    background-color: ${(p) => p.theme["primary-400"]};
-    color: ${(p) => p.theme["background-light"]};
+    background-color: ${(p) => p.theme["background-dark"]};
+    color: ${(p) => p.theme["secondary-50"]};
     padding: 5px 10px;
     display: inline-block;
     width: auto;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 8px;
   }
 `;
 export const ImageContainer = styled.div`

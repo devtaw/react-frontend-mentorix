@@ -2,14 +2,16 @@ import styled from "styled-components";
 
 export const StyleHeader = styled.header`
   display: flex;
+  position: relative;
+  z-index: 1;
   align-items: center;
   justify-content: space-between;
   padding: 25px 25px;
-  background-color: ${(p) => p.theme["background-light"]};
+  background-color: ${(p) => p.theme["background-dark"]};
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
   .logo {
-    color: ${(p) => p.theme["secondary-900"]};
+    color: ${(p) => p.theme["background-dark"]};
     line-height: normal;
     max-width: 130px;
     height: auto;
@@ -23,7 +25,7 @@ export const StyleHeader = styled.header`
 
   .link {
     text-decoration: none;
-    color: ${(p) => p.theme["secondary-500"]} !important;
+    color: ${(p) => p.theme["text-light"]} !important;
     font-family: "Open Sans", sans-serif;
     font-size: 18.72px;
     font-weight: 700;
@@ -33,7 +35,6 @@ export const StyleHeader = styled.header`
 
   .login-link {
     text-decoration: none;
-    color: ${(p) => p.theme["background-dark"]};
-    letter-spacing: -0.374px;
+    color: ${(p) => p.theme["terciary-a100"]} !important;
   }
 `;

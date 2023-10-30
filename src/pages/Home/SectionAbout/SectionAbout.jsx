@@ -1,7 +1,7 @@
 import React from "react";
 import sectionAboutImg from "../../../assets/img/section-about.png";
 import { AboutSection, ImageContainer, TextContainer, Container } from "./SectionAbout.styled.js";
-import { TextH1, TextH3, TextH6 } from "../../../common/typography.js"; // Certifique-se de importar TextH6
+import { TextBody, TextH2 } from "../../../common/typography.js";
 
 function SectionAbout() {
   return (
@@ -11,12 +11,12 @@ function SectionAbout() {
           <img src={sectionAboutImg} alt="Imagem de uma Homem sorrindo com um notebook na mão." />
         </ImageContainer>
         <TextContainer>
-          <TextH6>SOBRE A EMPRESA</TextH6>
-          <TextH1>Por que estudantes escolhem o Mentorix para aprender?</TextH1>
-          <TextH3>
-            Temos o compromisso de fornecer ensino de qualidade e ser uma referência em auxiliar os profissionais a
-            adquirirem novas habilidades e a impulsionarem o desenvolvimento de suas carreiras.
-          </TextH3>
+          <span>SOBRE A EMPRESA</span>
+          <TextH2>Por que escolher a Mentorix?</TextH2>
+          <TextBody>
+            Temos o compromisso de fornecer mentorias de qualidade e auxiliar os profissionais a impulsionarem suas
+            carreiras.
+          </TextBody>
           <ul className="minha-lista">
             <li className="item-lista">Instrutores Qualificados e Especializados</li>
             <li className="item-lista">Aprendizado Interativo e Prático</li>

@@ -19,6 +19,11 @@ export const SpanTitle = styled.span`
   line-height: 19px;
   margin-left: 2px;
   color: ${(props) => props.theme["primary-900"]};
+  background-color: ${(props) => props.theme["primary-100"]};
+
+  width: 113px;
+  padding: 5px;
+  border-radius: 8px;
 `;
 
 export const Title = styled.h1`
@@ -38,7 +43,7 @@ export const Title = styled.h1`
 
 export const TextDescription = styled.p`
   font-family: "Montserrat", sans-serif;
-  font-size: ${(props) => props.theme["body-sm"]};
+  font-size: ${(props) => props.theme["body-md"]};
   color: ${(props) => props.theme["blue-gray-800"]};
   font-weight: 400;
   margin-bottom: 15px;
