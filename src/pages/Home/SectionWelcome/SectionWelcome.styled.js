@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import { ContentContainer } from "../../../common/ContentContainer.styled";
+import welcomeSectionImage from "../../../assets/img/bg-section-welcome.png";
 
 export const WelcomeContainer = styled.div`
   display: flex;
   background-color: ${(p) => p.theme["background-dark"]};
   color: ${(p) => p.theme["white"]};
+
+  background-image: url(${welcomeSectionImage});
+  background-size: cover;
 `;
 
 export const Container = styled(ContentContainer)`
