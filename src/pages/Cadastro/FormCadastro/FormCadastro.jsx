@@ -14,7 +14,7 @@ import { InputGroup, Form } from "react-bootstrap";
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
 import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router";
-import { Container } from "./FormCadastro.styled";
+import { Button, Container } from "./FormCadastro.styled";
 
 export function FormCadastro({ onSave }) {
   const [nomeCompleto, setNomeCompleto] = useState("");
@@ -179,8 +179,9 @@ export function FormCadastro({ onSave }) {
           }}
         />
       </InputGroup>
-
-      <MentorixButton onClick={handleSave}>Cadastrar</MentorixButton>
+      <Button>
+        <MentorixButton onClick={handleSave}>Cadastrar</MentorixButton>
+      </Button>
     </Container>
   );
 }
