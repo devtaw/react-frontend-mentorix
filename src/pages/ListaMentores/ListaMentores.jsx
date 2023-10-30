@@ -57,9 +57,11 @@ export function ListaMentores() {
                 {/* oncClick vai disparar função handleClickMentor quando botão for clicado */}
                 <CardMentor
                   urlFoto={mentor.fotoPerfil}
+                  profissao={mentor.profissao}
                   nome={mentor.nomeCompleto}
                   biografia={mentor.biografia}
                   especialidades={mentorEspecialidadesMap.get(mentor.id) || []}
+                  linkedin={mentor.linkedin}
                   onClick={handleClickCardMentor}
                 />
               </div>
