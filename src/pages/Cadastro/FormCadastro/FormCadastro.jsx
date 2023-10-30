@@ -29,6 +29,7 @@ export function FormCadastro({ onSave }) {
   const [biografia, setBiografia] = useState("");
   const [linkedin, setLinkedin] = useState("");
   const [profissao, setProfissao] = useState("");
+  const [especialidades, setEspecialidades] = useState([]);
 
   const snackbar = useSnackbar();
   const navigate = useNavigate();
@@ -45,7 +46,20 @@ export function FormCadastro({ onSave }) {
       biografia,
       linkedin,
       profissao,
+      especialidades,
     });
+  }
+
+  function handleClickCheckbox(value, checked) {
+    if (checked) {
+      setEspecialidades([...especialidades, value]);
+      return;
+    } else {
+      const novaLista = especialidades.filter(
+        (especialidade) => especialidade !== value
+      );
+      setEspecialidades(novaLista);
+    }
   }
 
   return (
@@ -195,6 +209,9 @@ export function FormCadastro({ onSave }) {
           label="Desenvolvimento"
           id="checkbox-1"
           value="desenvolvimento"
+          onChange={(e) =>
+            handleClickCheckbox(e.target.value, e.target.checked)
+          }
         />
         <Form.Check
           className="col-md-4"
@@ -202,6 +219,9 @@ export function FormCadastro({ onSave }) {
           label="Criptomoedas"
           id="checkbox-2"
           value="criptomoedas"
+          onChange={(e) =>
+            handleClickCheckbox(e.target.value, e.target.checked)
+          }
         />
         <Form.Check
           className="col-md-4"
@@ -209,6 +229,9 @@ export function FormCadastro({ onSave }) {
           label="Blockchain"
           id="checkbox-3"
           value="blockchain"
+          onChange={(e) =>
+            handleClickCheckbox(e.target.value, e.target.checked)
+          }
         />
         <Form.Check
           className="col-md-4"
@@ -216,6 +239,9 @@ export function FormCadastro({ onSave }) {
           label="Finanças"
           id="checkbox-1"
           value="financas"
+          onChange={(e) =>
+            handleClickCheckbox(e.target.value, e.target.checked)
+          }
         />
         <Form.Check
           className="col-md-4"
@@ -223,6 +249,9 @@ export function FormCadastro({ onSave }) {
           label="Investimentos"
           id="checkbox-2"
           value="investimentos"
+          onChange={(e) =>
+            handleClickCheckbox(e.target.value, e.target.checked)
+          }
         />
         <Form.Check
           className="col-md-4"
@@ -230,6 +259,9 @@ export function FormCadastro({ onSave }) {
           label="Estratégia"
           id="checkbox-3"
           value="estrategia"
+          onChange={(e) =>
+            handleClickCheckbox(e.target.value, e.target.checked)
+          }
         />
         <Form.Check
           className="col-md-4"
@@ -237,6 +269,9 @@ export function FormCadastro({ onSave }) {
           label="Criatividade"
           id="checkbox-1"
           value="criatividade"
+          onChange={(e) =>
+            handleClickCheckbox(e.target.value, e.target.checked)
+          }
         />
         <Form.Check
           className="col-md-4"
@@ -244,6 +279,9 @@ export function FormCadastro({ onSave }) {
           label="Comunicação"
           id="checkbox-2"
           value="comunicacao"
+          onChange={(e) =>
+            handleClickCheckbox(e.target.value, e.target.checked)
+          }
         />
         <Form.Check
           className="col-md-4"
@@ -251,6 +289,9 @@ export function FormCadastro({ onSave }) {
           label="Produtividade"
           id="checkbox-3"
           value="produtividade"
+          onChange={(e) =>
+            handleClickCheckbox(e.target.value, e.target.checked)
+          }
         />
         <div img=""></div>
       </EspecialidadesContainer>
