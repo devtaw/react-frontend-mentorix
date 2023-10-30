@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const SpanEsqueceuSenha = styled.span`
+export const SpanEsqueceuSenha = styled.div`
     font-size: 12px;
-    margin-top: 1px;
+    margin-top: 8px;
 `
 
 export const Container = styled.div`
@@ -21,17 +21,16 @@ export const Container = styled.div`
 `;
 
 export const Button = styled.div`
-  margin-top: 24px;
+  margin-top: 32px;
   margin-bottom: 16px;
   width: 100%;
   text-align: center;
   `
 
 
-
 export const ContainerCadastreSe = styled.div`
 width: 100%;
 text-align: center;
-
+margin-top: 16px;
 
 `

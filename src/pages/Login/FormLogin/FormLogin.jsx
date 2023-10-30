@@ -6,7 +6,6 @@ import {
   SpanEsqueceuSenha,
   Container,
   Button,
-  SpanCadastreSe,
   ContainerCadastreSe,
 } from "./FormLogin.styled";
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
