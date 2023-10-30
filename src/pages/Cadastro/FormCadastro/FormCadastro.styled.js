@@ -29,7 +29,13 @@ flex-wrap: wrap;
 background-color: #fff;
 border: 1px solid #0288D1;
 border-radius: 6px;
-padding: 1rem
+padding: 1rem;
+
+:checked {
+    border-radius: 0.25em;
+    background-color: #29B6F6;
+    border: 1px solid black;
+}
 `
 
 export const TextH1Styled = styled(TextH1)`
