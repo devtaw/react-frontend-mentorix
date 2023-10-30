@@ -59,6 +59,6 @@ font-weight: bold;
 `
 
 export const StyledLabel = styled.label`
-margin-bottom: 14px;
+margin-bottom: 6px;
 `
 
