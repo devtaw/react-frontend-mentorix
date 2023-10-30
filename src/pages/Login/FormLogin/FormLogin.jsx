@@ -1,8 +1,14 @@
 import { Envelope, Lock } from "@phosphor-icons/react";
 import React, { useState } from "react";
 import { InputGroup, Form } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import { SpanEsqueceuSenha, Container, Button } from "./FormLogin.styled";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  SpanEsqueceuSenha,
+  Container,
+  Button,
+  SpanCadastreSe,
+  ContainerCadastreSe,
+} from "./FormLogin.styled";
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
 import { useSnackbar } from "notistack";
 
@@ -57,13 +63,28 @@ export default function FormLogin({ onSave }) {
         />
       </InputGroup>
 
+      <SpanEsqueceuSenha>
+        Esqueceu sua senha? Envie e-mail{" "}
+        <Link
+          className="linkEsqueceuSenha"
+          to="mailto:suporte.mentorix@gmail.com"
+        >
+          suporte.mentorix@gmail.com
+        </Link>
+      </SpanEsqueceuSenha>
+
       <Button>
         <MentorixButton onClick={handleLogin}>Entrar</MentorixButton>
       </Button>
 
-      <SpanEsqueceuSenha>
-        <p>Esqueceu sua senha? Entre em contato com suporte@mentorix.com</p>
-      </SpanEsqueceuSenha>
+      <ContainerCadastreSe>
+        <span>
+          Ainda não possui conta?{" "}
+          <Link to="/cadastro" className="linkCadastro">
+            Crie sua conta
+          </Link>
+        </span>
+      </ContainerCadastreSe>
     </Container>
   );
 }

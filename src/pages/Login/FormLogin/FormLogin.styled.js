@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const SpanEsqueceuSenha = styled.span`
-    height: 10px;
     font-size: 12px;
+    margin-top: 1px;
 `
 
 export const Container = styled.div`
@@ -10,11 +10,28 @@ export const Container = styled.div`
   width: 25rem;
   margin-top: 40px;
   margin-bottom: 40px;
+
+  .linkCadastro {
+    text-decoration: none;
+  }
+
+  .linkEsqueceuSenha {
+    text-decoration: none;
+  }
 `;
 
 export const Button = styled.div`
-  margin-top: 16px;
+  margin-top: 24px;
   margin-bottom: 16px;
   width: 100%;
-  text-align: right;
+  text-align: center;
   `
+
+
+
+export const ContainerCadastreSe = styled.div`
+width: 100%;
+text-align: center;
+
+
+`
