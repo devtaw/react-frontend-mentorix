@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const SpanEsqueceuSenha = styled.span`
     height: 10px;
+    font-size: 12px;
 `
 
 export const Container = styled.div`

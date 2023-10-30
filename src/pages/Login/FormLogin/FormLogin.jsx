@@ -61,7 +61,7 @@ export default function FormLogin({ onSave }) {
         <MentorixButton onClick={handleLogin}>Entrar</MentorixButton>
       </Button>
 
-      <SpanEsqueceuSenha className="spanSenha">
+      <SpanEsqueceuSenha>
         <p>Esqueceu sua senha? Entre em contato com suporte@mentorix.com</p>
       </SpanEsqueceuSenha>
     </Container>
