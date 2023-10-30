@@ -17,7 +17,7 @@ export function Login({ email, senha }) {
         snackbar.enqueueSnackbar("Login efetuado com sucesso!", {
           variant: "success",
         });
-        navigate("/area-mentor");
+        navigate("/area-mentor/" + resposta.id);
         return;
       }
     } catch (error) {
