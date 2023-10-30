@@ -1,6 +1,6 @@
 import { Button, Card } from "react-bootstrap";
 import styled from "styled-components";
-import { TextBody, TextH4 } from "../../../common/typography";
+import { TextBody } from "../../../common/typography";
 
 export const CardContainer = styled(Card)`
   border-radius: 5px;
@@ -27,6 +27,21 @@ export const TagList = styled.div`
     border-radius: 5px;
     background-color: ${(props) => props.theme["terciary-50"]}; //#F1E9C9
     color: ${(props) => props.theme["terciary-800"]}; //#C47F17
+  }
+
+  h5.tecnologia {
+    background-color: ${(props) => props.theme["primary-200"]};
+    color: ${(props) => props.theme["primary-900"]};
+  }
+
+  h5.negocios {
+    background-color: ${(props) => props.theme["terciary-200"]};
+    color: ${(props) => props.theme["terciary-800"]};
+  }
+
+  h5.comportamento {
+    background-color: ${(props) => props.theme["secondary-100"]};
+    color: ${(props) => props.theme["secondary-800"]};
   }
 `;
 
