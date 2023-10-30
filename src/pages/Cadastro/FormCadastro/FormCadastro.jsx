@@ -111,6 +111,7 @@ export function FormCadastro({ onSave }) {
           type="password"
           placeholder="Senha"
           aria-label="Password"
+          minLength={6}
           aria-describedby="inputGroup-sizing-default"
           value={senha}
           onChange={(e) => {
@@ -174,6 +175,8 @@ export function FormCadastro({ onSave }) {
         </InputGroup.Text>
         <Form.Control
           type="text"
+          maxLength={400}
+          rows={5}
           placeholder="Biografia"
           aria-label="Biography"
           aria-describedby="inputGroup-sizing-default"
@@ -183,6 +186,7 @@ export function FormCadastro({ onSave }) {
           }}
         />
       </InputGroup>
+
       <label>Especialidades</label>
       <EspecialidadesContainer>
         <Form.Check
@@ -248,6 +252,7 @@ export function FormCadastro({ onSave }) {
           id="checkbox-3"
           value="produtividade"
         />
+        <div img=""></div>
       </EspecialidadesContainer>
       <Button>
         <MentorixButton onClick={handleSave}>Cadastrar</MentorixButton>
