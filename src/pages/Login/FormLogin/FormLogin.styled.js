@@ -26,6 +26,10 @@ export const Container = styled.div`
   .linkEsqueceuSenha {
     text-decoration: none;
   }
+
+  ::placeholder {
+    font-size: 14px;
+  }
 `;
 
 export const Button = styled.div`
@@ -55,5 +59,6 @@ font-weight: bold;
 `
 
 export const StyledLabel = styled.label`
-margin-bottom: 8px;
+margin-bottom: 14px;
 `
+
