@@ -4,15 +4,28 @@ import { InputGroup, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { SpanEsqueceuSenha, Container, Button } from "./FormLogin.styled";
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
+import { useSnackbar } from "notistack";
 
 export default function FormLogin({ onSave }) {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
+  const snackbar = useSnackbar();
   const navigate = useNavigate();
+
   function handleLogin() {
-    console.log(email, senha);
-    onSave({ email, senha });
+    const formValido = validaForm();
+    if (formValido) {
+      onSave({ email, senha });
+    }
+  }
+
+  function validaForm() {
+    if (email.length === 0 || senha.length === 0) {
+      snackbar.enqueueSnackbar("E-mail ou senha incorretos");
+      return false;
+    }
+    return true;
   }
 
   return (
