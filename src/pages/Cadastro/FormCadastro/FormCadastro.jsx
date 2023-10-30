@@ -165,7 +165,7 @@ export function FormCadastro({ onSave }) {
         />
       </InputGroup>
 
-      <label>LinkedIn</label>
+      <label>LinkedIn (opcional)</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
           <LinkedinLogo size={16} color="#673AB7" weight="fill" />
