@@ -2,22 +2,22 @@ import Button from "react-bootstrap/Button";
 import styled from "styled-components";
 
 export const MentorixButton = styled(Button)`
-  height: 45px;
+  height: 50px;
   padding: 0 45px;
   display: inline-block;
-  background-color: ${(props) => props.theme["secondary-800"]};
-  border-color: ${(props) => props.theme["secondary-800"]} !important;
-  line-height: 45px;
-  border-radius: 6px;
-  font-size: 15px;
-  font-weight: 600;
-  color: #fff;
+  background-color: ${(props) => props.theme["terciary-a100"]};
+  border-color: ${(props) => props.theme["terciary-400"]} !important;
+  line-height: 50px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: ${(props) => props.theme["background-dark"]} !important;
   transition: all 0.3s ease-out 0s;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 
   &:hover {
-    background-color: ${(props) => props.theme["secondary-900"]} !important;
-    border-color: ${(props) => props.theme["secondary-900"]} !important;
+    background-color: ${(props) => props.theme["terciary-400"]} !important;
+    border-color: ${(props) => props.theme["terciary-400"]} !important;
   }
 `;
 

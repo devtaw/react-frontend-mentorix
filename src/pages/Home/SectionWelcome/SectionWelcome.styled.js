@@ -3,7 +3,7 @@ import { ContentContainer } from "../../../common/ContentContainer.styled";
 
 export const WelcomeContainer = styled.div`
   display: flex;
-  background-color: ${(p) => p.theme["primary-900"]};
+  background-color: ${(p) => p.theme["background-dark"]};
   color: ${(p) => p.theme["white"]};
 `;
 
@@ -15,32 +15,35 @@ export const Container = styled(ContentContainer)`
 `;
 
 export const TextH1 = styled.h1`
-  color: ${(p) => p.theme["white"]};
+  color: ${(p) => p.theme["background-light"]};
   font-size: 24px;
 `;
 
 export const TextH2 = styled.h2`
-  color: ${(p) => p.theme["white"]};
+  color: ${(p) => p.theme["background-light"]};
   font-size: 60px;
 `;
 
 export const TextContainer = styled.div`
   max-width: 50%;
   h1 {
-    font-size: 50px;
-    color: ${(p) => p.theme["terciary-300"]};
+    font-size: 65px;
+    color: ${(p) => p.theme["text-light"]};
   }
-  h2 {
-    font-size: 15px;
-    color: ${(p) => p.theme["terciary-100"]};
+  p {
+    font-size: 18px;
+    color: ${(p) => p.theme["text-light"]};
   }
-  h6 {
+  span {
+    font-size: 14px;
     font-family: "Open Sans", sans-serif;
-    background-color: ${(p) => p.theme["blue-a400"]};
-    color: ${(p) => p.theme["white"]};
+    background-color: ${(p) => p.theme["background-light"]};
+    color: ${(p) => p.theme["primary-800"]};
+    font-weight: 700;
     padding: 5px 10px;
     display: inline-block;
     width: auto;
+    border-radius: 8px;
   }
 `;
 export const ImageContainer = styled.div`
