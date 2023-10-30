@@ -1,39 +1,42 @@
 import { Envelope, Lock } from "@phosphor-icons/react";
 import React, { useState } from "react";
 import { InputGroup, Form } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import { SpanEsqueceuSenha, Container } from "./FormLogin.styled";
-
+import { Link, useNavigate } from "react-router-dom";
+import {
+  SpanEsqueceuSenha,
+  Container,
+  Button,
+  ContainerCadastreSe,
+  TextH1Styled,
+} from "./FormLogin.styled";
 import { MentorixButton } from "../../../common/Button/MentorixButton.styled";
+import { useSnackbar } from "notistack";
 
-export default function FormLogin() {
-  // const [email, setEmail] = useState('')
-  // const [senha, setSenha] = useState('')
+export default function FormLogin({ onSave }) {
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
 
-  function handleLogin(e) {
-    e.preventDefault();
-
-    if (email.length == 0 || email.indexOf("@") === -1) {
-      alert("E-mail inválido");
-      return;
-    }
-
-    if (senha.length < 5) {
-      alert("E-mail inválido");
-      return;
-    }
-
-    navigate("/area-mentor");
-  }
-
+  const snackbar = useSnackbar();
   const navigate = useNavigate();
 
-  // function handleLogin () {
-  //     navigate("/area-mentor");
-  // }
+  function handleLogin() {
+    const formValido = validaForm();
+    if (formValido) {
+      onSave({ email, senha });
+    }
+  }
+
+  function validaForm() {
+    if (email.length === 0 || senha.length === 0) {
+      snackbar.enqueueSnackbar("E-mail ou senha incorretos");
+      return false;
+    }
+    return true;
+  }
 
   return (
     <Container>
+      <TextH1Styled>Login</TextH1Styled>
       <label>E-mail</label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default" className="text-white">
@@ -44,7 +47,7 @@ export default function FormLogin() {
           aria-label="Email"
           aria-describedby="inputGroup-sizing-default"
           type="email"
-          //   onChange={(e) => setUsuario(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </InputGroup>
       <label>Senha</label>
@@ -57,15 +60,32 @@ export default function FormLogin() {
           aria-label="Password"
           aria-describedby="inputGroup-sizing-default"
           type="password"
-          //   onChange={(e) => setSenha(e.target.value)}
+          onChange={(e) => setSenha(e.target.value)}
         />
       </InputGroup>
 
-      <MentorixButton onClick={handleLogin}>Entrar</MentorixButton>
-
-      <SpanEsqueceuSenha className="spanSenha">
-        <p>Esqueceu sua senha? Entre em contato com suporte@mentorix.com</p>
+      <SpanEsqueceuSenha>
+        Esqueceu sua senha? Envie e-mail{" "}
+        <Link
+          className="linkEsqueceuSenha"
+          to="mailto:suporte.mentorix@gmail.com"
+        >
+          suporte.mentorix@gmail.com
+        </Link>
       </SpanEsqueceuSenha>
+
+      <Button>
+        <MentorixButton onClick={handleLogin}>Entrar</MentorixButton>
+      </Button>
+
+      <ContainerCadastreSe>
+        <span>
+          Ainda não possui conta?{" "}
+          <Link to="/cadastro" className="linkCadastro">
+            Crie sua conta
+          </Link>
+        </span>
+      </ContainerCadastreSe>
     </Container>
   );
 }
