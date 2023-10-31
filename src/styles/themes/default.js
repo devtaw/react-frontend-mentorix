@@ -65,6 +65,7 @@ export const defaultTheme = {
   "terciary-a700": "#FFD600",
 
   //Cores semânticas ou cores de feedback:
+  "green-200": "#A5D6A7", //success text
   "green-500": "#43A047", //success text
   "orange-500": "#FF9800", //warning text
   "red-600": "#D32F2F", //danger text

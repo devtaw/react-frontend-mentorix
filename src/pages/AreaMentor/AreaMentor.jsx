@@ -60,19 +60,13 @@ export function AreaMentor() {
               {loading ? (
                 <TextH1Mentor className="mb-5 mt-5">Carregando...</TextH1Mentor>
               ) : (
-                <TextH1Mentor className="mb-5 mt-5">
-                  Seja bem-vindo (a) {mentorData ? mentorData.nomeCompleto : ""}
-                  !
-                </TextH1Mentor>
+                <TextH1Mentor className="mb-5 mt-5">Olá, {mentorData ? mentorData.nomeCompleto : ""}!</TextH1Mentor>
               )}
             </div>
             <div>
-              <TextH3Mentor className="mb-3 mt-3">
-                Solicitações de agendamento recebidas
-              </TextH3Mentor>
+              <TextH3Mentor className="mb-3 mt-3">Solicitações de agendamento recebidas</TextH3Mentor>
               <TextBodyMentor>
-                Aceite ou recuse suas solicitações e você e o mentorado vão
-                receber um e-mail.
+                Aceite ou recuse suas solicitações e você e o mentorado vão receber um e-mail.
               </TextBodyMentor>
             </div>
             {mentorData?.agendamentos?.map((agendamento) => (
@@ -87,9 +81,7 @@ export function AreaMentor() {
               </div>
             ))}
             <hr />
-            <TextH5Mentor className="mb-4 mt-5">
-              Aqui na Área do Mentor você pode editar seu perfil.
-            </TextH5Mentor>
+            <TextH5Mentor className="mb-4 mt-5">Aqui na Área do Mentor você pode editar seu perfil.</TextH5Mentor>
           </div>
 
           <TextDescriptionMentor>
