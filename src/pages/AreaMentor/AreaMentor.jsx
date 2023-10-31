@@ -23,7 +23,7 @@ import { Agendamento } from "../../common/Agendamento/Agendamento";
 export function AreaMentor() {
   const { id } = useParams();
   const [mentorData, setMentorData] = useState(null);
-  const [especialidade, setEspecialidadeData] = useState(null);
+  const [especialidades, setEspecialidadesData] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -32,6 +32,7 @@ export function AreaMentor() {
         const mentor = await getMentorById(id);
         console.log(mentor);
         setMentorData(mentor);
+        setEspecialidadesData(mentor.especialidades);
         setLoading(false);
       } catch (error) {
         console.error("Erro ao buscar os dados do mentor:", error);
@@ -103,7 +104,7 @@ export function AreaMentor() {
             email={mentorData ? mentorData.email : ""}
             nome={mentorData ? mentorData.nomeCompleto : ""}
             foto={mentorData ? mentorData.fotoPerfil : ""}
-            especialidade={especialidade ? especialidade : ""}
+            especialidades={especialidades ? especialidades : []}
             id={mentorData ? mentorData.id : ""}
           />
         </div>

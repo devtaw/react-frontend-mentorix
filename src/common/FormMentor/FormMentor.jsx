@@ -54,6 +54,10 @@ export function FormMentor(props) {
     setSelectedEspecialidade(especialidades);
   }, [especialidades]);
 
+  useEffect(() => {
+    setEspecialidades(props.especialidades);
+  }, [props]);
+
   const especialidadesList = [
     { label: "Estratégia", value: "estrategia" },
     { label: "Finanças", value: "financas" },
@@ -132,13 +136,13 @@ export function FormMentor(props) {
   };
   function handleClickCheckbox(value, checked) {
     if (checked) {
-      setEspecialidade([...especialidade, value]);
+      setEspecialidades([...especialidades, value]);
       return;
     } else {
-      const novaLista = especialidade.filter(
+      const novaLista = especialidades.filter(
         (especialidade) => especialidade !== value
       );
-      setEspecialidade(novaLista);
+      setEspecialidades(novaLista);
     }
   }
 
@@ -288,24 +292,7 @@ export function FormMentor(props) {
           </InputGroup>
         </Labelleft>
       </div>
-      {/* <div>
-        <EspecialidadesList
-          especialidades={especialidadesList}
-          selectedEspecialidade={tempSelectedEspecialidade}
-          onEspecialidadeChange={handleTempCheckboxChange}
-          isEditing={isEditing}
-        />
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Textorodape>*Você pode marcar mais de 1 opção.</Textorodape>
-        </div>
-      </div> */}
-
+   
       <Labelleft>Especialidades</Labelleft>
       <EspecialidadesContainer>
         <Form.Check
@@ -314,6 +301,15 @@ export function FormMentor(props) {
           label="Desenvolvimento"
           id="checkbox-1"
           value="desenvolvimento"
+        //   checked={(event)=>{
+        //     console.log("event",event); 
+        //     console.log("especialidades", especialidades);
+        //   //  return especialidades.includes("desenvolvimento")
+        //   return true
+        //   }
+        // }
+        defaultChecked={true}
+        // checked={true}
           onChange={(e) =>
             handleClickCheckbox(e.target.value, e.target.checked)
           }
@@ -324,6 +320,7 @@ export function FormMentor(props) {
           label="Criptomoedas"
           id="checkbox-2"
           value="criptomoedas"
+          checked={()=>especialidades.includes("criptomoedas")}
           onChange={(e) =>
             handleClickCheckbox(e.target.value, e.target.checked)
           }
@@ -334,6 +331,7 @@ export function FormMentor(props) {
           label="Blockchain"
           id="checkbox-3"
           value="blockchain"
+          checked={()=>especialidades.includes("blockchain")}
           onChange={(e) =>
             handleClickCheckbox(e.target.value, e.target.checked)
           }
@@ -344,6 +342,7 @@ export function FormMentor(props) {
           label="Finanças"
           id="checkbox-1"
           value="financas"
+          checked={()=>especialidades.includes("financas")}
           onChange={(e) =>
             handleClickCheckbox(e.target.value, e.target.checked)
           }
@@ -354,6 +353,7 @@ export function FormMentor(props) {
           label="Investimentos"
           id="checkbox-2"
           value="investimentos"
+          checked={()=>especialidades.includes("investimentos")}
           onChange={(e) =>
             handleClickCheckbox(e.target.value, e.target.checked)
           }
@@ -364,6 +364,7 @@ export function FormMentor(props) {
           label="Estratégia"
           id="checkbox-3"
           value="estrategia"
+          checked={()=>especialidades.includes("estrategia")}
           onChange={(e) =>
             handleClickCheckbox(e.target.value, e.target.checked)
           }
@@ -374,6 +375,7 @@ export function FormMentor(props) {
           label="Criatividade"
           id="checkbox-1"
           value="criatividade"
+          checked={()=>especialidades.includes("criatividade")}
           onChange={(e) =>
             handleClickCheckbox(e.target.value, e.target.checked)
           }
@@ -384,6 +386,7 @@ export function FormMentor(props) {
           label="Comunicação"
           id="checkbox-2"
           value="comunicacao"
+          checked={()=>especialidades.includes("comunicacao")}
           onChange={(e) =>
             handleClickCheckbox(e.target.value, e.target.checked)
           }
@@ -394,6 +397,7 @@ export function FormMentor(props) {
           label="Produtividade"
           id="checkbox-3"
           value="produtividade"
+          checked={()=>especialidades.includes("produtividade")}
           onChange={(e) =>
             handleClickCheckbox(e.target.value, e.target.checked)
           }
