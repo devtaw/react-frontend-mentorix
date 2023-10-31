@@ -16,7 +16,8 @@ export const CardBotton = styled.div`
 `;
 
 export const CardIcone = styled.div`
-
+  display: flex;
+  align-items: center;
 `;
 
 export const Agendamentoborder = styled.div`
@@ -25,5 +26,12 @@ export const Agendamentoborder = styled.div`
   border-radius: 10px;
   margin-bottom: 25px;
   align-items: center;
-  padding: 15px; 
+  padding: 15px;
+`;
+
+export const ButtonAceite = styled.div`
+  svg:hover {
+    /* color: ${(props) => props.theme["primary-a700"]}; */
+    opacity: 0.8;
+  }
 `;

@@ -1,5 +1,5 @@
 import React from "react";
-import { CardMensagem, CardIcone, Agendamentoborder } from "./Agendamento.styled";
+import { CardMensagem, CardIcone, Agendamentoborder, ButtonAceite } from "./Agendamento.styled";
 import { useSnackbar } from "notistack";
 import { ThumbsDown, ThumbsUp } from "@phosphor-icons/react";
 import Container from "react-bootstrap/Container";
@@ -54,21 +54,24 @@ export function Agendamento({ idDoAgendamento, nomeCompleto, email, mensagem, pr
           <Col className="col-3 d-flex justify-content-center">
             <div className="d-flex justify-content-center align-items-center">
               <CardIcone>
-                <ThumbsUp
-                  style={{ marginRight: "20px" }}
-                  size={45}
-                  color={theme["green-500"]}
-                  weight="fill"
-                  onClick={handleThumbsUpClick}
-                />
-
-                <ThumbsDown
-                  style={{ marginLeft: "20px" }}
-                  size={45}
-                  color={theme["red-600"]}
-                  weight="fill"
-                  onClick={handleThumbsDownClick}
-                />
+                <ButtonAceite>
+                  <ThumbsUp
+                    style={{ marginRight: "20px", cursor: "pointer" }}
+                    size={45}
+                    color={theme["green-500"]}
+                    weight="fill"
+                    onClick={handleThumbsUpClick}
+                  />
+                </ButtonAceite>
+                <ButtonAceite>
+                  <ThumbsDown
+                    style={{ marginRight: "20px", cursor: "pointer" }}
+                    size={45}
+                    color={theme["red-600"]}
+                    weight="fill"
+                    onClick={handleThumbsDownClick}
+                  />
+                </ButtonAceite>
               </CardIcone>
             </div>
           </Col>
