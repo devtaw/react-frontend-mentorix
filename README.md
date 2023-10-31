@@ -12,6 +12,8 @@
 
 - [Descrição do projeto](#descrição-page_facing_up)
 
+- [Funcionalidades](#funcionalidades)
+
 - [Tecnologias utilizadas](#tecnologias)
 
 - [Paleta de Cores utilizada no projeto](#paleta-de-cores-art)
@@ -42,6 +44,19 @@ Desenvolvimento do Front-End que vai consumir todos os endpoints criados para a 
 <p align="justify"> O site <b>Mentorix</b> foi desenvolvido para a avaliação "Projeto em Grupo -  Ligando as Peças” do "Módulo 5: Frameworks, bibliotecas, tecnologias client-side/front-end + Postura profissional e Inovação" do curso de formação <b>WebDev Full Stack JavaScript</b> da Resilia Educação em parceria com o programa "Códigos do Amanhã" da <b>EBANX</b>.</p>
 
 <b>(http://mentorix.netlify.app/):</b>
+
+## Funcionalidades
+
+- Mentor faz cadastro no Mentorix
+- Lista de Mentores é atualizada com os dados cadastrados
+- Mentor faz login
+- Mentor entra na Área do Mentor e vê seus dados de cadastros preenchidos
+- Mentor consegue editar e salvar seus dados cadastrados previamente
+- Mentorado manda mensagem solicitando agendamento
+- Mentor recebe a mensagem na Área do Mentor
+- Mentor recebe a mensagem por e-mail
+- Mentor aceita ou recusar a solicitação de agendamento do Mentorado
+- Mentorado recebe e-mail com o aceite ou a recusa
 
 ## Tecnologias utilizadas 
 
