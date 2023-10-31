@@ -12,21 +12,15 @@ import {
   ShareNetwork,
   Note,
 } from "@phosphor-icons/react";
-import {
-  Textorodape,
-  Labelleft,
-  EspecialidadesContainer,
-} from "./FormMentor.styled";
-import EspecialidadesList from "./CardMentor.jsx";
+import { Textorodape, Labelleft, EspecialidadesContainer } from "./FormMentor.styled";
+import { useSnackbar } from "notistack";
 
 export function FormMentor(props) {
   const [isEditing, setIsEditing] = useState(false);
   const [newSenha, setNewSenha] = useState("");
   const [isSenhaModified, setIsSenhaModified] = useState(false);
   const [selectedEspecialidade, setSelectedEspecialidade] = useState([]);
-  const [tempSelectedEspecialidade, setTempSelectedEspecialidade] = useState(
-    []
-  );
+  const [tempSelectedEspecialidade, setTempSelectedEspecialidade] = useState([]);
   const [especialidade, setEspecialidade] = useState([]);
 
   const [linkedin, setLinkedin] = useState(props.linkedin);
@@ -35,6 +29,9 @@ export function FormMentor(props) {
   const [especialidades, setEspecialidades] = useState(props.especialidades);
   const [biografia, setBiografia] = useState(props.biografia);
   const [foto, setFoto] = useState(props.foto);
+  const [email, setEmail] = useState(props.email);
+
+  const snackbar = useSnackbar();
 
   const handleLinkedinChange = (event) => {
     setLinkedin(event.target.value);
@@ -46,29 +43,13 @@ export function FormMentor(props) {
     setProfissao(props.profissao);
     setBiografia(props.biografia);
     setFoto(props.foto);
+    setEmail(props.email);
+    setEspecialidades(props.especialidades);
   }, [props]);
-
-  console.log("props", props);
 
   useEffect(() => {
     setSelectedEspecialidade(especialidades);
   }, [especialidades]);
-
-  useEffect(() => {
-    setEspecialidades(props.especialidades);
-  }, [props]);
-
-  const especialidadesList = [
-    { label: "Estratégia", value: "estrategia" },
-    { label: "Finanças", value: "financas" },
-    { label: "Investimentos", value: "investimentos" },
-    { label: "Desenvolvimento", value: "desenvolvimento" },
-    { label: "Criptomoedas", value: "criptomoedas" },
-    { label: "Blockchain", value: "blockchain" },
-    { label: "Criatividade", value: "criatividade" },
-    { label: "Comunicação", value: "comunicacao" },
-    { label: "Produtividade", value: "produtividade" },
-  ];
 
   const handleProfissaoChange = (event) => {
     setProfissao(event.target.value);
@@ -95,16 +76,25 @@ export function FormMentor(props) {
       profissao: profissao,
       linkedin: linkedin,
       biografia: biografia,
-      nome: nomeCompleto,
-      foto: foto,
-      senha: isSenhaModified ? newSenha : props.senha,
-      especialidade: selectedEspecialidade,
+      nomeCompleto: nomeCompleto,
+      fotoPerfil: foto,
+      senha: isSenhaModified ? newSenha : null,
+      especialidades: especialidades,
     };
 
     try {
-      const mentorAtualizado = await updateMentor(id, dadosAtualizados);
+      const mentorAtualizado = await updateMentor(props.id, dadosAtualizados);
+
+      snackbar.enqueueSnackbar("Dados atualizados com sucesso!", {
+        variant: "success",
+      });
+
       console.log("Mentor atualizado:", mentorAtualizado);
     } catch (error) {
+      snackbar.enqueueSnackbar("Houve um erro ao atualizar os dados. Por favor tente novamente mais tarde.", {
+        variant: "error",
+      });
+
       console.error("Erro ao atualizar mentor:", error);
     }
 
@@ -127,9 +117,7 @@ export function FormMentor(props) {
 
   const handleTempCheckboxChange = (value) => {
     if (tempSelectedEspecialidade.includes(value)) {
-      setTempSelectedEspecialidade(
-        tempSelectedEspecialidade.filter((item) => item !== value)
-      );
+      setTempSelectedEspecialidade(tempSelectedEspecialidade.filter((item) => item !== value));
     } else {
       setTempSelectedEspecialidade([...tempSelectedEspecialidade, value]);
     }
@@ -139,9 +127,7 @@ export function FormMentor(props) {
       setEspecialidades([...especialidades, value]);
       return;
     } else {
-      const novaLista = especialidades.filter(
-        (especialidade) => especialidade !== value
-      );
+      const novaLista = especialidades.filter((especialidade) => especialidade !== value);
       setEspecialidades(novaLista);
     }
   }
@@ -157,11 +143,7 @@ export function FormMentor(props) {
       >
         {isEditing ? (
           <>
-            <MentorixButton
-              color={"terciary-200"}
-              onClick={handleSaveClick}
-              style={{ marginRight: "10px" }}
-            >
+            <MentorixButton color={"terciary-200"} onClick={handleSaveClick} style={{ marginRight: "10px" }}>
               Salvar
             </MentorixButton>
             <MentorixButton color={"secondary-100"} onClick={handleCancelClick}>
@@ -217,9 +199,11 @@ export function FormMentor(props) {
               <Envelope size={16} color="#4d0057" weight="fill" />
             </InputGroup.Text>
             <Form.Control
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               aria-label="Small"
               aria-describedby="inputGroup-sizing-sm"
-              disabled={!isEditing}
+              disabled={true}
             />
           </InputGroup>
         </Labelleft>
@@ -231,9 +215,9 @@ export function FormMentor(props) {
               <Password size={16} color="#4d0057" weight="fill" />
             </InputGroup.Text>
             <Form.Control
-              disabled={!isEditing}
+              disabled={true}
               onChange={handleSenhaChange}
-              value={isEditing ? newSenha : "***"}
+              value={"******"}
               aria-label="Small"
               aria-describedby="inputGroup-sizing-sm"
             />
@@ -255,9 +239,7 @@ export function FormMentor(props) {
               onChange={handleBiografiaChange}
             />
           </InputGroup>
-          <Textorodape>
-            *O texto deve ter no máximo 400 caracteres (com espaços).
-          </Textorodape>
+          <Textorodape>*O texto deve ter no máximo 400 caracteres (com espaços).</Textorodape>
         </Labelleft>
 
         <Labelleft>
@@ -292,7 +274,7 @@ export function FormMentor(props) {
           </InputGroup>
         </Labelleft>
       </div>
-   
+
       <Labelleft>Especialidades</Labelleft>
       <EspecialidadesContainer>
         <Form.Check
@@ -301,18 +283,9 @@ export function FormMentor(props) {
           label="Desenvolvimento"
           id="checkbox-1"
           value="desenvolvimento"
-        //   checked={(event)=>{
-        //     console.log("event",event); 
-        //     console.log("especialidades", especialidades);
-        //   //  return especialidades.includes("desenvolvimento")
-        //   return true
-        //   }
-        // }
-        defaultChecked={true}
-        // checked={true}
-          onChange={(e) =>
-            handleClickCheckbox(e.target.value, e.target.checked)
-          }
+          disabled={!isEditing}
+          checked={!!especialidades?.includes("desenvolvimento")}
+          onChange={(e) => handleClickCheckbox(e.target.value, e.target.checked)}
         />
         <Form.Check
           className="col-md-4"
@@ -320,10 +293,9 @@ export function FormMentor(props) {
           label="Criptomoedas"
           id="checkbox-2"
           value="criptomoedas"
-          checked={()=>especialidades.includes("criptomoedas")}
-          onChange={(e) =>
-            handleClickCheckbox(e.target.value, e.target.checked)
-          }
+          disabled={!isEditing}
+          checked={!!especialidades.includes("criptomoedas")}
+          onChange={(e) => handleClickCheckbox(e.target.value, e.target.checked)}
         />
         <Form.Check
           className="col-md-4"
@@ -331,76 +303,69 @@ export function FormMentor(props) {
           label="Blockchain"
           id="checkbox-3"
           value="blockchain"
-          checked={()=>especialidades.includes("blockchain")}
-          onChange={(e) =>
-            handleClickCheckbox(e.target.value, e.target.checked)
-          }
+          disabled={!isEditing}
+          checked={!!especialidades.includes("blockchain")}
+          onChange={(e) => handleClickCheckbox(e.target.value, e.target.checked)}
         />
         <Form.Check
           className="col-md-4"
           type="checkbox"
           label="Finanças"
-          id="checkbox-1"
+          id="checkbox-4"
           value="financas"
-          checked={()=>especialidades.includes("financas")}
-          onChange={(e) =>
-            handleClickCheckbox(e.target.value, e.target.checked)
-          }
+          disabled={!isEditing}
+          checked={!!especialidades.includes("financas")}
+          onChange={(e) => handleClickCheckbox(e.target.value, e.target.checked)}
         />
         <Form.Check
           className="col-md-4"
           type="checkbox"
           label="Investimentos"
-          id="checkbox-2"
+          id="checkbox-5"
           value="investimentos"
-          checked={()=>especialidades.includes("investimentos")}
-          onChange={(e) =>
-            handleClickCheckbox(e.target.value, e.target.checked)
-          }
+          disabled={!isEditing}
+          checked={!!especialidades.includes("investimentos")}
+          onChange={(e) => handleClickCheckbox(e.target.value, e.target.checked)}
         />
         <Form.Check
           className="col-md-4"
           type="checkbox"
           label="Estratégia"
-          id="checkbox-3"
+          id="checkbox-6"
           value="estrategia"
-          checked={()=>especialidades.includes("estrategia")}
-          onChange={(e) =>
-            handleClickCheckbox(e.target.value, e.target.checked)
-          }
+          disabled={!isEditing}
+          checked={!!especialidades.includes("estrategia")}
+          onChange={(e) => handleClickCheckbox(e.target.value, e.target.checked)}
         />
         <Form.Check
           className="col-md-4"
           type="checkbox"
           label="Criatividade"
-          id="checkbox-1"
+          id="checkbox-7"
           value="criatividade"
-          checked={()=>especialidades.includes("criatividade")}
-          onChange={(e) =>
-            handleClickCheckbox(e.target.value, e.target.checked)
-          }
+          disabled={!isEditing}
+          checked={!!especialidades.includes("criatividade")}
+          onChange={(e) => handleClickCheckbox(e.target.value, e.target.checked)}
         />
         <Form.Check
           className="col-md-4"
           type="checkbox"
           label="Comunicação"
-          id="checkbox-2"
+          id="checkbox-8"
           value="comunicacao"
-          checked={()=>especialidades.includes("comunicacao")}
-          onChange={(e) =>
-            handleClickCheckbox(e.target.value, e.target.checked)
-          }
+          disabled={!isEditing}
+          checked={!!especialidades.includes("comunicacao")}
+          onChange={(e) => handleClickCheckbox(e.target.value, e.target.checked)}
         />
         <Form.Check
           className="col-md-4"
           type="checkbox"
           label="Produtividade"
-          id="checkbox-3"
+          id="checkbox-9"
           value="produtividade"
-          checked={()=>especialidades.includes("produtividade")}
-          onChange={(e) =>
-            handleClickCheckbox(e.target.value, e.target.checked)
-          }
+          disabled={!isEditing}
+          checked={!!especialidades.includes("produtividade")}
+          onChange={(e) => handleClickCheckbox(e.target.value, e.target.checked)}
         />
         <div img=""></div>
       </EspecialidadesContainer>

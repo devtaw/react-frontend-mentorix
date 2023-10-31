@@ -18,7 +18,7 @@ export function Login() {
           variant: "success",
         });
         console.log("resposta", resposta);
-        navigate("/area-mentor/" + resposta.user.id);
+        navigate("/area-mentor/" + resposta.mentor_id);
         return;
       }
     } catch (error) {
